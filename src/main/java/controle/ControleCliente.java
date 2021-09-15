@@ -1,7 +1,11 @@
 package controle;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import modelo.*;
 
 public class ControleCliente {
+        private SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy"); 
         private Cliente[] cliente;
         private int qtdCliente;
         private Dados dados = new Dados();
@@ -74,38 +78,52 @@ public class ControleCliente {
 
     
     
-       public boolean inserirCliente(Cliente dadosCliente) {
-                boolean res = false;
-		for (int j=0;j<qtdCliente;j++){
-                    if(cliente[j]==null){
-                        cliente[j]=dadosCliente;
-                        res = true;
-                    }
-                }
-                return res;
+	public boolean inserirEditarCliente(String[] dadosClientes) throws ParseException {
+		if(!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+") || 
+				  !dadosClientes[6].matches("[0-9]+")) {
+			return false;
+		} else {
+                    Date d = formato.parse(dadosClientes[4]);
+				Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1], Integer.parseInt(dadosClientes[3]), 
+					new Telefone(Integer.parseInt(dadosClientes[5]),Integer.parseInt(dadosClientes[6])), 
+                                        new Endereco(dadosClientes[9],dadosClientes[10],dadosClientes[7],Integer.parseInt(dadosClientes[3]),
+                                            Integer.parseInt(dadosClientes[8]),Integer.parseInt(dadosClientes[12]),Integer.parseInt(dadosClientes[11])),
+                                        d
+								);
+				dados.inserirEditarCliente(c, Integer.parseInt(dadosClientes[0]));
+				return true;
+		}
 	}
        
-       public boolean editarCliente(Cliente dadosCliente, int cpf) {
-                boolean res = false;
-		for (int j=0;j<qtdCliente;j++){
-                    if(cliente[j].getCpf()==cpf){
-                        cliente[j]=null;
-                        cliente[j]=dadosCliente;
-                        res = true;
-                    }
-                    
-                }
-                return res;
-	}
-       
-       	public boolean removerCliente(int cpfCliente) {
-            boolean res = false;
-            for (int j=0;j<qtdCliente;j++){
-                    if(cliente[j].getCpf()==cpfCliente){
-                        cliente[j]=null;
-                        res = true;
-                    }
-            }
-            return res;
-	}	    
+        public boolean removerCliente(int i) {
+                        int qtdCliente = dados.getQtdCliente();
+                        String alunoRemovido = dados.getCliente()[i].getNome();
+                        String aux;
+                        for (int j = 0; j < qtdCliente; j++) { 
+                                aux = dados.getVenda()[j].getCliente().getNome();
+                                if(alunoRemovido.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCliente() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCliente(dados.getQtdCliente() - 1);
+			dados.getCliente()[dados.getQtdCliente()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getCliente()[cont].getNome().compareTo(alunoRemovido) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCliente() - 1; j++) {
+				dados.getCliente()[j] = null;
+				dados.getCliente()[j] = dados.getCliente()[j+1];
+			}
+			dados.getCliente()[dados.getQtdCliente()] = null;
+			dados.setQtdCliente(dados.getQtdCliente() - 1);
+			return true;
+		}
+        }
+        
+        
 }
