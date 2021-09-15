@@ -104,7 +104,8 @@ public class Dados {
                 qtdSaia =5; 
                 qtdShorte =5; 
                 qtdTelefone =5; 
-                qtdVenda =5; 
+                qtdVenda =5;
+                
                 
 	}
      

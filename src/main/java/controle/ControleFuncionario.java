@@ -77,47 +77,38 @@ public class ControleFuncionario {
         }
     
     
-       public boolean inserirEditarFuncionario(String[] dadosFuncionario) {
-		if(!dadosFuncionario[3].matches("[0-9]+") || !dadosFuncionario[4].matches("[0-9]+") || 
-				!dadosFuncionario[5].matches("[0-9]+") || !dadosFuncionario[6].matches("[0-9]+")) {
-			return false;
-		} else {
-				Funcionario f = new Funcionario(Integer.parseInt(dadosFuncionario[0]),dadosFuncionario[1], Integer.parseInt(dadosFuncionario[2]), 
-						Integer.parseInt(dadosFuncionario[3]), Integer.parseInt(dadosFuncionario[4]),Integer.parseInt(dadosFuncionario[5]), 
-						new Telefone((dadosFuncionario[5]), Integer.parseInt(dadosFuncionario[6])));
-				dados.inserirEditarFuncionario(f, Integer.parseInt(dadosFuncionario[0]));
-				return true;
-		}
+        public boolean inserirFuncionario(Funcionario dadosFuncionario) {
+                boolean res = false;
+		for (int j=0;j<qtdFuncionario;j++){
+                    if(funcionario[j]==null){
+                        funcionario[j]=dadosFuncionario;
+                        res = true;
+                    }
+                }
+                return res;
 	}
-	// a posicao 0 do vetor dadosFuncionario indica onde os dados devem ser inseridos
        
-       	public boolean removerFuncionario(int i) {
-		int qtdFuncionarios = dados.getQtdFuncionario();
-		String funcionarioRemovido = dados.getFuncionario()[i].getNome();
-		String aux;
-		for (int j = 0; j < qtdFuncionario; j++) { 
-			aux = dados.getVenda()[j].getFuncionario().getNome();
-			if(funcionarioRemovido.compareTo(aux) == 0) 
-				return false; //não é possível remover um cliente pois ele está associado a uma venda
-		}
-		
-		if(i == (dados.getQtdFuncionario()- 1)) { // O cliente a ser removido está no final do array
-			dados.setQtdFuncionario(dados.getQtdFuncionario()- 1);
-			dados.getFuncionario()[dados.getQtdFuncionario()] = null;
-			return true;
-		} else { // o cliente a ser removido está no meio do array
-			int cont = 0;
-			while(dados.getFuncionario()[cont].getNome().compareTo(funcionarioRemovido) != 0) {
-				cont++;
-			}
-			//Rotina swap
-			for(int j = cont; j < dados.getQtdFuncionario()- 1; j++) {
-				dados.getFuncionario()[j] = null;
-				dados.getFuncionario()[j] = dados.getFuncionario()[j+1];
-			}
-			dados.getFuncionario()[dados.getQtdFuncionario()] = null;
-			dados.setQtdFuncionario(dados.getQtdFuncionario() - 1);
-                    return true;
-		}
-	}	    
+       public boolean editarFuncionario(Funcionario dadosFuncionario, int cpf) {
+                boolean res = false;
+		for (int j=0;j<qtdFuncionario;j++){
+                    if(funcionario[j].getCpf()==cpf){
+                        funcionario[j]=null;
+                        funcionario[j]=dadosFuncionario;
+                        res = true;
+                    }
+                    
+                }
+                return res;
+	}
+       
+       	public boolean removerFuncionario(int cpfFuncionario) {
+            boolean res = false;
+            for (int j=0;j<qtdFuncionario;j++){
+                    if(funcionario[j].getCpf()==cpfFuncionario){
+                        funcionario[j]=null;
+                        res = true;
+                    }
+            }
+            return res;
+	}
 }

@@ -5,8 +5,7 @@ import modelo.*;
 public class ControleDados {
     
     private Dados dados = new Dados();
-    
-	
+    	
     public ControleDados() {
         dados.fillWithSomeData();
     }
@@ -31,9 +30,9 @@ public class ControleDados {
 	return this.dados.getQtdFuncionario();
     }
 	
-	public Funcionario[] getFuncionarios() {
-		return this.dados.getFuncionario();
-	}
+    public Funcionario[] getFuncionarios() {
+	return this.dados.getFuncionario();
+    }
     
     
     
