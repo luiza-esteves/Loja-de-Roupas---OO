@@ -11,7 +11,7 @@ public class Cliente extends Pessoa {
         super();
     }
     
-    public Cliente(int totalCompras, String n, int cp, Telefone t, Endereco e,Date d) {
+    public Cliente(int totalCompras, String n, int cp, Telefone t, Endereco e,String d) {
         this.totalCompras = totalCompras;
         this.nome = n;
         this.cpf = cp;
@@ -52,11 +52,11 @@ public class Cliente extends Pessoa {
         this.totalCompras = totalCompras;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

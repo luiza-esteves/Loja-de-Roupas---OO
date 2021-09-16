@@ -5,7 +5,7 @@ import java.util.Date;
 import modelo.*;
 
 public class ControleFuncionario {
-    private SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy"); 
+ 
         private Funcionario[] funcionario;
         private int qtdFuncionario;
         private Dados dados = new Dados();
@@ -85,12 +85,11 @@ public boolean inserirEditarFuncionario(String[] dadosFuncionarios) throws Parse
 				  !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
 		} else {
-                    Date d = formato.parse(dadosFuncionarios[4]);
 				Funcionario f = new Funcionario(Integer.parseInt(dadosFuncionarios[2]), dadosFuncionarios[1], Integer.parseInt(dadosFuncionarios[3]), 
 					new Telefone(Integer.parseInt(dadosFuncionarios[5]),Integer.parseInt(dadosFuncionarios[6])), 
                                         new Endereco(dadosFuncionarios[9],dadosFuncionarios[10],dadosFuncionarios[7],Integer.parseInt(dadosFuncionarios[3]),
                                             Integer.parseInt(dadosFuncionarios[8]),Integer.parseInt(dadosFuncionarios[12]),Integer.parseInt(dadosFuncionarios[11])),
-                                        d
+                                        dadosFuncionarios[4]
 								);
 				dados.inserirEditarFuncionario(f, Integer.parseInt(dadosFuncionarios[0]));
 				return true;

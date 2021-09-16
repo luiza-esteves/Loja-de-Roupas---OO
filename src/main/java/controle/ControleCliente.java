@@ -1,11 +1,11 @@
 package controle;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import modelo.*;
 
 public class ControleCliente {
-        private SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy"); 
+       
         private Cliente[] cliente;
         private int qtdCliente;
         private Dados dados = new Dados();
@@ -83,12 +83,12 @@ public class ControleCliente {
 				  !dadosClientes[6].matches("[0-9]+")) {
 			return false;
 		} else {
-                    Date d = formato.parse(dadosClientes[4]);
 				Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1], Integer.parseInt(dadosClientes[3]), 
 					new Telefone(Integer.parseInt(dadosClientes[5]),Integer.parseInt(dadosClientes[6])), 
-                                        new Endereco(dadosClientes[9],dadosClientes[10],dadosClientes[7],Integer.parseInt(dadosClientes[3]),
-                                            Integer.parseInt(dadosClientes[8]),Integer.parseInt(dadosClientes[12]),Integer.parseInt(dadosClientes[11])),
-                                        d
+                                        new Endereco(dadosClientes[9],dadosClientes[10],dadosClientes[7],Integer.parseInt(dadosClientes[8]),
+                                            Integer.parseInt(dadosClientes[13]),Integer.parseInt(dadosClientes[12]),Integer.parseInt(dadosClientes[11])
+                                        ),
+                                        dadosClientes[4]
 								);
 				dados.inserirEditarCliente(c, Integer.parseInt(dadosClientes[0]));
 				return true;

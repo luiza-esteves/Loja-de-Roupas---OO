@@ -7,6 +7,11 @@ public class Shorte extends Roupa{
     Scanner ler = new Scanner(System.in);
     
     private String tipoShort, tipoBoca;
+    
+       
+    public Shorte(){
+        super();
+    }
 
     public Shorte(String tipoShort, String tipoBoca,  int c, 
             String no, String t,String cor, String mat, String marca, String categ,

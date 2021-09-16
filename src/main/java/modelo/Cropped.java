@@ -5,6 +5,10 @@ public class Cropped extends Roupa {
     Scanner ler = new Scanner(System.in);
     
     private String estilo, modelagem, manga;
+       
+    public Cropped(){
+        super();
+    }
 
     public Cropped(String estilo, String modelagem, String manga,int c,
             String no, String t,String cor, String mat, String marca, String categ,

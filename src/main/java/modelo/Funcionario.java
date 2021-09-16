@@ -11,7 +11,7 @@ public class Funcionario extends Pessoa {
         super();
     }
 
-    public Funcionario(double salario,String n, int cp, Telefone t, Endereco e,Date d) {
+    public Funcionario(double salario,String n, int cp, Telefone t, Endereco e,String d) {
         this.salario = salario;
         this.nome = n;
         this.cpf = cp;
@@ -46,11 +46,11 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

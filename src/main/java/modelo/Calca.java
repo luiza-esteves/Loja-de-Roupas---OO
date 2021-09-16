@@ -6,6 +6,10 @@ public class Calca extends Roupa{
 
     private String tipoCalca, cos, lavagem;
     
+    public Calca(){
+        super();
+    }
+    
 
     public Calca(String tipoCalca, String cos, String lavagem, int c, 
             String no, String t,String cor, String mat, String marca, String categ,

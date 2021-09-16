@@ -78,11 +78,11 @@ public class Dados {
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
-			cliente[i] = new Cliente(0,"Nome: "+i,000000000+i,telefone[i],endereco[i],d);
+			cliente[i] = new Cliente(0,"Nome: "+i,000000000+i,telefone[i],endereco[i],"data"+i);
                         
-                        funcionario[i] = new Funcionario(i*608.21,"Nome: "+i,000000044+i,telefone[i],endereco[i],d);
+                        funcionario[i] = new Funcionario(i*608.21,"Nome: "+i,000000044+i,telefone[i],endereco[i],"data"+i);
                         
-                        estoque[i] = new Estoque(10,i);
+                        estoque[i] = new Estoque(macacao[i],2);
                         
                         venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],estoque[i]);
                         

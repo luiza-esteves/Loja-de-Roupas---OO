@@ -21,76 +21,76 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		dados = d;
 
 		switch (op) {
-		case 1:// Mostrar dados de alunos cadastrados (JList)
-			listaNomes = new ControleCliente(dados).getNomesCliente();
-			listaClientesCadastrados = new JList<String>(listaNomes);
-			janela = new JFrame("Cliente");
-			titulo = new JLabel("Clientes Cadastrados");
-			cadastroCliente = new JButton("Cadastrar");
-			refreshCliente = new JButton("Refresh");
+                    case 1:// Mostrar dados de alunos cadastrados (JList)
+                            listaNomes = new ControleCliente(dados).getNomesCliente();
+                            listaClientesCadastrados = new JList<String>(listaNomes);
+                            janela = new JFrame("Cliente");
+                            titulo = new JLabel("Clientes Cadastrados");
+                            cadastroCliente = new JButton("Cadastrar");
+                            refreshCliente = new JButton("Refresh");
 
-			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
-			listaClientesCadastrados.setBounds(20, 50, 350, 120);
-			listaClientesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			listaClientesCadastrados.setVisibleRowCount(10);
+                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+                            titulo.setBounds(90, 10, 250, 30);
+                            listaClientesCadastrados.setBounds(20, 50, 350, 120);
+                            listaClientesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                            listaClientesCadastrados.setVisibleRowCount(10);
 
-			cadastroCliente.setBounds(70, 177, 100, 30);
-			refreshCliente.setBounds(200, 177, 100, 30);
+                            cadastroCliente.setBounds(70, 177, 100, 30);
+                            refreshCliente.setBounds(200, 177, 100, 30);
 
-			janela.setLayout(null);
+                            janela.setLayout(null);
 
-			janela.add(titulo);
-			janela.add(listaClientesCadastrados);
-			janela.add(cadastroCliente);
-			janela.add(refreshCliente);
+                            janela.add(titulo);
+                            janela.add(listaClientesCadastrados);
+                            janela.add(cadastroCliente);
+                            janela.add(refreshCliente);
 
-			janela.setSize(400, 250);
-			janela.setVisible(true);
+                            janela.setSize(400, 250);
+                            janela.setVisible(true);
 
-			cadastroCliente.addActionListener(this);
-			refreshCliente.addActionListener(this);
-			listaClientesCadastrados.addListSelectionListener(this);
+                            cadastroCliente.addActionListener(this);
+                            refreshCliente.addActionListener(this);
+                            listaClientesCadastrados.addListSelectionListener(this);
 
-			break;
+                            break;
 
-		case 2:// Mostrar dados de professores cadastrados (JList)
-			listaNomes = new ControleFuncionario(dados).getNomefuncionario();
-			listaVendedoresCadastrados = new JList<String>(listaNomes);
-			janela = new JFrame("Funcionários");
-			titulo = new JLabel("Funcionários Cadastrados");
-			cadastroVendedor = new JButton("Cadastrar");
-			refreshVendedor = new JButton("Refresh");
+                    case 2:// Mostrar dados de professores cadastrados (JList)
+                            listaNomes = new ControleFuncionario(dados).getNomefuncionario();
+                            listaVendedoresCadastrados = new JList<String>(listaNomes);
+                            janela = new JFrame("Funcionários");
+                            titulo = new JLabel("Funcionários Cadastrados");
+                            cadastroVendedor = new JButton("Cadastrar");
+                            refreshVendedor = new JButton("Refresh");
 
-			titulo.setFont(new Font("Arial", Font.BOLD, 20));
-			titulo.setBounds(90, 10, 250, 30);
-			listaVendedoresCadastrados.setBounds(20, 50, 350, 120);
-			listaVendedoresCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			listaVendedoresCadastrados.setVisibleRowCount(10);
+                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+                            titulo.setBounds(90, 10, 250, 30);
+                            listaVendedoresCadastrados.setBounds(20, 50, 350, 120);
+                            listaVendedoresCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                            listaVendedoresCadastrados.setVisibleRowCount(10);
 
 
-			cadastroVendedor.setBounds(70, 177, 100, 30);
-			refreshVendedor.setBounds(200, 177, 100, 30);
+                            cadastroVendedor.setBounds(70, 177, 100, 30);
+                            refreshVendedor.setBounds(200, 177, 100, 30);
 
-			janela.setLayout(null);
+                            janela.setLayout(null);
 
-			janela.add(titulo);
-			janela.add(listaVendedoresCadastrados);
-			janela.add(cadastroVendedor);
-			janela.add(refreshVendedor);
+                            janela.add(titulo);
+                            janela.add(listaVendedoresCadastrados);
+                            janela.add(cadastroVendedor);
+                            janela.add(refreshVendedor);
 
-			janela.setSize(400, 250);
-			janela.setVisible(true);
+                            janela.setSize(400, 250);
+                            janela.setVisible(true);
 
-			cadastroVendedor.addActionListener(this);
-			refreshVendedor.addActionListener(this);
-			listaVendedoresCadastrados.addListSelectionListener(this);
-			break;
+                            cadastroVendedor.addActionListener(this);
+                            refreshVendedor.addActionListener(this);
+                            listaVendedoresCadastrados.addListSelectionListener(this);
+                            break;
 
-		default:
-			JOptionPane.showMessageDialog(null,"Opção não encontrada!", null, 
-					JOptionPane.ERROR_MESSAGE);
-		}
+                    default:
+                            JOptionPane.showMessageDialog(null,"Opção não encontrada!", null, 
+                                            JOptionPane.ERROR_MESSAGE);
+                    }
 
 	}
 

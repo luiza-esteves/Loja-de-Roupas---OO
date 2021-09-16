@@ -3,7 +3,7 @@ package modelo;
 import java.util.Date;
 public abstract class Pessoa {
     
-    protected Date dataNascimento;
+    protected String dataNascimento;
     protected String nome;
     protected long cpf;
     protected Telefone telefone;
@@ -13,11 +13,11 @@ public abstract class Pessoa {
         super();
     }
     
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

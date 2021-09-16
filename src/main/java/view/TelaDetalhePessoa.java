@@ -64,19 +64,20 @@ public class TelaDetalhePessoa implements ActionListener {
 		if (op == 3) s = "Detalhe de Cliente";
 		if (op == 4) s = "Detalhe de Funcionário";
 
-		janela = new JFrame(s);
+                janela = new JFrame(s);
+               
 
 		//Preenche dados com dados do aluno clicado
 		if (op == 3) {
 			valorNome = new JTextField(dados.getCliente()[pos].getNome(), 200);
-			valorNome = new JTextField(dados.getFuncionarios()[pos].getNome(), 200);
-			valorCidade = new JTextField(dados.getFuncionarios()[pos].getEndereco().getCidade(),200);
-                        valorEstado = new JTextField(dados.getFuncionarios()[pos].getEndereco().getEstado(),200);
-                        valorBairro = new JTextField(dados.getFuncionarios()[pos].getEndereco().getBairro(),200);
-                        String ce = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getCEP());
-                        String ru = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getRua());
-                        String qua = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getQuadra());
-                        String lo = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getLote());
+			valorNome = new JTextField(dados.getCliente()[pos].getNome(), 200);
+			valorCidade = new JTextField(dados.getCliente()[pos].getEndereco().getCidade(),200);
+                        valorEstado = new JTextField(dados.getCliente()[pos].getEndereco().getEstado(),200);
+                        valorBairro = new JTextField(dados.getCliente()[pos].getEndereco().getBairro(),200);
+                        String ce = String.valueOf(dados.getCliente()[pos].getEndereco().getCEP());
+                        String ru = String.valueOf(dados.getCliente()[pos].getEndereco().getRua());
+                        String qua = String.valueOf(dados.getCliente()[pos].getEndereco().getQuadra());
+                        String lo = String.valueOf(dados.getCliente()[pos].getEndereco().getLote());
                         valorCep = new JTextField(ce,200);
                         valorRua = new JTextField(ru,200);
                         valorQuadra = new JTextField(qua,200);
@@ -127,29 +128,29 @@ public class TelaDetalhePessoa implements ActionListener {
 			botaoSalvar.setBounds(245, 175, 115, 30);
 		}
 
-		labelNome.setBounds(30, 800, 150, 25);
+		labelNome.setBounds(30, 20, 150, 25);
 		valorNome.setBounds(180, 20, 180, 25);
-		labelBairro.setBounds(30, 750, 150, 25);
-                valorBairro.setBounds(180, 50, 180, 25);
-                labelCep.setBounds(30, 50, 150, 25);
-                valorCep.setBounds(180, 50, 180, 25);
-                labelCidade.setBounds(30, 50, 150, 25);
-                valorCidade.setBounds(180, 50, 180, 25);
-                labelEstado.setBounds(30, 50, 150, 25);
-                valorEstado.setBounds(180, 50, 180, 25);
-                labelLote.setBounds(30, 50, 150, 25);
-                valorLote.setBounds(180, 50, 180, 25);
-                labelQuadra.setBounds(30, 50, 150, 25);
-                valorQuadra.setBounds(180, 50, 180, 25);
-                labelRua.setBounds(30, 50, 150, 25);
-                valorRua.setBounds(180, 50, 180, 25);
-		labelCPF.setBounds(30, 80, 150, 25);
-		valorCPF.setBounds(180, 80, 180, 25);
-		labelDataNascimento.setBounds(30, 110, 150, 25);
-		valorDataNascimento.setBounds(180, 110, 180, 25);
-		labelTelefone.setBounds(30, 140, 150, 25);
-		valorDDD.setBounds(180, 140, 28, 25);
-		valorTelefone.setBounds(210, 140, 65, 25);
+		labelBairro.setBounds(30, 60, 150, 25);
+                valorBairro.setBounds(180, 60, 180, 25);
+                labelCep.setBounds(30, 100, 150, 25);
+                valorCep.setBounds(180, 100, 180, 25);
+                labelCidade.setBounds(30, 140, 150, 25);
+                valorCidade.setBounds(180, 140, 180, 25);
+                labelEstado.setBounds(30, 180, 150, 25);
+                valorEstado.setBounds(180, 180, 180, 25);
+                labelLote.setBounds(30, 220, 150, 25);
+                valorLote.setBounds(180, 220, 180, 25);
+                labelQuadra.setBounds(30, 260, 150, 25);
+                valorQuadra.setBounds(180, 260, 180, 25);
+                labelRua.setBounds(30, 300, 150, 25);
+                valorRua.setBounds(180, 300, 180, 25);
+		labelCPF.setBounds(30, 340, 150, 25);
+		valorCPF.setBounds(180, 340, 180, 25);
+		labelDataNascimento.setBounds(30, 380, 150, 25);
+		valorDataNascimento.setBounds(180, 380, 180, 25);
+		labelTelefone.setBounds(30, 420, 150, 25);
+		valorDDD.setBounds(180, 420, 28, 25);
+		valorTelefone.setBounds(420, 140, 65, 25);
 
 		//Coloca os campos relacionados a endereco se aluno
 		if (op == 1 || op == 3 ) {
@@ -167,8 +168,8 @@ public class TelaDetalhePessoa implements ActionListener {
 
 		//Coloca botoes de excluir e salvar
 		if (op == 3 || op == 4) {
-			botaoSalvar.setBounds(120, 175, 115, 30);
-			botaoExcluir.setBounds(245, 175, 115, 30);
+			botaoSalvar.setBounds(120, 480, 115, 30);
+			botaoExcluir.setBounds(245, 480, 115, 30);
 			this.janela.add(botaoExcluir);
 		}
 
@@ -176,6 +177,20 @@ public class TelaDetalhePessoa implements ActionListener {
 		this.janela.add(valorNome);
 		this.janela.add(labelCPF);
 		this.janela.add(valorCPF);
+                this.janela.add(labelBairro);
+		this.janela.add(valorBairro);
+                this.janela.add(labelCep);
+		this.janela.add(valorCep);
+                this.janela.add(labelCidade);
+		this.janela.add(valorCidade);
+                this.janela.add(labelEstado);
+		this.janela.add(valorEstado);
+                this.janela.add(labelLote);
+		this.janela.add(valorLote);
+                this.janela.add(labelQuadra);
+		this.janela.add(valorQuadra);
+                this.janela.add(labelRua);
+		this.janela.add(valorRua);
 		this.janela.add(labelDataNascimento);
 		this.janela.add(valorDataNascimento);
 		this.janela.add(labelTelefone);
@@ -185,7 +200,7 @@ public class TelaDetalhePessoa implements ActionListener {
 
 		this.janela.setLayout(null);
 
-		this.janela.setSize(400, 250);
+		this.janela.setSize(400, 800);
 		this.janela.setVisible(true);
 
 		botaoSalvar.addActionListener(this);
@@ -196,9 +211,11 @@ public class TelaDetalhePessoa implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
+                    System.out.println("teste");
 			try {
+                            
 				boolean res;
-				if(opcao == 1) //cadastro de novo aluno
+				if(opcao == 1) //cadastro de novo cliente
 					novoDado[0] = Integer.toString(dados.getQtdCliente());
 				else if (opcao == 2) // cadastro de novo prof
 					novoDado[0] = Integer.toString(dados.getQtdFuncionarios());

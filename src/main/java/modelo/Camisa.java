@@ -7,6 +7,11 @@ public class Camisa extends Roupa{
      Scanner ler = new Scanner(System.in);
      
     private String modelagem, manga, gola, botao;
+     
+    
+    public Camisa(){
+        super();
+    }
 
     public Camisa(String modelagem, String manga, String gola, String botao,int c,
             String no, String t,String cor, String mat, String marca, String categ,

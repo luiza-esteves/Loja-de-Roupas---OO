@@ -34,6 +34,45 @@ public class ControleDados {
 	return this.dados.getFuncionario();
     }
     
+    public int getQtdEstoque() {
+	return this.dados.getQtdEstoque();
+    }
+	
+    public Estoque[] getEstoques() {
+	return this.dados.getEstoque();
+    }
+    
+	
+    public Calca[] getCalca() {
+	return this.dados.getCalca();
+    }
+    
+    public Camisa[] getCamisa() {
+	return this.dados.getCamisa();
+    }
+    
+    public Camiseta[] getCamiseta() {
+	return this.dados.getCamiseta();
+    }
+    public Casaco[] getCasaco() {
+	return this.dados.getCasaco();
+    }
+    public Cinto[] getCinto() {
+	return this.dados.getCinto();
+    }
+    public Cropped[] getCropped() {
+	return this.dados.getCropped();
+    }
+    public Macacao[] getMacacao() {
+	return this.dados.getMacacao();
+    }
+    public Saia[] getSaia() {
+	return this.dados.getSaia();
+    }
+    public Shorte[] getShorte() {
+	return this.dados.getShorte();
+    }
+    
     
     
     

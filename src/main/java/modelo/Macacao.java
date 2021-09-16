@@ -6,6 +6,10 @@ public class Macacao extends Roupa{
     Scanner ler = new Scanner(System.in);
 
     private String modelagem, lavagem;
+       
+    public Macacao(){
+        super();
+    }
 
     public Macacao(String modelagem, String lavagem,int c,
             String no, String t,String cor, String mat, String marca, String categ,

@@ -6,6 +6,10 @@ public class Saia extends Roupa{
      Scanner ler = new Scanner(System.in);
      
     private String modelagem, tipoCintura;
+       
+    public Saia(){
+        super();
+    }
 
     public Saia(String modelagem, String tipoCintura,int c,
             String no, String t,String cor, String mat, String marca, String categ,
