@@ -55,6 +55,10 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JTextField valorGola;
         private JLabel labelBoatao = new JLabel("Botão:");
 	private JTextField valorBotao;
+        private JLabel labelEstilo = new JLabel("Estilo:");
+	private JTextField valorEstilo;
+        private JLabel labelTipoCintura = new JLabel("Tipo de cintura:");
+	private JTextField valorTipoCintura;
         
         private JLabel labelDecote = new JLabel("Decote: ");
 	private JTextField valorDecote ;
@@ -66,6 +70,10 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JTextField valorOcasiao ;
         private JLabel labelLargura = new JLabel("Largura: ");
 	private JTextField valorLargura ;
+        private JLabel labelTipoShort = new JLabel("Tipo de Short: ");
+	private JTextField valorTipoShort ;
+        private JLabel labelTipoBoca = new JLabel("Tipo de Boca: ");
+	private JTextField valorTipoBoca;
         
         
         
@@ -206,101 +214,238 @@ public class TelaDetalheRoupa implements ActionListener{
                         String larg = String.valueOf(dados.getCinto()[pos].getLargura());
                         valorLargura = new JTextField(larg, 200);                
                         
+                }else if (op == 15) { //Preenche dados com dados do cropped
+			String cdg = String.valueOf(dados.getCropped()[pos].getCodigo());
+                        valorCodigo = new JTextField(cdg, 200);
+			valorNome = new JTextField(dados.getCropped()[pos].getNome(), 200);
+			valorTamanho = new JTextField(dados.getCropped()[pos].getTamanho(), 200);
+			valorCor = new JTextField(dados.getCropped()[pos].getCor(),200);
+                        valorMaterial = new JTextField(dados.getCropped()[pos].getMaterial(),200);
+                        valorMarca = new JTextField(dados.getCropped()[pos].getMarca(),200);
+                        valorCategoria = new JTextField(dados.getCropped()[pos].getCategoria(),200);
+                        valorGenero = new JTextField(dados.getCropped()[pos].getGenero(),200);
+                        valorEstampa = new JTextField(dados.getCropped()[pos].getEstampa(),200);
+                        String com = String.valueOf(dados.getCropped()[pos].getComprimento());
+                        valorComprimento = new JTextField(com,200);
+                        String preco =String.valueOf(dados.getCropped()[pos].getPreco());
+			valorPreco = new JTextField(preco, 200);
+                        valorEstilo = new JTextField(dados.getCropped()[pos].getEstilo(), 200);
+                        valorModelagem = new JTextField(dados.getCropped()[pos].getModelagem(), 200);
+                        valorManga = new JTextField(dados.getCropped()[pos].getManga(), 200); 
+                        
+                }else if (op == 16) { //Preenche dados com dados do macacão
+			String cdg = String.valueOf(dados.getMacacao()[pos].getCodigo());
+                        valorCodigo = new JTextField(cdg, 200);
+			valorNome = new JTextField(dados.getMacacao()[pos].getNome(), 200);
+			valorTamanho = new JTextField(dados.getMacacao()[pos].getTamanho(), 200);
+			valorCor = new JTextField(dados.getMacacao()[pos].getCor(),200);
+                        valorMaterial = new JTextField(dados.getMacacao()[pos].getMaterial(),200);
+                        valorMarca = new JTextField(dados.getMacacao()[pos].getMarca(),200);
+                        valorCategoria = new JTextField(dados.getMacacao()[pos].getCategoria(),200);
+                        valorGenero = new JTextField(dados.getMacacao()[pos].getGenero(),200);
+                        valorEstampa = new JTextField(dados.getMacacao()[pos].getEstampa(),200);
+                        String com = String.valueOf(dados.getMacacao()[pos].getComprimento());
+                        valorComprimento = new JTextField(com,200);
+                        String preco =String.valueOf(dados.getMacacao()[pos].getPreco());
+			valorPreco = new JTextField(preco, 200);
+                        valorLavagem = new JTextField(dados.getMacacao()[pos].getLavagem(), 200);
+                        valorModelagem = new JTextField(dados.getMacacao()[pos].getModelagem(), 200);         
+                }else if (op == 17) { //Preenche dados com dados da saia
+			String cdg = String.valueOf(dados.getSaia()[pos].getCodigo());
+                        valorCodigo = new JTextField(cdg, 200);
+			valorNome = new JTextField(dados.getSaia()[pos].getNome(), 200);
+			valorTamanho = new JTextField(dados.getSaia()[pos].getTamanho(), 200);
+			valorCor = new JTextField(dados.getSaia()[pos].getCor(),200);
+                        valorMaterial = new JTextField(dados.getSaia()[pos].getMaterial(),200);
+                        valorMarca = new JTextField(dados.getSaia()[pos].getMarca(),200);
+                        valorCategoria = new JTextField(dados.getSaia()[pos].getCategoria(),200);
+                        valorGenero = new JTextField(dados.getSaia()[pos].getGenero(),200);
+                        valorEstampa = new JTextField(dados.getSaia()[pos].getEstampa(),200);
+                        String com = String.valueOf(dados.getSaia()[pos].getComprimento());
+                        valorComprimento = new JTextField(com,200);
+                        String preco =String.valueOf(dados.getSaia()[pos].getPreco());
+			valorPreco = new JTextField(preco, 200);
+                        valorTipoCintura = new JTextField(dados.getSaia()[pos].getTipoCintura(), 200);
+                        valorModelagem = new JTextField(dados.getSaia()[pos].getModelagem(), 200);         
+                }else if (op == 18) { //Preenche dados com dados da saia
+			String cdg = String.valueOf(dados.getShorte()[pos].getCodigo());
+                        valorCodigo = new JTextField(cdg, 200);
+			valorNome = new JTextField(dados.getShorte()[pos].getNome(), 200);
+			valorTamanho = new JTextField(dados.getShorte()[pos].getTamanho(), 200);
+			valorCor = new JTextField(dados.getShorte()[pos].getCor(),200);
+                        valorMaterial = new JTextField(dados.getShorte()[pos].getMaterial(),200);
+                        valorMarca = new JTextField(dados.getShorte()[pos].getMarca(),200);
+                        valorCategoria = new JTextField(dados.getShorte()[pos].getCategoria(),200);
+                        valorGenero = new JTextField(dados.getShorte()[pos].getGenero(),200);
+                        valorEstampa = new JTextField(dados.getShorte()[pos].getEstampa(),200);
+                        String com = String.valueOf(dados.getShorte()[pos].getComprimento());
+                        valorComprimento = new JTextField(com,200);
+                        String preco =String.valueOf(dados.getShorte()[pos].getPreco());
+			valorPreco = new JTextField(preco, 200);
+                        valorTipoShort = new JTextField(dados.getShorte()[pos].getTipoShort(), 200);
+                        valorTipoBoca = new JTextField(dados.getShorte()[pos].getTipoBoca(), 200);         
                 }
-                
-                
-                
-                
-                
-                
-                
+                    
                 else { //Não preenche com dados
-
-                        String ce = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getCEP());
-                        String ru = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getRua());
-                        String qua = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getQuadra());
-                        String lo = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getLote());
-                        valorCep = new JTextField(ce,200);
-                        valorRua = new JTextField(ru,200);
-                        valorQuadra = new JTextField(qua,200);
-                        valorLote = new JTextField(lo,200);
-			valorsalario = new JTextField(200);
-			valorCPF = new JTextField(200);
-			valorTotalCompras = new JTextField(200);
-			valorDDD = new JTextField(3);
-			valorTelefone = new JTextField(10);
+                        
+                        valorCodigo = new JTextField(200);
+			valorNome = new JTextField(200);
+			valorTamanho = new JTextField(200);
+			valorCor = new JTextField(200);
+                        valorMaterial = new JTextField(200);
+                        valorMarca = new JTextField(200);
+                        valorCategoria = new JTextField(200);
+                        valorGenero = new JTextField(200);
+                        valorEstampa = new JTextField(200);               
+                        valorComprimento = new JTextField(20);      
+			valorPreco = new JTextField(200);
 
 			botaoSalvar.setBounds(245, 175, 115, 30);
 		}
 
-		labelNome.setBounds(30, 20, 150, 25);
-		valorNome.setBounds(180, 20, 180, 25);
-		labelBairro.setBounds(30, 60, 150, 25);
-                valorBairro.setBounds(180, 60, 180, 25);
-                labelCep.setBounds(30, 100, 150, 25);
-                valorCep.setBounds(180, 100, 180, 25);
-                labelCidade.setBounds(30, 140, 150, 25);
-                valorCidade.setBounds(180, 140, 180, 25);
-                labelEstado.setBounds(30, 180, 150, 25);
-                valorEstado.setBounds(180, 180, 180, 25);
-                labelLote.setBounds(30, 220, 150, 25);
-                valorLote.setBounds(180, 220, 180, 25);
-                labelQuadra.setBounds(30, 260, 150, 25);
-                valorQuadra.setBounds(180, 260, 180, 25);
-                labelRua.setBounds(30, 300, 150, 25);
-                valorRua.setBounds(180, 300, 180, 25);
-		labelCPF.setBounds(30, 340, 150, 25);
-		valorCPF.setBounds(180, 340, 180, 25);
-		labelDataNascimento.setBounds(30, 380, 150, 25);
-		valorDataNascimento.setBounds(180, 380, 180, 25);
-		labelTelefone.setBounds(30, 420, 150, 25);
-		valorDDD.setBounds(180, 420, 28, 25);
-		valorTelefone.setBounds(420, 140, 65, 25);
+                labelCodigo.setBounds(30, 20, 150, 25);
+                valorCodigo.setBounds(180, 20, 180, 25);
+		labelNome.setBounds(30, 60, 150, 25);
+		valorNome.setBounds(180, 60, 180, 25);
+                labelTamanho.setBounds(30, 100, 150, 25);
+                valorTamanho.setBounds(180, 100, 180, 25);
+                labelCor.setBounds(30, 140, 150, 25);
+                valorCor.setBounds(180, 140, 180, 25);
+                labelMaterial.setBounds(30, 180, 150, 25);
+                valorMaterial.setBounds(180, 180, 180, 25);
+                labelMarca.setBounds(30, 220, 150, 25);
+                valorMarca.setBounds(180, 220, 180, 25);
+                labelCategoria.setBounds(30, 260, 150, 25);
+                valorCategoria.setBounds(180, 260, 180, 25);
+                labelGenero.setBounds(30, 300, 150, 25);
+                valorGenero.setBounds(180, 300, 180, 25);
+		labelEstampa.setBounds(30, 340, 150, 25);
+		valorEstampa.setBounds(180, 340, 180, 25);
+		labelComprimento.setBounds(30, 380, 150, 25);
+		valorComprimento.setBounds(180, 380, 180, 25);
+		labelPreco.setBounds(30, 420, 150, 25);
+		valorPreco.setBounds(180, 420, 28, 25);
 
-		//Coloca os campos relacionados a endereco se aluno
-		if (op == 1 || op == 3 ) {
-			this.janela.add(labelTotalCompras);
-			this.janela.add(valorTotalCompras);
+		//Coloca os campos relacionados a calça
+		if (op == 1 || op == 10 ) {
+			this.janela.add(labelTipoCalca);
+			this.janela.add(valorTipoCalca);
+                        this.janela.add(labelCos);
+			this.janela.add(valorCos);
+                        this.janela.add(labelLavagem);
+			this.janela.add(valorLavagem);
 
 		}
 
-		//Coloca campos relacionados a valor hora/aula se professor
-		if (op == 2 || op == 4) {
+		//Coloca campos relacionados a camisa
+		if (op == 2 || op == 11) {
 
-			this.janela.add(labelSalario);
-			this.janela.add(valorsalario);
+			this.janela.add(labelModelagem);
+			this.janela.add(valorModelagem);
+                        this.janela.add(labelManga);
+			this.janela.add(valorManga);
+                        this.janela.add(labelGola);
+			this.janela.add(valorGola);
+                        this.janela.add(labelBoatao);
+			this.janela.add(valorBotao);
+                }
+                
+                //Coloca campos relacionados a camiseta
+                
+                if (op == 3 || op == 12 ) {
+			this.janela.add(labelModelagem);
+			this.janela.add(valorModelagem);
+                        this.janela.add(labelDecote);
+			this.janela.add(valorDecote);
 		}
+                
+                //Coloca campos relacionados a casaco
+                if (op == 4 || op == 13 ) {
+			this.janela.add(labelCapuz);
+			this.janela.add(valorCapuz);
+                        this.janela.add(labelZiper);
+			this.janela.add(valorZiper);
+                        this.janela.add(labelGola);
+			this.janela.add(valorGola);
+		}
+                
+                //Coloca campos relacionados a cinto
+                if (op == 5 || op == 14 ) {
+			this.janela.add(labelOcasiao);
+			this.janela.add(valorOcasiao);
+                        this.janela.add(labelCategoria);
+			this.janela.add(valorCategoria);
+		}
+                
+                //Coloca campos relacionados a cropped
+                if (op == 6 || op == 15 ) {
+			this.janela.add(labelEstilo);
+			this.janela.add(valorEstilo);
+                        this.janela.add(labelModelagem);
+			this.janela.add(valorModelagem);
+                        this.janela.add(labelManga);
+			this.janela.add(valorManga);
+		}
+                
+                //Coloca campos relacionados a Macacão
+                if (op == 7 || op == 16 ) {
+			this.janela.add(labelLavagem);
+			this.janela.add(valorLavagem);
+                        this.janela.add(labelModelagem);
+			this.janela.add(valorModelagem);
+
+		}
+                
+                //Coloca campos relacionados a Saia
+                if (op == 8 || op == 17 ) {
+                        this.janela.add(labelModelagem);
+			this.janela.add(valorModelagem);
+                        this.janela.add(labelTipoCintura);
+			this.janela.add(valorTipoCintura);
+
+		}
+                
+                //Coloca campos relacionados a Short
+                if (op == 9 || op == 18 ) {
+                        this.janela.add(labelTipoShort);
+			this.janela.add(valorTipoShort);
+                        this.janela.add(labelTipoBoca);
+			this.janela.add(valorTipoBoca);
+
+		}
+
 
 		//Coloca botoes de excluir e salvar
-		if (op == 3 || op == 4) {
+		if (op == 10 || op == 11 || op == 12 || op == 13 || op == 14 || op == 15 || op == 16 || op == 17 || op == 18) {
 			botaoSalvar.setBounds(120, 480, 115, 30);
 			botaoExcluir.setBounds(245, 480, 115, 30);
 			this.janela.add(botaoExcluir);
 		}
-
+                
+                
+                this.janela.add(labelCodigo);
+		this.janela.add(valorCodigo);
 		this.janela.add(labelNome);
 		this.janela.add(valorNome);
-		this.janela.add(labelCPF);
-		this.janela.add(valorCPF);
-                this.janela.add(labelBairro);
-		this.janela.add(valorBairro);
-                this.janela.add(labelCep);
-		this.janela.add(valorCep);
-                this.janela.add(labelCidade);
-		this.janela.add(valorCidade);
-                this.janela.add(labelEstado);
-		this.janela.add(valorEstado);
-                this.janela.add(labelLote);
-		this.janela.add(valorLote);
-                this.janela.add(labelQuadra);
-		this.janela.add(valorQuadra);
-                this.janela.add(labelRua);
-		this.janela.add(valorRua);
-		this.janela.add(labelDataNascimento);
-		this.janela.add(valorDataNascimento);
-		this.janela.add(labelTelefone);
-		this.janela.add(valorDDD);
-		this.janela.add(valorTelefone);
+                this.janela.add(labelTamanho);
+		this.janela.add(valorTamanho);
+                this.janela.add(labelCor);
+		this.janela.add(valorCor);
+                this.janela.add(labelMaterial);
+		this.janela.add(valorMaterial);
+                this.janela.add(labelMarca);
+		this.janela.add(valorMarca);
+                this.janela.add(labelCategoria);
+		this.janela.add(valorCategoria);
+                this.janela.add(labelGenero);
+		this.janela.add(valorGenero);
+                this.janela.add(labelEstampa);
+		this.janela.add(valorEstampa);
+		this.janela.add(labelComprimento);
+		this.janela.add(valorComprimento);
+		this.janela.add(labelPreco);
+		this.janela.add(valorPreco);
+                
 		this.janela.add(botaoSalvar);
 
 		this.janela.setLayout(null);
@@ -310,6 +455,112 @@ public class TelaDetalheRoupa implements ActionListener{
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
+	}
+        
+        public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+		if(src == botaoSalvar) {
+                    System.out.println("teste");
+			try {
+                            
+				boolean res;
+				if(opcao == 1) //cadastro de novo cliente
+					novoDado[0] = Integer.toString(dados.getQtdCliente());
+				else if (opcao == 2) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getQtdFuncionarios());
+				else // edicao de dado existente
+					novoDado[0] = Integer.toString(posicao);
+
+				novoDado[1] =  valorNome.getText();
+				novoDado[3] =  valorCPF.getText();
+				novoDado[4] =  valorDataNascimento.getText();
+				novoDado[5] =  valorDDD.getText();
+				novoDado[6] =  valorTelefone.getText();
+                                novoDado[7] =  valorBairro.getText();
+                                novoDado[8] =  valorCep.getText();
+                                novoDado[9] =  valorCidade.getText();
+                                novoDado[10] =  valorEstado.getText();
+                                novoDado[11] =  valorLote.getText();
+                                novoDado[12] =  valorQuadra.getText();
+                                novoDado[13] =  valorRua.getText();
+                               
+
+				if (opcao == 1 || opcao == 3) {
+					novoDado[2] =  valorTotalCompras.getText();
+					res = dadosCliente.inserirEditarCliente(novoDado);
+				} else {
+					novoDado[2] =  valorsalario.getText();
+					res = dadosFuncionario.inserirEditarFuncionario(novoDado);
+				}
+
+				if(res) {
+					mensagemSucessoCadastro();
+				}
+				else mensagemErroCadastro();
+
+			} catch (NullPointerException exc1) {
+				mensagemErroCadastro();
+			} catch (NumberFormatException exc2) {
+				mensagemErroCadastro();
+			} catch (ParseException ex) {
+                        Logger.getLogger(TelaDetalhePessoa.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+		}
+
+		if(src == botaoExcluir) {
+			boolean res = false;
+
+			if (opcao == 3) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+				
+			if (opcao == 4){ //exclui professor
+				res = dadosFuncionario.removerFuncionario(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoProf(); 
+			}
+
+
+			
+		}
+	}
+
+	public void mensagemSucessoExclusao() {
+		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
+				JOptionPane.INFORMATION_MESSAGE);
+		janela.dispose();
+	}
+
+	public void mensagemSucessoCadastro() {
+		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null, 
+				JOptionPane.INFORMATION_MESSAGE);
+		janela.dispose();
+	}
+
+	public void mensagemErroCadastro() {
+		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
+				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
+				+ "1. Nem todos os campos foram preenchidos \n"
+				+ "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+				JOptionPane.ERROR_MESSAGE);
+	}
+
+	public void mensagemErroExclusaoAluno() {
+		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
+				+ "Verifique se o aluno está matriculado\n"
+				+ "em alguma disciplina. Se sim, cancele\n "
+				+ "a matricula e tente novamente.", null, 
+				JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void mensagemErroExclusaoProf() {
+		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
+				+ "Verifique se o professor está responsável\n"
+				+ "por alguma disciplina. Se sim, substitua\n "
+				+ "o professor e tente novamente.", null, 
+				JOptionPane.ERROR_MESSAGE);
 	}
 
 }
