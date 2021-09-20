@@ -580,43 +580,43 @@ public class TelaDetalheRoupa implements ActionListener{
 			}
                         
                         if (opcao == 12) {//exclui aluno
-				res = dadosCamiseta.removerCliente(posicao);
+				res = dadosCamiseta.removerCamiseta(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 13) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosCasaco.removerCasaco(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 14) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosCinto.removerCinto(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 15) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosCropped.removerCropped(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 16) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosMacacao.removerMacacao(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 17) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosSaia.removerSaia(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 18) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dadosShorte.removerShorte(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
