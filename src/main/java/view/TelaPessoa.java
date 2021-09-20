@@ -216,7 +216,6 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
     public void setListaNomes(String[] listaNomes) {
         this.listaNomes = listaNomes;
     }
-        
-        
+               
 
 }

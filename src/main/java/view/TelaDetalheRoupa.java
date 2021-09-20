@@ -13,7 +13,6 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class TelaDetalheRoupa implements ActionListener{
     private JFrame janela;
     
@@ -71,9 +70,7 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JTextField valorTipoShort ;
         private JLabel labelTipoBoca = new JLabel("Tipo de Boca: ");
 	private JTextField valorTipoBoca;
-        
-        
-        
+           
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[9];
@@ -94,7 +91,7 @@ public class TelaDetalheRoupa implements ActionListener{
         
         
         public void inserirEditar(int op, ControleDados d, 
-                                    TelaRoupa p, int pos) {
+                                    TelaEstoque p, int pos) {
 
 		opcao = op;
 		posicao = pos;
@@ -510,45 +507,44 @@ public class TelaDetalheRoupa implements ActionListener{
                                     novoDado[13] =  valorCos.getText();
                                     novoDado[14] =  valorLavagem.getText();
                                     res = dadosCalca.inserirEditarCalca(novoDado);
-                                }
-//				} else if (opcao == 2 || opcao == 11){
-//                                    novoDado[12] =  valorModelagem.getText();
-//                                    novoDado[13] =  valorManga.getText();
-//                                    novoDado[14] =  valorGola.getText();
-//                                    novoDado[15] =  valorBotao.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 3 || opcao == 12){
-//                                    novoDado[12] =  valorModelagem.getText();
-//                                    novoDado[13] =  valorDecote.getText();
-//
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 4 || opcao == 13){
-//                                    novoDado[12] =  valorCapuz.getText();
-//                                    novoDado[13] =  valorZiper.getText();
-//                                    novoDado[14] =  valorGola.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 5 || opcao == 14){
-//                                    novoDado[12] =  valorOcasiao.getText();
-//                                    novoDado[13] =  valorCategoria.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 6 || opcao == 15){
-//                                    novoDado[12] =  valorEstilo.getText();
-//                                    novoDado[13] =  valorModelagem.getText();
-//                                    novoDado[14] =  valorManga.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 7 || opcao == 16){
-//                                    novoDado[12] =  valorLavagem.getText();
-//                                    novoDado[13] =  valorModelagem.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 8 || opcao == 17){
-//                                    novoDado[12] =  valorModelagem.getText();
-//                                    novoDado[13] =  valorTipoCintura.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}else if (opcao == 9 || opcao == 18){
-//                                    novoDado[12] =  valorTipoShort.getText();
-//                                    novoDado[13] =  valorTipoBoca.getText();
-//                                    res = dadosCliente.inserirEditarCliente(novoDado);
-//				}
+                                }else if (opcao == 2 || opcao == 11){
+                                    novoDado[12] =  valorModelagem.getText();
+                                    novoDado[13] =  valorManga.getText();
+                                    novoDado[14] =  valorGola.getText();
+                                    novoDado[15] =  valorBotao.getText();
+                                    res = dadosCamisa.inserirEditarCamisa(novoDado);
+				}else if (opcao == 3 || opcao == 12){
+                                    novoDado[12] =  valorModelagem.getText();
+                                    novoDado[13] =  valorDecote.getText();
+
+                                    res = dadosCamiseta.inserirEditarCamiseta(novoDado);
+				}else if (opcao == 4 || opcao == 13){
+                                    novoDado[12] =  valorCapuz.getText();
+                                    novoDado[13] =  valorZiper.getText();
+                                    novoDado[14] =  valorGola.getText();
+                                    res = dadosCasaco.inserirEditarCasaco(novoDado);
+				}else if (opcao == 5 || opcao == 14){
+                                    novoDado[12] =  valorOcasiao.getText();
+                                    novoDado[13] =  valorCategoria.getText();
+                                    res = dadosCinto.inserirEditarCinto(novoDado);
+				}else if (opcao == 6 || opcao == 15){
+                                    novoDado[12] =  valorEstilo.getText();
+                                    novoDado[13] =  valorModelagem.getText();
+                                    novoDado[14] =  valorManga.getText();
+                                    res = dadosCropped.inserirEditarCropped(novoDado);
+				}else if (opcao == 7 || opcao == 16){
+                                    novoDado[12] =  valorLavagem.getText();
+                                    novoDado[13] =  valorModelagem.getText();
+                                    res = dadosMacacao.inserirEditarMacacao(novoDado);
+				}else if (opcao == 8 || opcao == 17){
+                                    novoDado[12] =  valorModelagem.getText();
+                                    novoDado[13] =  valorTipoCintura.getText();
+                                    res = dadosSaia.inserirEditarSaia(novoDado);
+				}else if (opcao == 9 || opcao == 18){
+                                    novoDado[12] =  valorTipoShort.getText();
+                                    novoDado[13] =  valorTipoBoca.getText();
+                                    res = dadosShorte.inserirEditarShorte(novoDado);
+				}
 
 				if(res) {
                                     mensagemSucessoCadastro();

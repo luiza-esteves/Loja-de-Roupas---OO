@@ -13,6 +13,7 @@ public class TelaMenu implements ActionListener {
 	private static JButton funcionario = new JButton("Funcionário");
         private static JButton estoque = new JButton("Estoque");
 	private static JButton venda = new JButton("Nova venda");
+        private static JButton roupa = new JButton("Roupa");
 	
         
         public static ControleDados dados = new ControleDados();//carrega os dados
@@ -24,6 +25,7 @@ public class TelaMenu implements ActionListener {
 		funcionario.setBounds(140, 100, 100, 30);	
                 estoque.setBounds(140, 200, 100, 30);
                 venda.setBounds(140, 150, 100, 30);
+                roupa.setBounds(140, 300, 100, 30);
 		
 		janela.setLayout(null);
 		
@@ -32,6 +34,7 @@ public class TelaMenu implements ActionListener {
 		janela.add(funcionario);
                 janela.add(estoque);
                 janela.add(venda);
+                 janela.add(roupa);
 		
 		janela.setSize(400, 600);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,6 +71,9 @@ public class TelaMenu implements ActionListener {
 					"Ainda precisam ser implementadas as funcionalidades\n"
 					+ "relacionadas a curso e a matrícula", null, 
 					JOptionPane.INFORMATION_MESSAGE);
+                
+                if(src == roupa)
+			new TelaEstoque().mostrarDados(dados, 2);
 	}
     
 }
