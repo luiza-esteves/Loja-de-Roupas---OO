@@ -72,8 +72,10 @@ public class TelaMenu implements ActionListener {
 					+ "relacionadas a curso e a matrícula", null, 
 					JOptionPane.INFORMATION_MESSAGE);
                 
-                if(src == roupa)
-			new TelaEstoque().mostrarDados(dados, 2);
+                if(src == roupa)  
+                    new TelaRoupa();
+			 TelaRoupa().mostrarDados(dados);
+                
 	}
     
 }

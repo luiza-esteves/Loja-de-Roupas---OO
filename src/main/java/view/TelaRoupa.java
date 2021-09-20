@@ -11,6 +11,7 @@ import controle.ControleCliente;
 import controle.ControleDados;
 import controle.ControleFuncionario;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -48,6 +49,19 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	private JButton refreshShorte;
         
         
+        JFrame jan = new JFrame("Roupas");
+        JLabel tit = new JLabel("Roupas");     
+        JButton calca = new JButton("Calça");
+        JButton camisa = new JButton("Camisa");
+        JButton camiseta = new JButton("Camiseta");
+        JButton casaco = new JButton("Casaco");
+        JButton cinto = new JButton("Cinto");
+        JButton cropped = new JButton("Cropped");
+        JButton macacao = new JButton("Macacao");
+        JButton saia = new JButton("Saia");
+        JButton shorte = new JButton("Short");
+        
+        
 	private static ControleDados dados;
 	private JList<String> listaCalcaCadastrados;
 	private JList<String> listaCamisaCadastrados;
@@ -58,15 +72,53 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
         private JList<String> listaMacacaoCadastrados;
         private JList<String> listaSaiaCadastrados;
         private JList<String> listaShorteCadastrados;
+        int op;
         
 	private String[] listaNomes = new String[50];
-        
-        public void mostrarDados(ControleDados d, int op){
-		dados = d;
 
+    public TelaRoupa() {
+
+        
+        titulo.setFont(new Font("Arial", Font.BOLD, 20));
+	titulo.setBounds(120, 10, 150, 30);
+	calca.setBounds(140, 50, 100, 30);
+	camisa.setBounds(140, 100, 100, 30);	
+        camiseta.setBounds(140, 200, 100, 30);
+        casaco.setBounds(140, 150, 100, 30);
+        cinto.setBounds(140, 300, 100, 30);
+        cropped.setBounds(140, 350, 100, 30);
+        macacao.setBounds(140, 400, 100, 30);
+        saia.setBounds(140, 450, 100, 30);
+        shorte.setBounds(140, 500, 100, 30);
+        
+        jan.setLayout(null);
+		
+		jan.add(titulo);
+		jan.add(calca);
+		jan.add(camisa);
+                jan.add(camiseta);
+                jan.add(casaco);
+                jan.add(cinto);
+                jan.add(cropped);
+                jan.add(macacao);
+                jan.add(saia);
+                jan.add(shorte);
+		
+		jan.setSize(400, 600);
+		jan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jan.setVisible(true);
+            
+    }
+        
+        
+    
+        
+        public void mostrarDados(ControleDados d){
+            
+            dados = d;
 		switch (op) {
                     case 1:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCalca(dados).getNomeCalcas();
+                            listaNomes = new ControleCalca(dados).getNomesCalcas();
                             listaCalcaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Calças");
                             titulo = new JLabel("Calças Cadastrados");
@@ -366,5 +418,28 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                     }
 
 	}
+        
+        public void actionPerformed(ActionEvent e) {
+            Object src = e.getSource(); 
+            if(src == calca){
+                op=1;
+            }else if(src == camisa){
+                op=2;
+            }else if(src == camiseta){
+                op=3;
+            }else if(src == casaco){
+                op=4;
+            }else if(src == cinto){
+                op=5;
+            }else if(src == cropped){
+                op=6;
+            }else if(src == macacao){
+                op=7;
+            }else if(src == saia){
+                op=8;
+            }else if(src == shorte){
+                op=9;
+            }
+        }
     
 }
