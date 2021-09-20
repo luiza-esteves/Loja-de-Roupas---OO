@@ -27,44 +27,40 @@ public class ControleCalca {
 				  !dadosCalca[6].matches("[0-9]+")) {
 			return false;
 		} else {
-				Calca c = new Calca(dadosCalca[3], dadosCalca[1], Integer.parseInt(dadosCalca[3]), 
-					new Telefone(Integer.parseInt(dadosCalca[5]),Integer.parseInt(dadosCalca[6])), 
-                                        new Endereco(dadosCalca[9],dadosCalca[10],dadosCalca[7],Integer.parseInt(dadosCalca[8]),
-                                            Integer.parseInt(dadosCalca[13]),Integer.parseInt(dadosCalca[12]),Integer.parseInt(dadosCalca[11])
-                                        ),
-                                        dadosCalca[4]
-								);
-				dados.inserirEditarCliente(c, Integer.parseInt(dadosCalca[0]));
-				return true;
+			Calca c = new Calca(dadosCalca[12], dadosCalca[13], dadosCalca[14],Integer.parseInt(dadosCalca[1]),
+                                        dadosCalca[2],dadosCalca[3],dadosCalca[4],dadosCalca[5],dadosCalca[6],
+                                        dadosCalca[7],dadosCalca[8],dadosCalca[9],Double.parseDouble(dadosCalca[10]),Double.parseDouble(dadosCalca[11]));
+			dados.inserirEditarCalca(c, Integer.parseInt(dadosCalca[0]));
+			return true;
 		}
 	}
        
-        public boolean removerCliente(int i) {
-                        int qtdCliente = dados.getQtdCliente();
-                        String alunoRemovido = dados.getCliente()[i].getNome();
+        public boolean removerCalca(int i) {
+                        int qtdCalca = dados.getQtdCalca();
+                        String calcaRemovida = dados.getCalca()[i].getNome();
                         String aux;
-                        for (int j = 0; j < qtdCliente; j++) { 
-                                aux = dados.getVenda()[j].getCliente().getNome();
-                                if(alunoRemovido.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        for (int j = 0; j < qtdCalca; j++) { 
+                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                if(calcaRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }
                         
-                    if(i == (dados.getQtdCliente() - 1)) { // O aluno a ser removido está no final do array
-			dados.setQtdCliente(dados.getQtdCliente() - 1);
-			dados.getCliente()[dados.getQtdCliente()] = null;
+                    if(i == (dados.getQtdCalca()- 1)) { // A calça a ser removido está no final do array
+			dados.setQtdCalca(dados.getQtdCalca() - 1);
+			dados.getCalca()[dados.getQtdCalca()] = null;
 			return true;
                     } else { // o aluno a ser removido está no meio do array
 			int cont = 0;
-			while(dados.getCliente()[cont].getNome().compareTo(alunoRemovido) != 0) {
+			while(dados.getCalca()[cont].getNome().compareTo(calcaRemovida) != 0) {
 				cont++;
 			}
 			//Rotina swap
-			for(int j = cont; j < dados.getQtdCliente() - 1; j++) {
-				dados.getCliente()[j] = null;
-				dados.getCliente()[j] = dados.getCliente()[j+1];
+			for(int j = cont; j < dados.getQtdCalca() - 1; j++) {
+				dados.getCalca()[j] = null;
+				dados.getCalca()[j] = dados.getCalca()[j+1];
 			}
-			dados.getCliente()[dados.getQtdCliente()] = null;
-			dados.setQtdCliente(dados.getQtdCliente() - 1);
+			dados.getCalca()[dados.getQtdCalca()] = null;
+			dados.setQtdCalca(dados.getQtdCalca() - 1);
 			return true;
 		}
         }

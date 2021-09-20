@@ -210,8 +210,7 @@ public class TelaDetalhePessoa implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
-		if(src == botaoSalvar) {
-                    System.out.println("teste");
+		if(src == botaoSalvar) {            
 			try {
                             
 				boolean res;

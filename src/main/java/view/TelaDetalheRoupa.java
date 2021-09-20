@@ -1,4 +1,5 @@
 package view;
+import controle.ControleCamisa;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,15 +39,12 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JTextField valorComprimento;
         private JLabel labelPreco = new JLabel("Preço: ");
 	private JTextField valorPreco;
-        
-
 	private JLabel labelTipoCalca = new JLabel("Tipo de calça: ");
 	private JTextField valorTipoCalca;
 	private JLabel labelCos = new JLabel("Cós");
 	private JTextField valorCos;
         private JLabel labelLavagem = new JLabel("Lavagem");
-	private JTextField valorLavagem;
-        
+	private JTextField valorLavagem;        
         private JLabel labelModelagem = new JLabel("Modelagem: ");
 	private JTextField valorModelagem ;
 	private JLabel labelManga = new JLabel("Manga:");
@@ -58,8 +56,7 @@ public class TelaDetalheRoupa implements ActionListener{
         private JLabel labelEstilo = new JLabel("Estilo:");
 	private JTextField valorEstilo;
         private JLabel labelTipoCintura = new JLabel("Tipo de cintura:");
-	private JTextField valorTipoCintura;
-        
+	private JTextField valorTipoCintura;       
         private JLabel labelDecote = new JLabel("Decote: ");
 	private JTextField valorDecote ;
         private JLabel labelCapuz = new JLabel("Capuz: ");
@@ -81,8 +78,16 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[9];
 	private static ControleDados dados;
-        private static ControleCliente dadosCliente;
-        private static ControleFuncionario dadosFuncionario;
+        private static ControleCalca dadosCalca;
+        private static ControleCamisa dadosCamisa;
+        private static ControleCamiseta dadosCamiseta;
+        private static ControleCasaco dadosCasaco;
+        private static ControleCinto dadosCinto;
+        private static ControleCropped dadosCropped;
+        private static ControleMacacao dadosMacacao;
+        private static ControleSaia dadosSaia;
+        private static ControleShorte dadosShorte;
+
 	private int posicao;
 	private int opcao;
 	private String s;
@@ -463,38 +468,90 @@ public class TelaDetalheRoupa implements ActionListener{
                     System.out.println("teste");
 			try {
                             
-				boolean res;
-				if(opcao == 1) //cadastro de novo cliente
-					novoDado[0] = Integer.toString(dados.getQtdCliente());
+				boolean res = false;
+				if(opcao == 1) //cadastro de novo calça
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCalca());
 				else if (opcao == 2) // cadastro de novo prof
-					novoDado[0] = Integer.toString(dados.getQtdFuncionarios());
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCamisa());
+                                else if (opcao == 3) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCamiseta());
+                                else if (opcao == 4) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCasaco());
+                                else if (opcao == 5) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCinto());
+                                else if (opcao == 6) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdCropped());
+                                else if (opcao == 7) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdMacacao());
+                                else if (opcao == 8) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdSaia());
+                                else if (opcao == 9) // cadastro de novo prof
+					novoDado[0] = Integer.toString(dados.getDados().getQtdShorte());
 				else // edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
-				novoDado[1] =  valorNome.getText();
-				novoDado[3] =  valorCPF.getText();
-				novoDado[4] =  valorDataNascimento.getText();
-				novoDado[5] =  valorDDD.getText();
-				novoDado[6] =  valorTelefone.getText();
-                                novoDado[7] =  valorBairro.getText();
-                                novoDado[8] =  valorCep.getText();
-                                novoDado[9] =  valorCidade.getText();
-                                novoDado[10] =  valorEstado.getText();
-                                novoDado[11] =  valorLote.getText();
-                                novoDado[12] =  valorQuadra.getText();
-                                novoDado[13] =  valorRua.getText();
+				novoDado[1] =  valorCodigo.getText();
+                                novoDado[2] =  valorNome.getText();
+				
+				novoDado[3] =  valorTamanho.getText();
+                                novoDado[4] =  valorCor.getText();
+				novoDado[5] =  valorMaterial.getText();
+				novoDado[6] =  valorMarca.getText();
+                                novoDado[7] =  valorCategoria.getText();
+                                novoDado[8] =  valorGenero.getText();
+                                novoDado[9] =  valorEstampa.getText();
+                                novoDado[10] =  valorComprimento.getText();
+                                novoDado[11] =  valorPreco.getText();
+               
                                
 
-				if (opcao == 1 || opcao == 3) {
-					novoDado[2] =  valorTotalCompras.getText();
-					res = dadosCliente.inserirEditarCliente(novoDado);
-				} else {
-					novoDado[2] =  valorsalario.getText();
-					res = dadosFuncionario.inserirEditarFuncionario(novoDado);
-				}
+				if (opcao == 1 || opcao == 10) {
+                                    novoDado[12] =  valorTipoCalca.getText();
+                                    novoDado[13] =  valorCos.getText();
+                                    novoDado[14] =  valorLavagem.getText();
+                                    res = dadosCalca.inserirEditarCalca(novoDado);
+                                }
+//				} else if (opcao == 2 || opcao == 11){
+//                                    novoDado[12] =  valorModelagem.getText();
+//                                    novoDado[13] =  valorManga.getText();
+//                                    novoDado[14] =  valorGola.getText();
+//                                    novoDado[15] =  valorBotao.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 3 || opcao == 12){
+//                                    novoDado[12] =  valorModelagem.getText();
+//                                    novoDado[13] =  valorDecote.getText();
+//
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 4 || opcao == 13){
+//                                    novoDado[12] =  valorCapuz.getText();
+//                                    novoDado[13] =  valorZiper.getText();
+//                                    novoDado[14] =  valorGola.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 5 || opcao == 14){
+//                                    novoDado[12] =  valorOcasiao.getText();
+//                                    novoDado[13] =  valorCategoria.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 6 || opcao == 15){
+//                                    novoDado[12] =  valorEstilo.getText();
+//                                    novoDado[13] =  valorModelagem.getText();
+//                                    novoDado[14] =  valorManga.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 7 || opcao == 16){
+//                                    novoDado[12] =  valorLavagem.getText();
+//                                    novoDado[13] =  valorModelagem.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 8 || opcao == 17){
+//                                    novoDado[12] =  valorModelagem.getText();
+//                                    novoDado[13] =  valorTipoCintura.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}else if (opcao == 9 || opcao == 18){
+//                                    novoDado[12] =  valorTipoShort.getText();
+//                                    novoDado[13] =  valorTipoBoca.getText();
+//                                    res = dadosCliente.inserirEditarCliente(novoDado);
+//				}
 
 				if(res) {
-					mensagemSucessoCadastro();
+                                    mensagemSucessoCadastro();
 				}
 				else mensagemErroCadastro();
 
@@ -510,22 +567,65 @@ public class TelaDetalheRoupa implements ActionListener{
 		if(src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 3) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+			if (opcao == 10) {//exclui aluno
+				res = dadosCalca.removerCalca(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
 				
-			if (opcao == 4){ //exclui professor
-				res = dadosFuncionario.removerFuncionario(posicao);
+			if (opcao == 11){ //exclui professor
+				res = dadosCamisa.removerCamisa(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoProf(); 
+			}
+                        
+                        if (opcao == 12) {//exclui aluno
+				res = dadosCamiseta.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 13) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 14) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 15) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 16) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 17) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
+			}
+                        
+                        if (opcao == 18) {//exclui aluno
+				res = dadosCliente.removerCliente(posicao);
+				if (res) mensagemSucessoExclusao(); 
+				else mensagemErroExclusaoAluno(); 
 			}
 
 
 			
 		}
 	}
+        
 
 	public void mensagemSucessoExclusao() {
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null, 
@@ -562,5 +662,5 @@ public class TelaDetalheRoupa implements ActionListener{
 				+ "o professor e tente novamente.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
-
 }
+

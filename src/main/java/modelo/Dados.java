@@ -109,7 +109,7 @@ public class Dados {
                 
 	}
      
-     public void inserirEditarCliente(Cliente c, int pos) {
+    public void inserirEditarCliente(Cliente c, int pos) {
 		this.cliente[pos] = c;
 		if(pos == qtdCliente) qtdCliente++;
     }
@@ -118,6 +118,52 @@ public class Dados {
 		this.funcionario[pos] = f;
 		if(pos == qtdFuncionario) qtdFuncionario++;
     }
+    
+    public void inserirEditarCalca(Calca c, int pos) {
+		this.calca[pos] = c;
+		if(pos == qtdCalca) qtdCalca++;
+    }
+    
+    public void inserirEditarCamisa(Camisa c, int pos) {
+		this.camisa[pos] = c;
+		if(pos == qtdCamisa) qtdCamisa++;
+    }
+    
+    public void inserirEditarCamiseta(Camiseta c, int pos) {
+		this.camiseta[pos] = c;
+		if(pos == qtdCamiseta) qtdCamiseta++;
+    }
+    
+    public void inserirEditarCasaco(Casaco c, int pos) {
+		this.casaco[pos] = c;
+		if(pos == qtdCasaco) qtdCasaco++;
+    }
+    
+    public void inserirEditarCinto(Cinto c, int pos) {
+		this.cinto[pos] = c;
+		if(pos == qtdCinto) qtdCinto++;
+    }
+    
+    public void inserirEditarCropped(Cropped c, int pos) {
+		this.cropped[pos] = c;
+		if(pos == qtdCropped) qtdCropped++;
+    }
+    
+    public void inserirEditarMacacao(Macacao c, int pos) {
+		this.macacao[pos] = c;
+		if(pos == qtdMacacao) qtdMacacao++;
+    }
+    
+    public void inserirEditarSaia(Saia c, int pos) {
+		this.saia[pos] = c;
+		if(pos == qtdSaia) qtdSaia++;
+    }
+    
+    public void inserirEditarShorte(Shorte c, int pos) {
+		this.shorte[pos] = c;
+		if(pos == qtdShorte) qtdShorte++;
+    }
+     
 
     public Calca[] getCalca() {
         return calca;
