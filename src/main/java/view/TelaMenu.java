@@ -46,9 +46,9 @@ public class TelaMenu implements ActionListener {
 		
 		cliente.addActionListener(menu);
 		funcionario.addActionListener(menu);
-		
                 estoque.addActionListener(menu);
                 venda.addActionListener(menu);
+                roupa.addActionListener(menu);
 	}
 
     public void actionPerformed(ActionEvent e) {
@@ -74,7 +74,6 @@ public class TelaMenu implements ActionListener {
                 
                 if(src == roupa)  
                     new TelaRoupa();
-			 TelaRoupa().mostrarDados(dados);
                 
 	}
     

@@ -1,15 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
-import controle.ControleCalca;
-import controle.ControleCamisa;
-import controle.ControleCliente;
-import controle.ControleDados;
-import controle.ControleFuncionario;
+import controle.*;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,17 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-/**
- *
- * @author luiza
- */
 public class TelaRoupa implements ActionListener, ListSelectionListener{
     
-    private JFrame janela;
-	private JLabel titulo;
-	private JButton cadastroCalca;
+        private JFrame janela;
+	private JLabel titulo = new JLabel("Menu de Roupas");
+	private JButton cadastroCalca ;
 	private JButton refreshCalca;
 	private JButton cadastroCamisa;
 	private JButton refreshCamisa;
@@ -49,17 +37,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	private JButton refreshShorte;
         
         
-        JFrame jan = new JFrame("Roupas");
-        JLabel tit = new JLabel("Roupas");     
-        JButton calca = new JButton("Calça");
-        JButton camisa = new JButton("Camisa");
-        JButton camiseta = new JButton("Camiseta");
-        JButton casaco = new JButton("Casaco");
-        JButton cinto = new JButton("Cinto");
-        JButton cropped = new JButton("Cropped");
-        JButton macacao = new JButton("Macacao");
-        JButton saia = new JButton("Saia");
-        JButton shorte = new JButton("Short");
+        private static final JFrame jan = new JFrame("Roupas");
+        private static final JLabel tit = new JLabel("Roupas");     
+        private static final JButton calca = new JButton("Calça");
+        private static final JButton camisa = new JButton("Camisa");
+        private static final JButton camiseta = new JButton("Camiseta");
+        private static final JButton casaco = new JButton("Casaco");
+        private static final JButton cinto = new JButton("Cinto");
+        private static final JButton cropped = new JButton("Cropped");
+        private static final JButton macacao = new JButton("Macacao");
+        private static final JButton saia = new JButton("Saia");
+        private static final JButton shorte = new JButton("Short");
         
         
 	private static ControleDados dados;
@@ -72,28 +60,26 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
         private JList<String> listaMacacaoCadastrados;
         private JList<String> listaSaiaCadastrados;
         private JList<String> listaShorteCadastrados;
-        int op;
+        
         
 	private String[] listaNomes = new String[50];
 
-    public TelaRoupa() {
-
-        
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-	titulo.setBounds(120, 10, 150, 30);
-	calca.setBounds(140, 50, 100, 30);
-	camisa.setBounds(140, 100, 100, 30);	
-        camiseta.setBounds(140, 200, 100, 30);
-        casaco.setBounds(140, 150, 100, 30);
-        cinto.setBounds(140, 300, 100, 30);
-        cropped.setBounds(140, 350, 100, 30);
-        macacao.setBounds(140, 400, 100, 30);
-        saia.setBounds(140, 450, 100, 30);
-        shorte.setBounds(140, 500, 100, 30);
-        
-        jan.setLayout(null);
+    public TelaRoupa() {      
+                tit.setFont(new Font("Arial", Font.BOLD, 20));
+                tit.setBounds(120, 10, 150, 30);
+                calca.setBounds(140, 50, 100, 30);
+                camisa.setBounds(140, 100, 100, 30);	
+                camiseta.setBounds(140, 200, 100, 30);
+                casaco.setBounds(140, 150, 100, 30);
+                cinto.setBounds(140, 300, 100, 30);
+                cropped.setBounds(140, 350, 100, 30);
+                macacao.setBounds(140, 400, 100, 30);
+                saia.setBounds(140, 450, 100, 30);
+                shorte.setBounds(140, 500, 100, 30);
+  
+                jan.setLayout(null);
 		
-		jan.add(titulo);
+		jan.add(tit);
 		jan.add(calca);
 		jan.add(camisa);
                 jan.add(camiseta);
@@ -107,22 +93,36 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 		jan.setSize(400, 600);
 		jan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jan.setVisible(true);
+                
             
     }
-        
-        
     
+    public static void main(String[] args) {
+		TelaRoupa menu = new TelaRoupa();
+                
+		calca.addActionListener(menu);
+		camisa.addActionListener(menu);
+                camiseta.addActionListener(menu);
+                casaco.addActionListener(menu);
+                cinto.addActionListener(menu);
+                cropped.addActionListener(menu);
+                macacao.addActionListener(menu);
+                saia.addActionListener(menu);
+                shorte.addActionListener(menu);           
+    }
         
-        public void mostrarDados(ControleDados d){
-            
+        public void mostrarDados(int op, ControleDados d){
+             System.out.println("oi");
             dados = d;
 		switch (op) {
                     case 1:// Mostrar dados de alunos cadastrados (JList)
+                       
                             listaNomes = new ControleCalca(dados).getNomesCalcas();
+                            
                             listaCalcaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Calças");
                             titulo = new JLabel("Calças Cadastrados");
-                            cadastroCalca = new JButton("Cadastrar");
+                            cadastroCalca = new JButton("Cadastrar");            
                             refreshCalca = new JButton("Refresh");
 
                             titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -151,7 +151,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                             break;
 
                     case 2:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCamisa(dados).getNomeCamisas();
+                            listaNomes = new ControleCamisa(dados).getNomesCamisa();
                             listaCamisaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Camisa");
                             titulo = new JLabel("Camisa Cadastrados");
@@ -183,7 +183,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
                             break;
                     case 3:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCamiseta(dados).getNomeCamiseta();
+                            listaNomes = new ControleCamiseta(dados).getNomesCamiseta();
                             listaCamisaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Camiseta");
                             titulo = new JLabel("Camiseta Cadastrados");
@@ -420,26 +420,50 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	}
         
         public void actionPerformed(ActionEvent e) {
+            System.out.println("testando");
             Object src = e.getSource(); 
             if(src == calca){
-                op=1;
+                System.out.println("teste");
+                new TelaRoupa().mostrarDados(1, dados);
             }else if(src == camisa){
-                op=2;
+                new TelaRoupa().mostrarDados(2, dados);;
             }else if(src == camiseta){
-                op=3;
+                new TelaRoupa().mostrarDados(3, dados);
             }else if(src == casaco){
-                op=4;
+                new TelaRoupa().mostrarDados(4, dados);
             }else if(src == cinto){
-                op=5;
+                new TelaRoupa().mostrarDados(5, dados);
             }else if(src == cropped){
-                op=6;
+                new TelaRoupa().mostrarDados(6, dados);
             }else if(src == macacao){
-                op=7;
+                new TelaRoupa().mostrarDados(7, dados);
             }else if(src == saia){
-                op=8;
+                new TelaRoupa().mostrarDados(8, dados);
             }else if(src == shorte){
-                op=9;
+                new TelaRoupa().mostrarDados(9, dados);
             }
+        }
+        
+        public void valueChanged(ListSelectionEvent e) {
+		Object src = e.getSource();
+
+		if(e.getValueIsAdjusting() && src == listaCalcaCadastrados) {
+			new TelaDetalheRoupa().inserirEditar(10, dados, this, 
+					listaCalcaCadastrados.getSelectedIndex());
+		}
+
+//		if(e.getValueIsAdjusting() && src == listaVendedoresCadastrados) {
+//			new TelaDetalhePessoa().inserirEditar(4, dados, this, 
+//					listaVendedoresCadastrados.getSelectedIndex());
+//		}
+	}
+
+    public JList<String> getListaCalcasCadastrados() {
+            return listaCalcaCadastrados;
+        }
+
+        public void setListaCalcaCadastrados(JList<String> listaCalcaCadastrados) {
+            this.listaCalcaCadastrados = listaCalcaCadastrados;
         }
     
 }

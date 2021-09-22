@@ -91,7 +91,7 @@ public class TelaDetalheRoupa implements ActionListener{
         
         
         public void inserirEditar(int op, ControleDados d, 
-                                    TelaEstoque p, int pos) {
+                                    TelaRoupa p, int pos) {
 
 		opcao = op;
 		posicao = pos;
