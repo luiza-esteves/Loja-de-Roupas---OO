@@ -43,7 +43,7 @@ public class ControleCinto {
                         String cintoRemovida = dados.getCinto()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdCinto; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getCinto().getNome();
                                 if(cintoRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

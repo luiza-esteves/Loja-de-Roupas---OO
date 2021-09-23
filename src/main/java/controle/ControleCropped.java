@@ -51,7 +51,7 @@ public class ControleCropped {
                         String croppedRemovida = dados.getCropped()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdCropped; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getCropped().getNome();
                                 if(croppedRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

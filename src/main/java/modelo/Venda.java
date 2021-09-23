@@ -51,7 +51,7 @@ public class Venda {
 		this.camiseta = cmst;
 	}
 	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cinto casac) {
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Casaco casac) {
 		this.codCompra = cod;
 		this.valorTotal = valorTotal;
 		this.formaPagamento = formaPag;

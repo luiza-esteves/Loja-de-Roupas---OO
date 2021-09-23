@@ -43,7 +43,7 @@ public class ControleShorte {
                         String shorteRemovida = dados.getShorte()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdShorte; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getShorte().getNome();
                                 if(shorteRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

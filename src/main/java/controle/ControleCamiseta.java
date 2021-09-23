@@ -44,7 +44,7 @@ public class ControleCamiseta{
                         String camisetaRemovida = dados.getCamiseta()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdCamiseta; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getCamiseta().getNome();
                                 if(camisetaRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

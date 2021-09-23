@@ -42,7 +42,7 @@ public class ControleMacacao {
                         String macacaoRemovida = dados.getMacacao()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdMacacao; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getMacacao().getNome();
                                 if(macacaoRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

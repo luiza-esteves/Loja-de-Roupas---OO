@@ -14,6 +14,7 @@ public class ControleDados {
         return dados;
     }
 
+
     public void setDados(Dados dados) {
         this.dados = dados;
     }
@@ -71,6 +72,10 @@ public class ControleDados {
     }
     public Shorte[] getShorte() {
 	return this.dados.getShorte();
+    }
+    
+     public Venda[] getVendas() {
+	return this.dados.getVenda();
     }
     
     

@@ -50,7 +50,7 @@ public class ControleSaia {
                         String saiaRemovida = dados.getSaia()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdSaia; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getSaia().getNome();
                                 if(saiaRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

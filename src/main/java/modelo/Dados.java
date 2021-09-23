@@ -84,7 +84,7 @@ public class Dados {
                         
                         estoque[i] = new Estoque(macacao[i],2);
                         
-                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],estoque[i]);
+                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i]);
                         
 				
 		}

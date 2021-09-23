@@ -40,7 +40,7 @@ public class ControleCalca {
                         String calcaRemovida = dados.getCalca()[i].getNome();
                         String aux;
                         for (int j = 0; j < qtdCalca; j++) { 
-                                aux = dados.getVenda()[j].getEstoque().getNomeRoupa();
+                                aux = dados.getVenda()[j].getCalca().getNome();
                                 if(calcaRemovida.compareTo(aux) == 0) 
                                         return false; //não é possível remover a calça, pois ela está vinculada à uma venda
                         }

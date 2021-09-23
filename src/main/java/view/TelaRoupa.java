@@ -447,6 +447,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 		Object src = e.getSource();
 
 		if(e.getValueIsAdjusting() && src == listaCalcaCadastrados) {
+                        
 			new TelaDetalheRoupa().inserirEditar(10, dados, this, 
 					listaCalcaCadastrados.getSelectedIndex());
 		}
