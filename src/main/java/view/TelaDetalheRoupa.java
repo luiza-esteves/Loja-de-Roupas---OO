@@ -73,7 +73,7 @@ public class TelaDetalheRoupa implements ActionListener{
            
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
-	private String[] novoDado = new String[9];
+	private String[] novoDado = new String[15];
 	private static ControleDados dados;
         private static ControleCalca dadosCalca;
         private static ControleCamisa dadosCamisa;

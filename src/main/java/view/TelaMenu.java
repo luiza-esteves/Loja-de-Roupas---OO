@@ -73,7 +73,7 @@ public class TelaMenu implements ActionListener {
 					JOptionPane.INFORMATION_MESSAGE);
                 
                 if(src == roupa)  
-                    new TelaRoupa();
+                    new TelaRoupa(dados);
                    
                 
 	}
