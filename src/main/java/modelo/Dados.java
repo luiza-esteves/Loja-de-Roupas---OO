@@ -1,4 +1,3 @@
-
 package modelo;
 import java.util.*;
 
@@ -43,10 +42,10 @@ public class Dados {
 		for(int i = 0; i < 5; i++) {
 			telefone[i] = new Telefone((i+1)*100, (i+1)*1000000);
                         endereco[i] = new Endereco("cidade"+i,"estado"+i,"bairro"+i,11111111+i,i+2,i,i+1);
-                        calca[i] = new Calca("Tipo de calÃ§a"+i,"Cos"+i,"lavagem"+i,i,"nome"+i,"P",
+                        calca[i] = new Calca("Tipo de calça"+i,"Cos"+i,"lavagem"+i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
-                        camisa[i] = new Camisa("Modelagem"+i,"Manga"+i,"Gola"+i,"BotÃ£o"+i,i,"nome"+i,"P",
+                        camisa[i] = new Camisa("Modelagem"+i,"Manga"+i,"Gola"+i,"Botão"+i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
@@ -54,11 +53,11 @@ public class Dados {
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
-                        casaco[i] = new Casaco("Capuz"+i,"ZÃ­per"+i,"Gola"+i,i,"nome"+i,"P",
+                        casaco[i] = new Casaco("Capuz"+i,"Zíper"+i,"Gola"+i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
-                        cinto[i] = new Cinto("OcasiÃ£o"+i,i,i,"nome"+i,"P",
+                        cinto[i] = new Cinto("Ocasião"+i,i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
@@ -84,7 +83,7 @@ public class Dados {
                         
                         estoque[i] = new Estoque(macacao[i],2);
                         
-                        venda[i]=new Venda(i,50*i,"CartÃ£o",funcionario[i],cliente[i],calca[i]);
+                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i]);
                         
 				
 		}

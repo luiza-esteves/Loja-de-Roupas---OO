@@ -98,13 +98,25 @@ public class Venda {
 	
 	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Shorte shor) {
 		this.codCompra = cod;
-		this.valorTotal = valorTotal;
+		this.valorTotal = valorT;
 		this.formaPagamento = formaPag;
 		this.funcionario = func;
 		this.cliente = c;
 		this.shorte = shor;
 	}
+	
+	 public String toString() {
 
+	        return("Código da compra: \n"+ codCompra
+	        	+  "Valor total: \n"+ valorTotal
+	        	+  "Forma de pagamento: \n" +formaPagamento
+	        	+  "Vendedor: \n" +funcionario
+	        	+  "Cliente: \n" +cliente
+	            +  ""    
+	        );
+	        
+	    }
+	
 	public Funcionario getFuncionario() {
 		return funcionario;
 	}
