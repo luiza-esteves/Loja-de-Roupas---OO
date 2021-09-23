@@ -1,105 +1,230 @@
-
 package modelo;
 
 import java.util.Scanner;
 
 public class Venda {
-    Scanner ler = new Scanner(System.in);
-    private int codCompra, totalVendas;
-    private double valorTotal;
-    private String formaPagamento;
-    private Funcionario funcionario;
-    private Cliente cliente;
-    private Estoque estoque;
+	Scanner ler = new Scanner(System.in);
+	private Funcionario funcionario = new Funcionario();
+	private Cliente cliente = new Cliente();
+	private Calca calca = new Calca();
+    private Camisa camisa = new Camisa();
+    private Camiseta camiseta = new Camiseta();
+    private Casaco casaco = new Casaco();
+    private Cinto cinto = new Cinto();
+    private Cropped cropped = new Cropped();
+    private Macacao macacao = new Macacao();
+    private Saia saia = new Saia();
+    private Shorte shorte = new Shorte();
     
+    private int codCompra; 
+	private double valorTotal;
+	private String formaPagamento;
+	
+	public Venda() {
+		
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Calca cl) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.calca = cl;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Camisa cms) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.camisa = cms;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Camiseta cmst) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.camiseta = cmst;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cinto casac) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.casaco= casac;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cinto cin) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.cinto = cin;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cropped crop) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.cropped = crop;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Macacao mac) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.macacao = mac;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Saia s) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.saia = s;
+	}
+	
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Shorte shor) {
+		this.codCompra = cod;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPag;
+		this.funcionario = func;
+		this.cliente = c;
+		this.shorte = shor;
+	}
 
-    
-    public Venda(){
-        super();
-    }
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
 
-    public Venda(int codCompra, double valorTotal, String formaPagamento, Funcionario funcionario, Cliente cliente, Estoque estoque) {
-        this.codCompra = codCompra;
-        this.valorTotal = valorTotal;
-        this.formaPagamento = formaPagamento;
-        this.funcionario = funcionario;
-        this.cliente = cliente;
-        this.estoque = estoque;
-        
-    }
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
 
-    
-    public void cadastrarVenda(){
-        int qtd;
-        long func;
-  
-    }
-    
-    public Scanner getLer() {
-        return ler;
-    }
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
-    public void setLer(Scanner ler) {
-        this.ler = ler;
-    }
+	public Calca getCalca() {
+		return calca;
+	}
 
-    public int getCodCompra() {
-        return codCompra;
-    }
+	public void setCalca(Calca calca) {
+		this.calca = calca;
+	}
 
-    public void setCodCompra(int codCompra) {
-        this.codCompra = codCompra;
-    }
-     
-    public double getValorTotal() {
-        return valorTotal;
-    }
+	public Camisa getCamisa() {
+		return camisa;
+	}
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
+	public void setCamisa(Camisa camisa) {
+		this.camisa = camisa;
+	}
 
-    public String getFormaPagamento() {
-        return formaPagamento;
-    }
+	public Camiseta getCamiseta() {
+		return camiseta;
+	}
 
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
+	public void setCamiseta(Camiseta camiseta) {
+		this.camiseta = camiseta;
+	}
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+	public Casaco getCasaco() {
+		return casaco;
+	}
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+	public void setCasaco(Casaco casaco) {
+		this.casaco = casaco;
+	}
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
+	public Cinto getCinto() {
+		return cinto;
+	}
 
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
+	public void setCinto(Cinto cinto) {
+		this.cinto = cinto;
+	}
 
-    public int getTotalVendas() {
-        return totalVendas;
-    }
+	public Cropped getCropped() {
+		return cropped;
+	}
 
-    public void setTotalVendas(int totalVendas) {
-        this.totalVendas = totalVendas;
-    }
+	public void setCropped(Cropped cropped) {
+		this.cropped = cropped;
+	}
 
-    public Estoque getEstoque() {
-        return estoque;
-    }
+	public Macacao getMacacao() {
+		return macacao;
+	}
 
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
-    }
-    
-    
-    
+	public void setMacacao(Macacao macacao) {
+		this.macacao = macacao;
+	}
+
+	public Saia getSaia() {
+		return saia;
+	}
+
+	public void setSaia(Saia saia) {
+		this.saia = saia;
+	}
+
+	public Shorte getShorte() {
+		return shorte;
+	}
+
+	public void setShorte(Shorte shorte) {
+		this.shorte = shorte;
+	}
+
+	public int getCodCompra() {
+		return codCompra;
+	}
+
+	public void setCodCompra(int codCompra) {
+		this.codCompra = codCompra;
+	}
+
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public String getFormaPagamento() {
+		return formaPagamento;
+	}
+
+	public void setFormaPagamento(String formaPagamento) {
+		this.formaPagamento = formaPagamento;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
