@@ -418,7 +418,6 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	}
         
         public void actionPerformed(ActionEvent e) {
-            System.out.println("evento funcionando");
             Object src = e.getSource(); 
             if(src == calca){     
                 new TelaRoupa(dados).mostrarDados(1, dados);
@@ -438,6 +437,8 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 new TelaRoupa(dados).mostrarDados(8, dados);
             }else if(src == shorte){
                 new TelaRoupa(dados).mostrarDados(9, dados);
+            }else if (src == cadastroCalca){
+                new TelaDetalheRoupa().inserirEditar(1, dados, this, listaCalcaCadastrados.getSelectedIndex());
             }
         }
         
