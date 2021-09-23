@@ -1,4 +1,3 @@
-
 package controle;
 import modelo.*;
 
@@ -39,6 +38,10 @@ public class ControleDados {
 	return this.dados.getQtdEstoque();
     }
 	
+    public int getQtdVenda() {
+    	return this.dados.getQtdVenda();
+    }
+    
     public Estoque[] getEstoques() {
 	return this.dados.getEstoque();
     }
@@ -74,11 +77,9 @@ public class ControleDados {
 	return this.dados.getShorte();
     }
     
-     public Venda[] getVendas() {
+    public Venda[] getVenda() {
 	return this.dados.getVenda();
     }
-    
-    
     
     
 }
