@@ -66,16 +66,16 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
     public TelaRoupa() {      
                 tit.setFont(new Font("Arial", Font.BOLD, 20));
-                tit.setBounds(120, 10, 150, 30);
+                tit.setBounds(140, 10, 150, 30);
                 calca.setBounds(140, 50, 100, 30);
                 camisa.setBounds(140, 100, 100, 30);	
-                camiseta.setBounds(140, 200, 100, 30);
-                casaco.setBounds(140, 150, 100, 30);
-                cinto.setBounds(140, 300, 100, 30);
-                cropped.setBounds(140, 350, 100, 30);
-                macacao.setBounds(140, 400, 100, 30);
-                saia.setBounds(140, 450, 100, 30);
-                shorte.setBounds(140, 500, 100, 30);
+                camiseta.setBounds(140, 150, 100, 30);
+                casaco.setBounds(140, 200, 100, 30);
+                cinto.setBounds(140, 250, 100, 30);
+                cropped.setBounds(140, 300, 100, 30);
+                macacao.setBounds(140, 350, 100, 30);
+                saia.setBounds(140, 400, 100, 30);
+                shorte.setBounds(140, 450, 100, 30);
   
                 jan.setLayout(null);
 		
@@ -150,7 +150,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
                             break;
 
-                    case 2:// Mostrar dados de alunos cadastrados (JList)
+                    case 2:// Mostrar dados de camisas cadastrados (JList)
                             listaNomes = new ControleCamisa(dados).getNomesCamisa();
                             listaCamisaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Camisa");
@@ -184,7 +184,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                             break;
                     case 3:// Mostrar dados de alunos cadastrados (JList)
                             listaNomes = new ControleCamiseta(dados).getNomesCamiseta();
-                            listaCamisaCadastrados = new JList<String>(listaNomes);
+                            listaCamisetaCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Camiseta");
                             titulo = new JLabel("Camiseta Cadastrados");
                             cadastroCamiseta = new JButton("Cadastrar");
@@ -215,203 +215,203 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
                             break;
                             
-                    case 4:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCasaco(dados).getNomeCasaco();
-                            listaCasacoCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Casaco");
-                            titulo = new JLabel("Casacos Cadastrados");
-                            cadastroCamiseta = new JButton("Cadastrar");
-                            refreshCamiseta = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaCasacoCadastrados.setBounds(20, 50, 350, 120);
-                            listaCasacoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaCasacoCadastrados.setVisibleRowCount(10);
-
-                            cadastroCasaco.setBounds(70, 177, 100, 30);
-                            refreshCasaco.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaCasacoCadastrados);
-                            janela.add(cadastroCasaco);
-                            janela.add(refreshCasaco);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroCasaco.addActionListener(this);
-                            refreshCasaco.addActionListener(this);
-                            listaCasacoCadastrados.addListSelectionListener(this);
-
-                            break;
-                            
-                    case 5:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCinto(dados).getNomeCasaco();
-                            listaCintoCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Cinto");
-                            titulo = new JLabel("Cintos Cadastrados");
-                            cadastroCinto = new JButton("Cadastrar");
-                            refreshCinto = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaCintoCadastrados.setBounds(20, 50, 350, 120);
-                            listaCintoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaCintoCadastrados.setVisibleRowCount(10);
-
-                            cadastroCinto.setBounds(70, 177, 100, 30);
-                            refreshCinto.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaCintoCadastrados);
-                            janela.add(cadastroCinto);
-                            janela.add(refreshCinto);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroCinto.addActionListener(this);
-                            refreshCinto.addActionListener(this);
-                            listaCintoCadastrados.addListSelectionListener(this);
-
-                            break;
-                    
-                    case 6:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleCropped(dados).getNomeCropped();
-                            listaCroppedCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Cropped");
-                            titulo = new JLabel("Cropped Cadastrados");
-                            cadastroCropped = new JButton("Cadastrar");
-                            refreshCropped = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaCroppedCadastrados.setBounds(20, 50, 350, 120);
-                            listaCroppedCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaCroppedCadastrados.setVisibleRowCount(10);
-
-                            cadastroCropped.setBounds(70, 177, 100, 30);
-                            refreshCropped.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaCroppedCadastrados);
-                            janela.add(cadastroCropped);
-                            janela.add(refreshCropped);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroCropped.addActionListener(this);
-                            refreshCropped.addActionListener(this);
-                            listaCroppedCadastrados.addListSelectionListener(this);
-
-                            break;
-                            
-                    case 7:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleMacacao(dados).getNomeMacacao();
-                            listaMacacaoCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Macacão");
-                            titulo = new JLabel("Macacão Cadastrados");
-                            cadastroMacacao = new JButton("Cadastrar");
-                            refreshMacacao = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaMacacaoCadastrados.setBounds(20, 50, 350, 120);
-                            listaMacacaoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaMacacaoCadastrados.setVisibleRowCount(10);
-
-                            cadastroMacacao.setBounds(70, 177, 100, 30);
-                            refreshMacacao.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaMacacaoCadastrados);
-                            janela.add(cadastroMacacao);
-                            janela.add(refreshMacacao);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroMacacao.addActionListener(this);
-                            refreshMacacao.addActionListener(this);
-                            listaMacacaoCadastrados.addListSelectionListener(this);
-
-                            break;
-                            
-                    case 8:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleSaia(dados).getNomeSaia();
-                            listaSaiaCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Saia");
-                            titulo = new JLabel("Saias Cadastrados");
-                            cadastroSaia = new JButton("Cadastrar");
-                            refreshSaia = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaSaiaCadastrados.setBounds(20, 50, 350, 120);
-                            listaSaiaCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaSaiaCadastrados.setVisibleRowCount(10);
-
-                            cadastroSaia.setBounds(70, 177, 100, 30);
-                            refreshSaia.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaSaiaCadastrados);
-                            janela.add(cadastroSaia);
-                            janela.add(refreshSaia);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroSaia.addActionListener(this);
-                            refreshSaia.addActionListener(this);
-                            listaSaiaCadastrados.addListSelectionListener(this);
-
-                            break;
-                            
-                    case 9:// Mostrar dados de alunos cadastrados (JList)
-                            listaNomes = new ControleShorte(dados).getNomeShorte();
-                            listaShorteCadastrados = new JList<String>(listaNomes);
-                            janela = new JFrame("Saia");
-                            titulo = new JLabel("Saias Cadastrados");
-                            cadastroShorte = new JButton("Cadastrar");
-                            refreshShorte = new JButton("Refresh");
-
-                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
-                            titulo.setBounds(90, 10, 250, 30);
-                            listaShorteCadastrados.setBounds(20, 50, 350, 120);
-                            listaShorteCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                            listaShorteCadastrados.setVisibleRowCount(10);
-
-                            cadastroShorte.setBounds(70, 177, 100, 30);
-                            refreshShorte.setBounds(200, 177, 100, 30);
-
-                            janela.setLayout(null);
-
-                            janela.add(titulo);
-                            janela.add(listaShorteCadastrados);
-                            janela.add(cadastroShorte);
-                            janela.add(refreshShorte);
-
-                            janela.setSize(400, 250);
-                            janela.setVisible(true);
-
-                            cadastroShorte.addActionListener(this);
-                            refreshShorte.addActionListener(this);
-                            listaShorteCadastrados.addListSelectionListener(this);
-
-                            break; 
+//                    case 4:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleCasaco(dados).getNomeCasaco();
+//                            listaCasacoCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Casaco");
+//                            titulo = new JLabel("Casacos Cadastrados");
+//                            cadastroCamiseta = new JButton("Cadastrar");
+//                            refreshCamiseta = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaCasacoCadastrados.setBounds(20, 50, 350, 120);
+//                            listaCasacoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaCasacoCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroCasaco.setBounds(70, 177, 100, 30);
+//                            refreshCasaco.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaCasacoCadastrados);
+//                            janela.add(cadastroCasaco);
+//                            janela.add(refreshCasaco);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroCasaco.addActionListener(this);
+//                            refreshCasaco.addActionListener(this);
+//                            listaCasacoCadastrados.addListSelectionListener(this);
+//
+//                            break;
+//                            
+//                    case 5:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleCinto(dados).getNomeCasaco();
+//                            listaCintoCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Cinto");
+//                            titulo = new JLabel("Cintos Cadastrados");
+//                            cadastroCinto = new JButton("Cadastrar");
+//                            refreshCinto = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaCintoCadastrados.setBounds(20, 50, 350, 120);
+//                            listaCintoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaCintoCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroCinto.setBounds(70, 177, 100, 30);
+//                            refreshCinto.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaCintoCadastrados);
+//                            janela.add(cadastroCinto);
+//                            janela.add(refreshCinto);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroCinto.addActionListener(this);
+//                            refreshCinto.addActionListener(this);
+//                            listaCintoCadastrados.addListSelectionListener(this);
+//
+//                            break;
+//                    
+//                    case 6:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleCropped(dados).getNomeCropped();
+//                            listaCroppedCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Cropped");
+//                            titulo = new JLabel("Cropped Cadastrados");
+//                            cadastroCropped = new JButton("Cadastrar");
+//                            refreshCropped = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaCroppedCadastrados.setBounds(20, 50, 350, 120);
+//                            listaCroppedCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaCroppedCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroCropped.setBounds(70, 177, 100, 30);
+//                            refreshCropped.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaCroppedCadastrados);
+//                            janela.add(cadastroCropped);
+//                            janela.add(refreshCropped);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroCropped.addActionListener(this);
+//                            refreshCropped.addActionListener(this);
+//                            listaCroppedCadastrados.addListSelectionListener(this);
+//
+//                            break;
+//                            
+//                    case 7:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleMacacao(dados).getNomeMacacao();
+//                            listaMacacaoCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Macacão");
+//                            titulo = new JLabel("Macacão Cadastrados");
+//                            cadastroMacacao = new JButton("Cadastrar");
+//                            refreshMacacao = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaMacacaoCadastrados.setBounds(20, 50, 350, 120);
+//                            listaMacacaoCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaMacacaoCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroMacacao.setBounds(70, 177, 100, 30);
+//                            refreshMacacao.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaMacacaoCadastrados);
+//                            janela.add(cadastroMacacao);
+//                            janela.add(refreshMacacao);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroMacacao.addActionListener(this);
+//                            refreshMacacao.addActionListener(this);
+//                            listaMacacaoCadastrados.addListSelectionListener(this);
+//
+//                            break;
+//                            
+//                    case 8:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleSaia(dados).getNomeSaia();
+//                            listaSaiaCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Saia");
+//                            titulo = new JLabel("Saias Cadastrados");
+//                            cadastroSaia = new JButton("Cadastrar");
+//                            refreshSaia = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaSaiaCadastrados.setBounds(20, 50, 350, 120);
+//                            listaSaiaCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaSaiaCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroSaia.setBounds(70, 177, 100, 30);
+//                            refreshSaia.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaSaiaCadastrados);
+//                            janela.add(cadastroSaia);
+//                            janela.add(refreshSaia);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroSaia.addActionListener(this);
+//                            refreshSaia.addActionListener(this);
+//                            listaSaiaCadastrados.addListSelectionListener(this);
+//
+//                            break;
+//                            
+//                    case 9:// Mostrar dados de alunos cadastrados (JList)
+//                            listaNomes = new ControleShorte(dados).getNomeShorte();
+//                            listaShorteCadastrados = new JList<String>(listaNomes);
+//                            janela = new JFrame("Saia");
+//                            titulo = new JLabel("Saias Cadastrados");
+//                            cadastroShorte = new JButton("Cadastrar");
+//                            refreshShorte = new JButton("Refresh");
+//
+//                            titulo.setFont(new Font("Arial", Font.BOLD, 20));
+//                            titulo.setBounds(90, 10, 250, 30);
+//                            listaShorteCadastrados.setBounds(20, 50, 350, 120);
+//                            listaShorteCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+//                            listaShorteCadastrados.setVisibleRowCount(10);
+//
+//                            cadastroShorte.setBounds(70, 177, 100, 30);
+//                            refreshShorte.setBounds(200, 177, 100, 30);
+//
+//                            janela.setLayout(null);
+//
+//                            janela.add(titulo);
+//                            janela.add(listaShorteCadastrados);
+//                            janela.add(cadastroShorte);
+//                            janela.add(refreshShorte);
+//
+//                            janela.setSize(400, 250);
+//                            janela.setVisible(true);
+//
+//                            cadastroShorte.addActionListener(this);
+//                            refreshShorte.addActionListener(this);
+//                            listaShorteCadastrados.addListSelectionListener(this);
+//
+//                            break; 
                     default:
                             JOptionPane.showMessageDialog(null,"Opção não encontrada!", null, 
                                             JOptionPane.ERROR_MESSAGE);
@@ -420,10 +420,9 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	}
         
         public void actionPerformed(ActionEvent e) {
-            System.out.println("testando");
+            System.out.println("evento funcionando");
             Object src = e.getSource(); 
-            if(src == calca){
-                System.out.println("teste");
+            if(src == calca){     
                 new TelaRoupa().mostrarDados(1, dados);
             }else if(src == camisa){
                 new TelaRoupa().mostrarDados(2, dados);;
@@ -444,7 +443,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
             }
         }
         
-        public void valueChanged(ListSelectionEvent e) {
+    public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
 		if(e.getValueIsAdjusting() && src == listaCalcaCadastrados) {
@@ -460,10 +459,10 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
     public JList<String> getListaCalcasCadastrados() {
             return listaCalcaCadastrados;
-        }
+    }
 
-        public void setListaCalcaCadastrados(JList<String> listaCalcaCadastrados) {
+    public void setListaCalcaCadastrados(JList<String> listaCalcaCadastrados) {
             this.listaCalcaCadastrados = listaCalcaCadastrados;
-        }
+    }
     
 }

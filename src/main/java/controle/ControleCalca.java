@@ -3,7 +3,7 @@ import java.text.ParseException;
 import modelo.*;
 
 public class ControleCalca {
-    private Calca[] c;
+
      private Calca[] calca;
         private int qtdCalca;
         private Dados dados = new Dados();

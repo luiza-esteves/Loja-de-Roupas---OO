@@ -63,17 +63,18 @@ public class TelaMenu implements ActionListener {
                 if(src == estoque)
 			JOptionPane.showMessageDialog(null, 
 					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
+					+ "relacionadas a estoque", null, 
 					JOptionPane.INFORMATION_MESSAGE);
                 
                 if(src == venda)
 			JOptionPane.showMessageDialog(null, 
 					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
+					+ "relacionadas a venda", null, 
 					JOptionPane.INFORMATION_MESSAGE);
                 
                 if(src == roupa)  
                     new TelaRoupa();
+                   
                 
 	}
     
