@@ -23,6 +23,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		switch (op) {
                     case 1:// Mostrar dados de alunos cadastrados (JList)
                             listaNomes = new ControleCliente(dados).getNomesCliente();
+                            System.out.println(listaNomes);
                             listaClientesCadastrados = new JList<String>(listaNomes);
                             janela = new JFrame("Cliente");
                             titulo = new JLabel("Clientes Cadastrados");
