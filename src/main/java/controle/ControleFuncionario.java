@@ -80,33 +80,4 @@ public class ControleFuncionario {
             return qtdFuncionario;
         }
     
-public boolean inserirEditarFuncionario(String[] dadosFuncionarios) throws ParseException {
-		if(!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[5].matches("[0-9]+") || 
-				  !dadosFuncionarios[6].matches("[0-9]+")) {
-			return false;
-		} else {
-				Funcionario f = new Funcionario(Integer.parseInt(dadosFuncionarios[2]), dadosFuncionarios[1], Integer.parseInt(dadosFuncionarios[3]), 
-					new Telefone(Integer.parseInt(dadosFuncionarios[5]),Integer.parseInt(dadosFuncionarios[6])), 
-                                        new Endereco(dadosFuncionarios[9],dadosFuncionarios[10],dadosFuncionarios[7],Integer.parseInt(dadosFuncionarios[3]),
-                                            Integer.parseInt(dadosFuncionarios[8]),Integer.parseInt(dadosFuncionarios[12]),Integer.parseInt(dadosFuncionarios[11])),
-                                        dadosFuncionarios[4]
-								);
-				dados.inserirEditarFuncionario(f, Integer.parseInt(dadosFuncionarios[0]));
-				return true;
-		}
-	}
-       
-       
-
-       
-       	public boolean removerFuncionario(int cpfFuncionario) {
-            boolean res = false;
-            for (int j=0;j<qtdFuncionario;j++){
-                    if(funcionario[j].getCpf()==cpfFuncionario){
-                        funcionario[j]=null;
-                        res = true;
-                    }
-            }
-            return res;
-	}
 }

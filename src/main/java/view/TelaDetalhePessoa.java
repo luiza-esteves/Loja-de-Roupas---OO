@@ -15,36 +15,36 @@ import java.util.logging.Logger;
 
 public class TelaDetalhePessoa implements ActionListener {
 	private JFrame janela;
-	private JLabel labelNome = new JLabel("Nome: ");
+	private final JLabel labelNome = new JLabel("Nome: ");
 	private JTextField valorNome;
-	private JLabel labelTotalCompras = new JLabel("Total de compras: ");
+	private final JLabel labelTotalCompras = new JLabel("Total de compras: ");
 	private JTextField valorTotalCompras;
-        private JLabel labelSalario = new JLabel("Total de compras: ");
+        private final JLabel labelSalario = new JLabel("Salário: ");
 	private JTextField valorsalario;
-	private JLabel labelCidade = new JLabel("Cidade: ");
+	private final JLabel labelCidade = new JLabel("Cidade: ");
 	private JTextField valorCidade;
-        private JLabel labelEstado = new JLabel("Estad0: ");
+        private final JLabel labelEstado = new JLabel("Estad0: ");
 	private JTextField valorEstado;
-        private JLabel labelBairro = new JLabel("Bairro: ");
+        private final JLabel labelBairro = new JLabel("Bairro: ");
 	private JTextField valorBairro;
-        private JLabel labelCep = new JLabel("CEP: ");
+        private final JLabel labelCep = new JLabel("CEP: ");
 	private JTextField valorCep;
-        private JLabel labelRua = new JLabel("Rua: ");
+        private final JLabel labelRua = new JLabel("Rua: ");
 	private JTextField valorRua;
-        private JLabel labelQuadra = new JLabel("Quadra: ");
+        private final JLabel labelQuadra = new JLabel("Quadra: ");
 	private JTextField valorQuadra;
-        private JLabel labelLote = new JLabel("Lote: ");
+        private final JLabel labelLote = new JLabel("Lote: ");
 	private JTextField valorLote;
-	private JLabel labelCPF = new JLabel("CPF: ");
+	private final JLabel labelCPF = new JLabel("CPF: ");
 	private JTextField valorCPF;
-	private JLabel labelDataNascimento = new JLabel("Data de nascimento: ");
+	private final JLabel labelDataNascimento = new JLabel("Data de nascimento: ");
 	private JTextField valorDataNascimento;
-	private JLabel labelTelefone = new JLabel("Telefone");
+	private final JLabel labelTelefone = new JLabel("Telefone");
 	private JTextField valorDDD;
 	private JTextField valorTelefone;
-	private JButton botaoExcluir = new JButton("Excluir");
-	private JButton botaoSalvar = new JButton("Salvar");
-	private String[] novoDado = new String[14];
+	private final JButton botaoExcluir = new JButton("Excluir");
+	private final JButton botaoSalvar = new JButton("Salvar");
+	private final String[] novoDado = new String[14];
 	private static ControleDados dados;
         private static ControleCliente dadosCliente;
         private static ControleFuncionario dadosFuncionario;
@@ -247,12 +247,12 @@ public class TelaDetalhePessoa implements ActionListener {
                                 
 				if (opcao == 1 || opcao == 3) {        
 					novoDado[2] =  valorTotalCompras.getText();                       
-					res = dadosCliente.inserirEditarCliente(novoDado);
+					res = dados.inserirEditarCliente(novoDado);
                                         System.out.println(res);
                   
 				} else {
 					novoDado[2] =  valorsalario.getText();
-					res = dadosFuncionario.inserirEditarFuncionario(novoDado);
+					res = dados.inserirEditarFuncionario(novoDado);
 				}
 
 				if(res) {
@@ -271,13 +271,13 @@ public class TelaDetalhePessoa implements ActionListener {
 			boolean res = false;
 
 			if (opcao == 3) {//exclui aluno
-				res = dadosCliente.removerCliente(posicao);
+				res = dados.removerCliente(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
 				
 			if (opcao == 4){ //exclui professor
-				res = dadosFuncionario.removerFuncionario(posicao);
+				res = dados.removerFuncionario(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoProf(); 
 			}
