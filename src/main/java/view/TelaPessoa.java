@@ -102,13 +102,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		//Cadastro de novo aluno
-		if(src == cadastroCliente)
+		if(src == cadastroCliente){
 			new TelaDetalhePessoa().inserirEditar(1, dados, this, 0);
-
+                }
 		//Cadastro de novo professor
-		if(src == cadastroVendedor)
+		if(src == cadastroVendedor){
 			new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
-
+                }
 		// Atualiza a lista de nomes de alunos mostrada no JList
 		if(src == refreshCliente) {
 			listaClientesCadastrados.setListData(new ControleCliente(dados).getNomesCliente());			
@@ -124,6 +124,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	}
 
 	//Captura eventos relacionados ao JList
+        @Override
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 

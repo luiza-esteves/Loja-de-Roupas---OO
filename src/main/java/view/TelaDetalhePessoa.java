@@ -44,7 +44,7 @@ public class TelaDetalhePessoa implements ActionListener {
 	private JTextField valorTelefone;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
-	private String[] novoDado = new String[9];
+	private String[] novoDado = new String[14];
 	private static ControleDados dados;
         private static ControleCliente dadosCliente;
         private static ControleFuncionario dadosFuncionario;
@@ -109,23 +109,22 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorDataNascimento = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getDataNascimento()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getTelefone().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getTelefone().getNumero()), 10);	
-		} else { //Não preenche com dados
-
-                        String ce = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getCEP());
-                        String ru = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getRua());
-                        String qua = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getQuadra());
-                        String lo = String.valueOf(dados.getFuncionarios()[pos].getEndereco().getLote());
-                        valorCep = new JTextField(ce,200);
-                        valorRua = new JTextField(ru,200);
-                        valorQuadra = new JTextField(qua,200);
-                        valorLote = new JTextField(lo,200);
-			valorsalario = new JTextField(200);
-			valorCPF = new JTextField(200);
-			valorTotalCompras = new JTextField(200);
+		} else { //Não preenche com dados 
+                        valorNome = new JTextField(80);
+                        valorCidade = new JTextField(80);
+                        valorEstado = new JTextField(80);
+                        valorBairro = new JTextField(80);
+                        valorCep = new JTextField(7);
+                        valorRua = new JTextField(20);
+                        valorQuadra = new JTextField(3);
+                        valorLote = new JTextField(80);
+			valorCPF = new JTextField(11);
+                        valorDataNascimento = new JTextField(80);
 			valorDDD = new JTextField(3);
 			valorTelefone = new JTextField(10);
-
-			botaoSalvar.setBounds(245, 175, 115, 30);
+                        valorTotalCompras = new JTextField(5);
+                        valorsalario = new JTextField(10);
+			botaoSalvar.setBounds(245, 500, 115, 30);
 		}
 
 		labelNome.setBounds(30, 20, 150, 25);
@@ -146,21 +145,31 @@ public class TelaDetalhePessoa implements ActionListener {
                 valorRua.setBounds(180, 300, 180, 25);
 		labelCPF.setBounds(30, 340, 150, 25);
 		valorCPF.setBounds(180, 340, 180, 25);
+                
 		labelDataNascimento.setBounds(30, 380, 150, 25);
+                
 		valorDataNascimento.setBounds(180, 380, 180, 25);
 		labelTelefone.setBounds(30, 420, 150, 25);
+                valorTelefone.setBounds(210, 420, 150, 25);
 		valorDDD.setBounds(180, 420, 28, 25);
-		valorTelefone.setBounds(420, 140, 65, 25);
+		
+                
+               
 
 		//Coloca os campos relacionados a endereco se aluno
 		if (op == 1 || op == 3 ) {
+                        valorTotalCompras.setBounds(180, 460, 180, 25);
+                        labelTotalCompras.setBounds(30, 460, 150, 25);
 			this.janela.add(labelTotalCompras);
 			this.janela.add(valorTotalCompras);
+                 
 
 		}
 
 		//Coloca campos relacionados a valor hora/aula se professor
 		if (op == 2 || op == 4) {
+                        valorsalario.setBounds(180, 460, 180, 25);
+                        labelSalario.setBounds(30, 460, 150, 25);
 
 			this.janela.add(labelSalario);
 			this.janela.add(valorsalario);
@@ -168,8 +177,8 @@ public class TelaDetalhePessoa implements ActionListener {
 
 		//Coloca botoes de excluir e salvar
 		if (op == 3 || op == 4) {
-			botaoSalvar.setBounds(120, 480, 115, 30);
-			botaoExcluir.setBounds(245, 480, 115, 30);
+			botaoSalvar.setBounds(120, 500, 115, 30);
+			botaoExcluir.setBounds(245, 500, 115, 30);
 			this.janela.add(botaoExcluir);
 		}
 
@@ -194,9 +203,9 @@ public class TelaDetalhePessoa implements ActionListener {
 		this.janela.add(labelDataNascimento);
 		this.janela.add(valorDataNascimento);
 		this.janela.add(labelTelefone);
+                this.janela.add(valorTelefone);
 		this.janela.add(valorDDD);
-		this.janela.add(valorTelefone);
-		this.janela.add(botaoSalvar);
+                this.janela.add(botaoSalvar);
 
 		this.janela.setLayout(null);
 
@@ -208,11 +217,11 @@ public class TelaDetalhePessoa implements ActionListener {
 	}
 
 
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
-		if(src == botaoSalvar) {            
-			try {
-                            
+		if(src == botaoSalvar) {        
+			try {                       
 				boolean res;
 				if(opcao == 1) //cadastro de novo cliente
 					novoDado[0] = Integer.toString(dados.getQtdCliente());
@@ -234,10 +243,13 @@ public class TelaDetalhePessoa implements ActionListener {
                                 novoDado[12] =  valorQuadra.getText();
                                 novoDado[13] =  valorRua.getText();
                                
-
-				if (opcao == 1 || opcao == 3) {
-					novoDado[2] =  valorTotalCompras.getText();
+                           
+                                
+				if (opcao == 1 || opcao == 3) {        
+					novoDado[2] =  valorTotalCompras.getText();                       
 					res = dadosCliente.inserirEditarCliente(novoDado);
+                                        System.out.println(res);
+                  
 				} else {
 					novoDado[2] =  valorsalario.getText();
 					res = dadosFuncionario.inserirEditarFuncionario(novoDado);
@@ -248,10 +260,8 @@ public class TelaDetalhePessoa implements ActionListener {
 				}
 				else mensagemErroCadastro();
 
-			} catch (NullPointerException exc1) {
-				mensagemErroCadastro();
-			} catch (NumberFormatException exc2) {
-				mensagemErroCadastro();
+			} catch (NullPointerException | NumberFormatException exc1) {
+				mensagemErroCadastro();                 
 			} catch (ParseException ex) {
                         Logger.getLogger(TelaDetalhePessoa.class.getName()).log(Level.SEVERE, null, ex);
                     }

@@ -78,11 +78,28 @@ public class ControleCliente {
 
     
     
-	public boolean inserirEditarCliente(String[] dadosClientes) throws ParseException {
+	public boolean inserirEditarCliente(String[] dadosClientes){
+                                 System.out.println(dadosClientes[0]);
+                                             System.out.println(dadosClientes[1]);
+                                             System.out.println(dadosClientes[2]);
+                                             System.out.println(dadosClientes[3]);
+                                             System.out.println(dadosClientes[4]);
+                                             System.out.println(dadosClientes[5]);
+                                             System.out.println(dadosClientes[6]);
+                                             System.out.println(dadosClientes[7]);
+                                             System.out.println(dadosClientes[8]);
+                                             System.out.println(dadosClientes[9]);
+                                             System.out.println(dadosClientes[10]);
+                                             System.out.println(dadosClientes[11]);
+                                             System.out.println(dadosClientes[12]);
+                                             System.out.println(dadosClientes[13]);
+           
 		if(!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+") || 
 				  !dadosClientes[6].matches("[0-9]+")) {
+                    
 			return false;
 		} else {
+                    System.out.println("teste");
 				Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1], Integer.parseInt(dadosClientes[3]), 
 					new Telefone(Integer.parseInt(dadosClientes[5]),Integer.parseInt(dadosClientes[6])), 
                                         new Endereco(dadosClientes[9],dadosClientes[10],dadosClientes[7],Integer.parseInt(dadosClientes[8]),
@@ -93,8 +110,8 @@ public class ControleCliente {
 				dados.inserirEditarCliente(c, Integer.parseInt(dadosClientes[0]));
 				return true;
 		}
-	}
-       
+	
+        }
         public boolean removerCliente(int i) {
                         int qtdCliente = dados.getQtdCliente();
                         String alunoRemovido = dados.getCliente()[i].getNome();
