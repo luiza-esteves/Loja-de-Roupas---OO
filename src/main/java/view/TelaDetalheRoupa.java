@@ -75,15 +75,6 @@ public class TelaDetalheRoupa implements ActionListener{
 	private final JButton botaoSalvar = new JButton("Salvar");
 	private final String[] novoDado = new String[15];
 	private static ControleDados dados;
-        private static ControleCalca dadosCalca;
-        private static ControleCamisa dadosCamisa;
-        private static ControleCamiseta dadosCamiseta;
-        private static ControleCasaco dadosCasaco;
-        private static ControleCinto dadosCinto;
-        private static ControleCropped dadosCropped;
-        private static ControleMacacao dadosMacacao;
-        private static ControleSaia dadosSaia;
-        private static ControleShorte dadosShorte;
 
 	private int posicao;
 	private int opcao;
@@ -300,8 +291,24 @@ public class TelaDetalheRoupa implements ActionListener{
                         valorEstampa = new JTextField(200);               
                         valorComprimento = new JTextField(20);      
 			valorPreco = new JTextField(200);
+                        valorTipoCalca= new JTextField(200);
+                        valorCos= new JTextField(200);
+                        valorLavagem= new JTextField(200);
+                        valorModelagem= new JTextField(200);
+                        valorManga= new JTextField(200);
+                        valorGola= new JTextField(200);
+                        valorBotao= new JTextField(200);
+                        valorDecote= new JTextField(200);
+                        valorCapuz= new JTextField(200);
+                        valorZiper= new JTextField(200);
+                        valorOcasiao= new JTextField(200);
+                        valorLargura= new JTextField(200);
+                        valorEstilo= new JTextField(200);
+                        valorTipoCintura= new JTextField(200);
+                        valorTipoShort= new JTextField(200);
+                        valorTipoBoca= new JTextField(200);
 
-			botaoSalvar.setBounds(245, 175, 115, 30);
+			botaoSalvar.setBounds(245, 580, 115, 30);
 		}
 
                 labelCodigo.setBounds(30, 20, 150, 25);
@@ -326,9 +333,16 @@ public class TelaDetalheRoupa implements ActionListener{
 		valorComprimento.setBounds(180, 380, 180, 25);
 		labelPreco.setBounds(30, 420, 150, 25);
 		valorPreco.setBounds(180, 420, 28, 25);
+                
 
 		//Coloca os campos relacionados a calça
 		if (op == 1 || op == 10 ) {
+                        labelTipoCalca.setBounds(30, 460, 150, 25);
+                        valorTipoCalca.setBounds(180, 460, 180, 25);
+                        labelCos.setBounds(30, 500, 150, 25);
+                        valorCos.setBounds(180, 500, 180, 25);
+                        labelLavagem.setBounds(30, 540, 150, 25);
+                        valorLavagem.setBounds(180, 540, 180, 25);
 			this.janela.add(labelTipoCalca);
 			this.janela.add(valorTipoCalca);
                         this.janela.add(labelCos);
@@ -340,6 +354,15 @@ public class TelaDetalheRoupa implements ActionListener{
 
 		//Coloca campos relacionados a camisa
 		if (op == 2 || op == 11) {
+                    
+                        labelModelagem.setBounds(30, 460, 150, 25);
+                        valorModelagem.setBounds(180, 460, 180, 25);
+                        labelManga.setBounds(30, 500, 150, 25);
+                        valorManga.setBounds(180, 500, 180, 25);
+                        labelGola.setBounds(30, 540, 150, 25);
+                        valorGola.setBounds(180, 540, 180, 25);
+                        labelBoatao.setBounds(30, 540, 150, 25);
+                        valorBotao.setBounds(180, 540, 180, 25);
 
 			this.janela.add(labelModelagem);
 			this.janela.add(valorModelagem);
@@ -354,6 +377,11 @@ public class TelaDetalheRoupa implements ActionListener{
                 //Coloca campos relacionados a camiseta
                 
                 if (op == 3 || op == 12 ) {
+                    
+                        labelModelagem.setBounds(30, 460, 150, 25);
+                        valorModelagem.setBounds(180, 460, 180, 25);
+                        labelDecote.setBounds(30, 500, 150, 25);
+                        valorDecote.setBounds(180, 500, 180, 25);
 			this.janela.add(labelModelagem);
 			this.janela.add(valorModelagem);
                         this.janela.add(labelDecote);
@@ -362,6 +390,12 @@ public class TelaDetalheRoupa implements ActionListener{
                 
                 //Coloca campos relacionados a casaco
                 if (op == 4 || op == 13 ) {
+                        labelCapuz.setBounds(30, 460, 150, 25);
+                        valorCapuz.setBounds(180, 460, 180, 25);
+                        labelZiper.setBounds(30, 500, 150, 25);
+                        valorZiper.setBounds(180, 500, 180, 25);
+                        labelGola.setBounds(30, 540, 150, 25);
+                        valorGola.setBounds(180, 540, 180, 25);
 			this.janela.add(labelCapuz);
 			this.janela.add(valorCapuz);
                         this.janela.add(labelZiper);
@@ -372,14 +406,25 @@ public class TelaDetalheRoupa implements ActionListener{
                 
                 //Coloca campos relacionados a cinto
                 if (op == 5 || op == 14 ) {
+                    
+                        labelOcasiao.setBounds(30, 460, 150, 25);
+                        valorOcasiao.setBounds(180, 460, 180, 25);
+                        labelLargura.setBounds(30, 460, 150, 25);
+                        valorLargura.setBounds(180, 460, 180, 25);
 			this.janela.add(labelOcasiao);
 			this.janela.add(valorOcasiao);
-                        this.janela.add(labelCategoria);
-			this.janela.add(valorCategoria);
+
 		}
                 
                 //Coloca campos relacionados a cropped
                 if (op == 6 || op == 15 ) {
+                    
+                        labelModelagem.setBounds(30, 460, 150, 25);
+                        valorModelagem.setBounds(180, 460, 180, 25);
+                        labelManga.setBounds(30, 500, 150, 25);
+                        valorManga.setBounds(180, 500, 180, 25);
+                        labelEstilo.setBounds(30, 540, 150, 25);
+                        valorEstilo.setBounds(180, 540, 180, 25);
 			this.janela.add(labelEstilo);
 			this.janela.add(valorEstilo);
                         this.janela.add(labelModelagem);
@@ -390,6 +435,10 @@ public class TelaDetalheRoupa implements ActionListener{
                 
                 //Coloca campos relacionados a Macacão
                 if (op == 7 || op == 16 ) {
+                        labelModelagem.setBounds(30, 460, 150, 25);
+                        valorModelagem.setBounds(180, 460, 180, 25);
+                        labelLavagem.setBounds(30, 500, 150, 25);
+                        valorLavagem.setBounds(180, 500, 180, 25);
 			this.janela.add(labelLavagem);
 			this.janela.add(valorLavagem);
                         this.janela.add(labelModelagem);
@@ -399,6 +448,10 @@ public class TelaDetalheRoupa implements ActionListener{
                 
                 //Coloca campos relacionados a Saia
                 if (op == 8 || op == 17 ) {
+                        labelModelagem.setBounds(30, 460, 150, 25);
+                        valorModelagem.setBounds(180, 460, 180, 25);
+                        labelTipoCintura.setBounds(30, 500, 150, 25);
+                        valorTipoCintura.setBounds(180, 500, 180, 25);
                         this.janela.add(labelModelagem);
 			this.janela.add(valorModelagem);
                         this.janela.add(labelTipoCintura);
@@ -408,6 +461,10 @@ public class TelaDetalheRoupa implements ActionListener{
                 
                 //Coloca campos relacionados a Short
                 if (op == 9 || op == 18 ) {
+                        labelTipoShort.setBounds(30, 460, 150, 25);
+                        valorTipoShort.setBounds(180, 460, 180, 25);
+                        labelTipoBoca.setBounds(30, 500, 150, 25);
+                        valorTipoBoca.setBounds(180, 500, 180, 25);
                         this.janela.add(labelTipoShort);
 			this.janela.add(valorTipoShort);
                         this.janela.add(labelTipoBoca);
@@ -458,12 +515,12 @@ public class TelaDetalheRoupa implements ActionListener{
 		botaoExcluir.addActionListener(this);
 	}
         
+    @Override
         public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
-                    System.out.println("teste");
-			try {
-                            
+                   
+			try {                           
 				boolean res = false;
 				if(opcao == 1) //cadastro de novo calça
 					novoDado[0] = Integer.toString(dados.getDados().getQtdCalca());
@@ -505,44 +562,44 @@ public class TelaDetalheRoupa implements ActionListener{
                                     novoDado[12] =  valorTipoCalca.getText();
                                     novoDado[13] =  valorCos.getText();
                                     novoDado[14] =  valorLavagem.getText();
-                                    res = dadosCalca.inserirEditarCalca(novoDado);
+                                    res = dados.inserirEditarCalca(novoDado);
                                 }else if (opcao == 2 || opcao == 11){
                                     novoDado[12] =  valorModelagem.getText();
                                     novoDado[13] =  valorManga.getText();
                                     novoDado[14] =  valorGola.getText();
                                     novoDado[15] =  valorBotao.getText();
-                                    res = dadosCamisa.inserirEditarCamisa(novoDado);
+                                    res = dados.inserirEditarCamisa(novoDado);
 				}else if (opcao == 3 || opcao == 12){
                                     novoDado[12] =  valorModelagem.getText();
                                     novoDado[13] =  valorDecote.getText();
 
-                                    res = dadosCamiseta.inserirEditarCamiseta(novoDado);
+                                    res = dados.inserirEditarCamiseta(novoDado);
 				}else if (opcao == 4 || opcao == 13){
                                     novoDado[12] =  valorCapuz.getText();
                                     novoDado[13] =  valorZiper.getText();
                                     novoDado[14] =  valorGola.getText();
-                                    res = dadosCasaco.inserirEditarCasaco(novoDado);
+                                    res = dados.inserirEditarCasaco(novoDado);
 				}else if (opcao == 5 || opcao == 14){
                                     novoDado[12] =  valorOcasiao.getText();
                                     novoDado[13] =  valorCategoria.getText();
-                                    res = dadosCinto.inserirEditarCinto(novoDado);
+                                    res = dados.inserirEditarCinto(novoDado);
 				}else if (opcao == 6 || opcao == 15){
                                     novoDado[12] =  valorEstilo.getText();
                                     novoDado[13] =  valorModelagem.getText();
                                     novoDado[14] =  valorManga.getText();
-                                    res = dadosCropped.inserirEditarCropped(novoDado);
+                                    res = dados.inserirEditarCropped(novoDado);
 				}else if (opcao == 7 || opcao == 16){
                                     novoDado[12] =  valorLavagem.getText();
                                     novoDado[13] =  valorModelagem.getText();
-                                    res = dadosMacacao.inserirEditarMacacao(novoDado);
+                                    res = dados.inserirEditarMacacao(novoDado);
 				}else if (opcao == 8 || opcao == 17){
                                     novoDado[12] =  valorModelagem.getText();
                                     novoDado[13] =  valorTipoCintura.getText();
-                                    res = dadosSaia.inserirEditarSaia(novoDado);
+                                    res = dados.inserirEditarSaia(novoDado);
 				}else if (opcao == 9 || opcao == 18){
                                     novoDado[12] =  valorTipoShort.getText();
                                     novoDado[13] =  valorTipoBoca.getText();
-                                    res = dadosShorte.inserirEditarShorte(novoDado);
+                                    res = dados.inserirEditarShorte(novoDado);
 				}
 
 				if(res) {
@@ -550,9 +607,7 @@ public class TelaDetalheRoupa implements ActionListener{
 				}
 				else mensagemErroCadastro();
 
-			} catch (NullPointerException exc1) {
-				mensagemErroCadastro();
-			} catch (NumberFormatException exc2) {
+			} catch (NullPointerException | NumberFormatException exc1) {
 				mensagemErroCadastro();
 			} catch (ParseException ex) {
                         Logger.getLogger(TelaDetalhePessoa.class.getName()).log(Level.SEVERE, null, ex);
@@ -563,55 +618,55 @@ public class TelaDetalheRoupa implements ActionListener{
 			boolean res = false;
 
 			if (opcao == 10) {//exclui aluno
-				res = dadosCalca.removerCalca(posicao);
+				res = dados.removerCalca(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
 				
 			if (opcao == 11){ //exclui professor
-				res = dadosCamisa.removerCamisa(posicao);
+				res = dados.removerCamisa(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoProf(); 
 			}
                         
                         if (opcao == 12) {//exclui aluno
-				res = dadosCamiseta.removerCamiseta(posicao);
+				res = dados.removerCamiseta(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 13) {//exclui aluno
-				res = dadosCasaco.removerCasaco(posicao);
+				res = dados.removerCasaco(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 14) {//exclui aluno
-				res = dadosCinto.removerCinto(posicao);
+				res = dados.removerCinto(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 15) {//exclui aluno
-				res = dadosCropped.removerCropped(posicao);
+				res = dados.removerCropped(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 16) {//exclui aluno
-				res = dadosMacacao.removerMacacao(posicao);
+				res = dados.removerMacacao(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 17) {//exclui aluno
-				res = dadosSaia.removerSaia(posicao);
+				res = dados.removerSaia(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
                         
                         if (opcao == 18) {//exclui aluno
-				res = dadosShorte.removerShorte(posicao);
+				res = dados.removerShorte(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}

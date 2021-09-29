@@ -23,54 +23,63 @@ public class Estoque {
      public Estoque(){
          super();
      }
-     
-      public Estoque(Calca c, int qtd){
+
+      public Estoque(Calca c, int qtd,int cod){
           this.calca = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = calca.getNome();
+          this.codRoupa=1;
      }
       
-      public Estoque(Camisa c, int qtd){
+      public Estoque(Camisa c, int qtd,int cod){
           this.camisa = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = camisa.getNome();
+          this.codRoupa=2;
      }    
-      public Estoque(Camiseta c, int qtd){
+      public Estoque(Camiseta c, int qtd,int cod){
           this.camiseta = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = camiseta.getNome();
+          this.codRoupa=3;
      }
       
-    public Estoque(Casaco c, int qtd){
+    public Estoque(Casaco c, int qtd,int cod){
           this.casaco = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = casaco.getNome();
+          this.codRoupa=4;
      }
            
-     public Estoque(Cinto c, int qtd){
+     public Estoque(Cinto c, int qtd,int cod){
           this.cinto = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = cinto.getNome();
+          this.codRoupa=5;
      }
-     public Estoque(Cropped c, int qtd){
+     public Estoque(Cropped c, int qtd,int cod){
           this.cropped = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = cropped.getNome();
+          this.codRoupa=6;
      }
-     public Estoque(Macacao c, int qtd){
+     public Estoque(Macacao c, int qtd,int cod){
           this.macacao = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = macacao.getNome();
+          this.codRoupa=7;
      }
-     public Estoque(Saia c, int qtd){
+     public Estoque(Saia c, int qtd,int cod){
           this.saia = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = saia.getNome();
+          this.codRoupa=8;
      }
-     public Estoque(Shorte c, int qtd){
+     public Estoque(Shorte c, int qtd,int cod){
           this.shorte = c;
           this.qtdDispobnivel=qtd;
           nomeRoupa = shorte.getNome();
+          this.codRoupa=9;
      }
      
      

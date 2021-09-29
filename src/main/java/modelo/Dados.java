@@ -81,7 +81,7 @@ public class Dados {
                         
                         funcionario[i] = new Funcionario(i*608.21,"Nome: "+i,000000044+i,telefone[i],endereco[i],"data"+i);
                         
-                        estoque[i] = new Estoque(macacao[i],2);
+                        estoque[i] = new Estoque(calca[i],2,1);
                         
                         venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i]);
                         
@@ -111,6 +111,11 @@ public class Dados {
     public void inserirEditarCliente(Cliente c, int pos) {
 		this.cliente[pos] = c;
 		if(pos == qtdCliente) qtdCliente++;
+    }
+    
+    public void inserirEditarEstoque(Estoque nome, int pos) {              
+		this.estoque[pos]=nome;
+		if(pos == qtdEstoque) qtdEstoque++;
     }
      
     public void inserirEditarFuncionario(Funcionario f, int pos) {
@@ -420,7 +425,7 @@ public class Dados {
         this.qtdFuncionario = qtdFuncionario;
     }
      
-    
+
     
      
     

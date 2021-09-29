@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Cinto extends Roupa {
     Scanner ler = new Scanner(System.in);
 
-    private String ocasiao, categoria;
+    private String ocasiao;
     private double largura;
     
     public Cinto(){
@@ -63,6 +63,7 @@ public class Cinto extends Roupa {
         return categoria;
     }
 
+    @Override
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
@@ -75,18 +76,22 @@ public class Cinto extends Roupa {
         this.largura = largura;
     }
 
+    @Override
     public int getCodigo() {
         return codigo;
     }
 
+    @Override
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
+    @Override
     public String getNome() {
         return nome;
     }
 
+    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }

@@ -61,10 +61,9 @@ public class TelaMenu implements ActionListener {
 			new TelaPessoa().mostrarDados(dados, 2);
 		
                 if(src == estoque)
-			JOptionPane.showMessageDialog(null, 
-					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a estoque", null, 
-					JOptionPane.INFORMATION_MESSAGE);
+			new TelaEstoque(dados);
+             
+                   
                 
                 if(src == venda)
 			new TelaVenda().mostrarDados(dados, 1);

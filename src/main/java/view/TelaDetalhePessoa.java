@@ -248,7 +248,7 @@ public class TelaDetalhePessoa implements ActionListener {
 				if (opcao == 1 || opcao == 3) {        
 					novoDado[2] =  valorTotalCompras.getText();                       
 					res = dados.inserirEditarCliente(novoDado);
-                                        System.out.println(res);
+                              
                   
 				} else {
 					novoDado[2] =  valorsalario.getText();
@@ -303,23 +303,23 @@ public class TelaDetalhePessoa implements ActionListener {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+				+ "2. CPF, DDD e telefone não contém apenas números", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void mensagemErroExclusaoAluno() {
 		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o aluno está matriculado\n"
-				+ "em alguma disciplina. Se sim, cancele\n "
-				+ "a matricula e tente novamente.", null, 
+				+ "Verifique se o cliente está cadastrado\n"
+				+ "em alguma venda. Se sim, cancele\n "
+				+ "a venda e tente novamente.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void mensagemErroExclusaoProf() {
 		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o professor está responsável\n"
-				+ "por alguma disciplina. Se sim, substitua\n "
-				+ "o professor e tente novamente.", null, 
+				+ "Verifique se o vendedor está responsável\n"
+				+ "por alguma venda. Se sim, substitua\n "
+				+ "o vendedor e tente novamente.", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 }
