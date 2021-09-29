@@ -82,9 +82,7 @@ public class ControleDados {
 	return this.dados.getVenda();
     }
     
-    
-    
-    	public boolean inserirEditarCliente(String[] dadosClientes){
+    public boolean inserirEditarCliente(String[] dadosClientes){
            
 		if(!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+") || 
 				  !dadosClientes[6].matches("[0-9]+")) {
@@ -105,7 +103,7 @@ public class ControleDados {
 	
         }
         
-        public boolean removerCliente(int i) {
+    public boolean removerCliente(int i) {
                         int qtdCliente = dados.getQtdCliente();
                         int qtdVendas = dados.getQtdVenda();
                         String clienteRemovido = dados.getCliente()[i].getNome();
@@ -136,7 +134,7 @@ public class ControleDados {
 		}
         }
             
-        public boolean inserirEditarFuncionario(String[] dadosFuncionarios) throws ParseException {
+    public boolean inserirEditarFuncionario(String[] dadosFuncionarios) throws ParseException {
 		if(!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[5].matches("[0-9]+") || 
 				  !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
@@ -152,7 +150,7 @@ public class ControleDados {
 		}
 	}
              
-       	public boolean removerFuncionario(int i) {
+    public boolean removerFuncionario(int i) {
             int qtdVendas = dados.getQtdVenda();
               int qtdFuncionario = dados.getQtdFuncionario();
                         String funcionarioRemovido = dados.getFuncionario()[i].getNome();
@@ -183,7 +181,7 @@ public class ControleDados {
 		}
 	}
         
-        public boolean inserirEditarCalca(String[] dadosCalca) throws ParseException {
+    public boolean inserirEditarCalca(String[] dadosCalca) throws ParseException {
 		if(!dadosCalca[3].matches("[0-9]+") || !dadosCalca[5].matches("[0-9]+") || 
 				  !dadosCalca[6].matches("[0-9]+")) {
 			return false;
@@ -196,7 +194,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCalca(int i) {
+    public boolean removerCalca(int i) {
                         int qtdCalca = dados.getQtdCalca();
                         String calcaRemovida = dados.getCalca()[i].getNome();
                         String aux;
@@ -226,7 +224,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarCamisa(String[] dadosCamisa) throws ParseException {
+    public boolean inserirEditarCamisa(String[] dadosCamisa) throws ParseException {
 		if(!dadosCamisa[3].matches("[0-9]+") || !dadosCamisa[5].matches("[0-9]+") || 
 				  !dadosCamisa[6].matches("[0-9]+")) {
 			return false;
@@ -239,7 +237,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCamisa(int i) {
+    public boolean removerCamisa(int i) {
                         int qtdCamisa = dados.getQtdCamisa();
                         String camisaRemovida = dados.getCamisa()[i].getNome();
                         String aux;
@@ -269,7 +267,7 @@ public class ControleDados {
 		}
         }
     
-        public boolean inserirEditarCamiseta(String[] dadosCamiseta) {
+    public boolean inserirEditarCamiseta(String[] dadosCamiseta) {
 		if(!dadosCamiseta[3].matches("[0-9]+") || !dadosCamiseta[5].matches("[0-9]+") || 
 				  !dadosCamiseta[6].matches("[0-9]+")) {
 			return false;
@@ -282,7 +280,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCamiseta(int i) {
+    public boolean removerCamiseta(int i) {
                         int qtdCamiseta = dados.getQtdCamiseta();
                         String camisetaRemovida = dados.getCamiseta()[i].getNome();
                         String aux;
@@ -312,7 +310,7 @@ public class ControleDados {
 		}
         }
     
-        public boolean inserirEditarCasaco(String[] dadosCasaco) throws ParseException {
+    public boolean inserirEditarCasaco(String[] dadosCasaco) throws ParseException {
 		if(!dadosCasaco[3].matches("[0-9]+") || !dadosCasaco[5].matches("[0-9]+") || 
 				  !dadosCasaco[6].matches("[0-9]+")) {
 			return false;
@@ -325,7 +323,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCasaco(int i) {
+    public boolean removerCasaco(int i) {
                         int qtdCasaco = dados.getQtdCasaco();
                         String casacoRemovida = dados.getCasaco()[i].getNome();
                         String aux;
@@ -355,7 +353,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarCinto(String[] dadosCinto) throws ParseException {
+    public boolean inserirEditarCinto(String[] dadosCinto) throws ParseException {
 		if(!dadosCinto[3].matches("[0-9]+") || !dadosCinto[5].matches("[0-9]+") || 
 				  !dadosCinto[6].matches("[0-9]+")) {
 			return false;
@@ -368,7 +366,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCinto(int i) {
+    public boolean removerCinto(int i) {
                         int qtdCinto = dados.getQtdCinto();
                         String cintoRemovida = dados.getCinto()[i].getNome();
                         String aux;
@@ -398,7 +396,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarCropped(String[] dadosCropped) throws ParseException {
+    public boolean inserirEditarCropped(String[] dadosCropped) throws ParseException {
 		if(!dadosCropped[3].matches("[0-9]+") || !dadosCropped[5].matches("[0-9]+") || 
 				  !dadosCropped[6].matches("[0-9]+")) {
 			return false;
@@ -411,7 +409,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerCropped(int i) {
+    public boolean removerCropped(int i) {
                         int qtdCropped = dados.getQtdCropped();
                         String croppedRemovida = dados.getCropped()[i].getNome();
                         String aux;
@@ -441,7 +439,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarMacacao(String[] dadosMacacao) throws ParseException {
+    public boolean inserirEditarMacacao(String[] dadosMacacao) throws ParseException {
 		if(!dadosMacacao[3].matches("[0-9]+") || !dadosMacacao[5].matches("[0-9]+") || 
 				  !dadosMacacao[6].matches("[0-9]+")) {
 			return false;
@@ -454,7 +452,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerMacacao(int i) {
+    public boolean removerMacacao(int i) {
                         int qtdMacacao = dados.getQtdMacacao();
                         String macacaoRemovida = dados.getMacacao()[i].getNome();
                         String aux;
@@ -484,7 +482,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarSaia(String[] dadosSaia) throws ParseException {
+    public boolean inserirEditarSaia(String[] dadosSaia) throws ParseException {
 		if(!dadosSaia[3].matches("[0-9]+") || !dadosSaia[5].matches("[0-9]+") || 
 				  !dadosSaia[6].matches("[0-9]+")) {
 			return false;
@@ -497,7 +495,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerSaia(int i) {
+    public boolean removerSaia(int i) {
                         int qtdSaia = dados.getQtdSaia();
                         String saiaRemovida = dados.getSaia()[i].getNome();
                         String aux;
@@ -527,7 +525,7 @@ public class ControleDados {
 		}
         }
         
-        public boolean inserirEditarShorte(String[] dadosShorte) throws ParseException {
+    public boolean inserirEditarShorte(String[] dadosShorte) throws ParseException {
 		if(!dadosShorte[3].matches("[0-9]+") || !dadosShorte[5].matches("[0-9]+") || 
 				  !dadosShorte[6].matches("[0-9]+")) {
 			return false;
@@ -540,7 +538,7 @@ public class ControleDados {
 		}
 	}
        
-        public boolean removerShorte(int i) {
+    public boolean removerShorte(int i) {
                         int qtdShorte = dados.getQtdShorte();
                         String shorteRemovida = dados.getShorte()[i].getNome();
                         String aux;
@@ -569,6 +567,7 @@ public class ControleDados {
 			return true;
 		}
         }
+        
     public boolean inserirEditarEstoqueCalca(String[] dadosEstoqueCalca) throws ParseException {
                 
                         Estoque e = new Estoque(dadosEstoqueCalca[2],Integer.parseInt(dadosEstoqueCalca[3]),Integer.parseInt(dadosEstoqueCalca[1]),1);
@@ -627,7 +626,7 @@ public class ControleDados {
     }
         
     public boolean removerEstoqueCalca(int i) {
-                        int qtdCalca = dados.getQtdCalca();
+                        int qtdCalca = dados.getEstoque()[i].getQtdDispobnivel();
                         int qtdVendas = dados.getQtdVenda();
                         String calcaRemovida = dados.getEstoque()[i].getNomeRoupa();
                         String aux;
@@ -657,4 +656,251 @@ public class ControleDados {
 		}
         }
     
+    public boolean removerEstoqueCamisa(int i) {
+                        int qtdCamisa = dados.getEstoque()[i].getQtdDispobnivel();
+                        int qtdVendas = dados.getQtdVenda();
+                        String camisaRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCamisa().getNome();
+                                if(camisaRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCamisa() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCamisa(dados.getQtdCamisa() - 1);
+			dados.getEstoque()[dados.getQtdCamisa()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(camisaRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCamisa()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueCamiseta(int i) {
+                        int qtdCamiseta = dados.getEstoque()[i].getQtdDispobnivel();
+                        int qtdVendas = dados.getQtdVenda();
+                        String camisetaRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCamiseta().getNome();
+                                if(camisetaRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCamiseta() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCamiseta(dados.getQtdCamiseta() - 1);
+			dados.getEstoque()[dados.getQtdCamiseta()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(camisetaRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCamiseta()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueCasaco(int i) {
+                        
+                        int qtdVendas = dados.getQtdVenda();
+                        String casacoRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(casacoRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCasaco() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCasaco(dados.getQtdCasaco() - 1);
+			dados.getEstoque()[dados.getQtdCasaco()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(casacoRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCasaco()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueCinto(int i) {
+                        
+                        int qtdVendas = dados.getQtdVenda();
+                        String cintoRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(cintoRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCinto() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCinto(dados.getQtdCinto() - 1);
+			dados.getEstoque()[dados.getQtdCinto()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(cintoRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCinto()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueCropped(int i) {
+                        
+                        int qtdVendas = dados.getQtdVenda();
+                        String croppedRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(croppedRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCropped() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCropped(dados.getQtdCropped() - 1);
+			dados.getEstoque()[dados.getQtdCropped()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(croppedRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCropped()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueMacacao(int i) {
+        
+                        int qtdVendas = dados.getQtdVenda();
+                        String macacaoRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(macacaoRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdMacacao() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdMacacao(dados.getQtdMacacao() - 1);
+			dados.getEstoque()[dados.getQtdMacacao()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(macacaoRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdMacacao()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueSaia(int i) {
+        
+                        int qtdVendas = dados.getQtdVenda();
+                        String saiaRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(saiaRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdSaia() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdSaia(dados.getQtdSaia() - 1);
+			dados.getEstoque()[dados.getQtdSaia()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(saiaRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdSaia()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
+    
+    public boolean removerEstoqueShorte(int i) {
+        
+                        int qtdVendas = dados.getQtdVenda();
+                        String shorteRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                if(shorteRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdShorte() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdShorte(dados.getQtdShorte() - 1);
+			dados.getEstoque()[dados.getQtdShorte()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(shorteRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdShorte()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
 }

@@ -202,7 +202,7 @@ public class TelaDetalheEstoque implements ActionListener{
 			boolean res = false;
 
 			if (opcao == 10) {//exclui aluno
-                            res = estoque.removerEstoqueCalca(posicao);
+                            res = dados.removerEstoqueCalca(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}
