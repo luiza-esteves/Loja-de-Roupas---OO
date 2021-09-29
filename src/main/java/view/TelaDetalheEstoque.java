@@ -27,7 +27,7 @@ public class TelaDetalheEstoque implements ActionListener{
     private int opcao;
     private String s;
     
-    private final String[] novoDado = new String[3];
+    private final String[] novoDado = new String[4];
     
     private final JLabel labelCodigo = new JLabel("Código: ");
     private JTextField valorCodigo;
@@ -74,57 +74,57 @@ public class TelaDetalheEstoque implements ActionListener{
                 
                 if (op == 10) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCalca().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCalca().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op ==11) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCamisa().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCamisa().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 12) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCamiseta().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCamiseta().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 13) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCasaco().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCasaco().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 14) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCinto().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCinto().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 15) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getCropped().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getCropped().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 16) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getMacacao().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getMacacao().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 17) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getSaia().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getSaia().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }else if (op == 18) {
                     String qtdDisp = String.valueOf(dados.getEstoques()[pos].getQtdDispobnivel());
-                    String cod = String.valueOf(dados.getEstoques()[pos].getShorte().getCodigo());
+                    String cod = String.valueOf(dados.getEstoques()[pos].getCodRoupa());
                     valorCodigo = new JTextField(cod, 200);
-                    valorNome = new JTextField(dados.getEstoques()[pos].getShorte().getNome(), 200);
+                    valorNome = new JTextField(dados.getEstoques()[pos].getNomeRoupa(), 200);
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }
                 else{
@@ -134,6 +134,11 @@ public class TelaDetalheEstoque implements ActionListener{
                     
                     botaoSalvar.setBounds(245, 580, 115, 30);
                 }
+                if (op == 10 || op == 11 || op == 12 || op == 13 || op == 14 || op == 15 || op == 16 || op == 17 || op == 18) {
+			botaoSalvar.setBounds(120, 480, 115, 30);
+			botaoExcluir.setBounds(245, 480, 115, 30);
+			this.janela.add(botaoExcluir);
+		}
                 
                 labelCodigo.setBounds(30, 20, 150, 25);
                 valorCodigo.setBounds(180, 20, 180, 25);
@@ -175,7 +180,10 @@ public class TelaDetalheEstoque implements ActionListener{
 				novoDado[1] =  valorCodigo.getText();
                                 novoDado[2] =  valorNome.getText();
 				novoDado[3] =  valorQtdEstoque.getText();
-
+                                int qtd = Integer.parseInt(novoDado[3]);
+                                if (opcao == 1 || opcao == 10) {
+                                res = dados.inserirEditarEstoqueCalca(novoDado);
+                                }
 				if(res) {
                                     mensagemSucessoCadastro();
 				}
@@ -183,7 +191,9 @@ public class TelaDetalheEstoque implements ActionListener{
 
 			} catch (NullPointerException | NumberFormatException exc1) {
 				mensagemErroCadastro();
-			}
+			} catch (ParseException ex) {
+                        Logger.getLogger(TelaDetalheEstoque.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 		}
 
 		if(src == botaoExcluir) {

@@ -44,10 +44,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
         private static final JButton saia = new JButton("Saia");
         private static final JButton shorte = new JButton("Short");
         private static final JFrame jan = new JFrame("Estoque");
-         private static final JLabel tit = new JLabel("Estoque");
-
-
-        private static ControleEstoque dadosEstoque;
+        private static final JLabel tit = new JLabel("Estoque");
+        
         private static ControleDados dados;
 	private JList<String> listaCalcaCadastrados;
 	private JList<String> listaCamisaCadastrados;
@@ -132,6 +130,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.setSize(600, 600);
                     janela.setVisible(true);
                     listaCalcaCadastrados.addListSelectionListener(this);
+                    estoqueCalca.addActionListener(this);
+                    refreshCalca.addActionListener(this);
                     break;
                 case 2:
                     listaNomes = new ControleEstoque(dados).getNomesEstoques(2);
@@ -371,13 +371,64 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 			new TelaEstoque(dados).mostrarDados(8, dados);
                 if(src == shorte)
 			new TelaEstoque(dados).mostrarDados(9, dados);
-
+            if (src == estoqueCalca){
+                new TelaDetalheEstoque().inserirEditar(1, dados, this, listaCalcaCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueCamisa){
+                new TelaDetalheEstoque().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueCamiseta){
+                new TelaDetalheEstoque().inserirEditar(3, dados, this, listaCamisetaCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueCasaco){
+                new TelaDetalheEstoque().inserirEditar(4, dados, this, listaCasacoCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueCinto){
+                new TelaDetalheEstoque().inserirEditar(5, dados, this, listaCintoCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueCropped){
+                new TelaDetalheEstoque().inserirEditar(6, dados, this, listaCroppedCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueMacacao){
+                new TelaDetalheEstoque().inserirEditar(7, dados, this, listaMacacaoCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueSaia){
+                new TelaDetalheEstoque().inserirEditar(8, dados, this, listaSaiaCadastrados.getSelectedIndex());
+            }
+            if (src == estoqueShorte){
+                new TelaDetalheEstoque().inserirEditar(9, dados, this, listaShorteCadastrados.getSelectedIndex());
+            }
+                
+            if(src == refreshCalca) {
+		listaCalcaCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(1));			
+		listaCalcaCadastrados.updateUI();
+           }else if(src == refreshCamisa) {
+		listaCamisaCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(2));		
+		listaCamisaCadastrados.updateUI();
+            }else if(src == refreshCamiseta) {
+		listaCamisetaCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(3));		
+		listaCamisetaCadastrados.updateUI();
+            }else if(src == refreshCasaco) {
+		listaCasacoCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(4));			
+		listaCasacoCadastrados.updateUI();
+            }else if(src == refreshCinto) {
+		listaCintoCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(5));			
+		listaCintoCadastrados.updateUI();
+            }else if(src == refreshCropped) {
+		listaCroppedCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(6));			
+		listaCroppedCadastrados.updateUI();
+            }else if(src == refreshMacacao) {
+		listaMacacaoCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(7));			
+		listaMacacaoCadastrados.updateUI();
+            }else if(src == refreshSaia) {
+		listaSaiaCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(8));			
+		listaSaiaCadastrados.updateUI();
+            }else if(src == refreshShorte) {
+		listaShorteCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(9));		
+		listaShorteCadastrados.updateUI();
+            }
 		
-		// Atualiza a lista de nomes de alunos mostrada no JList
-//		if(src == refreshEstoque) {
-//			listaRoupasCadastradas.setListData(new ControleEstoque(dados).getNomesEstoques());			
-//			listaRoupasCadastradas.updateUI();
-//		}		
+		
 	}
 
 	//Captura eventos relacionados ao JList

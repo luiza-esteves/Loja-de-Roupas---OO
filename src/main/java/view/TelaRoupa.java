@@ -439,6 +439,49 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 new TelaRoupa(dados).mostrarDados(9, dados);
             }else if (src == cadastroCalca){
                 new TelaDetalheRoupa().inserirEditar(1, dados, this, listaCalcaCadastrados.getSelectedIndex());
+            }else if (src == cadastroCamisa){
+                new TelaDetalheRoupa().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());
+            }else if (src == cadastroCamiseta){
+                new TelaDetalheRoupa().inserirEditar(3, dados, this, listaCamisetaCadastrados.getSelectedIndex());
+            }else if (src == cadastroCasaco){
+                new TelaDetalheRoupa().inserirEditar(4, dados, this, listaCasacoCadastrados.getSelectedIndex());
+            }else if (src == cadastroCinto){
+                new TelaDetalheRoupa().inserirEditar(5, dados, this, listaCintoCadastrados.getSelectedIndex());
+            }else if (src == cadastroCropped){
+                new TelaDetalheRoupa().inserirEditar(6, dados, this, listaCroppedCadastrados.getSelectedIndex());
+            }else if (src == cadastroMacacao){
+                new TelaDetalheRoupa().inserirEditar(7, dados, this, listaMacacaoCadastrados.getSelectedIndex());
+            }else if (src == cadastroSaia){
+                new TelaDetalheRoupa().inserirEditar(8, dados, this, listaSaiaCadastrados.getSelectedIndex());
+            }else if (src == cadastroShorte){
+                new TelaDetalheRoupa().inserirEditar(9, dados, this, listaShorteCadastrados.getSelectedIndex());
+            }else if(src == refreshCalca) {
+		listaCalcaCadastrados.setListData(new ControleCalca(dados).getNomesCalcas());			
+		listaCalcaCadastrados.updateUI();
+            }else if(src == refreshCamisa) {
+		listaCamisaCadastrados.setListData(new ControleCamisa(dados).getNomesCamisa());			
+		listaCamisaCadastrados.updateUI();
+            }else if(src == refreshCamiseta) {
+		listaCamisetaCadastrados.setListData(new ControleCamiseta(dados).getNomesCamiseta());			
+		listaCamisetaCadastrados.updateUI();
+            }else if(src == refreshCasaco) {
+		listaCasacoCadastrados.setListData(new ControleCasaco(dados).getNomesCasaco());			
+		listaCasacoCadastrados.updateUI();
+            }else if(src == refreshCinto) {
+		listaCintoCadastrados.setListData(new ControleCinto(dados).getNomesCinto());			
+		listaCintoCadastrados.updateUI();
+            }else if(src == refreshCropped) {
+		listaCroppedCadastrados.setListData(new ControleCropped(dados).getNomesCropped());			
+		listaCroppedCadastrados.updateUI();
+            }else if(src == refreshMacacao) {
+		listaMacacaoCadastrados.setListData(new ControleMacacao(dados).getNomesMacacao());			
+		listaMacacaoCadastrados.updateUI();
+            }else if(src == refreshSaia) {
+		listaSaiaCadastrados.setListData(new ControleSaia(dados).getNomesSaia());			
+		listaSaiaCadastrados.updateUI();
+            }else if(src == refreshShorte) {
+		listaShorteCadastrados.setListData(new ControleShorte(dados).getNomesShorte());			
+		listaShorteCadastrados.updateUI();
             }
         }
         

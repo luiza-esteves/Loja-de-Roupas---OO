@@ -569,16 +569,92 @@ public class ControleDados {
 			return true;
 		}
         }
-               public boolean inserirEditarEstoqueCalca(Calca dadosEstoque, int qtd) throws ParseException {
+    public boolean inserirEditarEstoqueCalca(String[] dadosEstoqueCalca) throws ParseException {
                 
-                        Estoque e = new Estoque(dadosEstoque,qtd,1);
-                        dados.inserirEditarEstoque(e, qtd);                        
+                        Estoque e = new Estoque(dadosEstoqueCalca[2],Integer.parseInt(dadosEstoqueCalca[3]),Integer.parseInt(dadosEstoqueCalca[1]),1);
+                        dados.inserirEditarEstoque(e,Integer.parseInt(dadosEstoqueCalca[0]));                        
                   
 			
 			return true;
     }
     
+    public boolean inserirEditarEstoqueCamisa(String[] dadosEstoque) throws ParseException {             
+                         Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),2);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                        
+                        
+			return true;
+    }
         
-       
+    public boolean inserirEditarEstoqueCamiseta(String[] dadosEstoque) throws ParseException {             
+                        Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),3);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                             
+			return true;
+    }
+    public boolean inserirEditarEstoqueCasaco(String[] dadosEstoque) throws ParseException {             
+                        Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),4);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                 
+			return true;
+    }
+    
+    public boolean inserirEditarEstoqueCinto(String[] dadosEstoque) throws ParseException {             
+                       Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),5);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                               
+			return true;
+    }
+    
+    public boolean inserirEditarEstoqueCropped(String[] dadosEstoque) throws ParseException {             
+                        Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),6);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                       
+			return true;
+    }
+    
+    public boolean inserirEditarEstoqueMacacao(String[] dadosEstoque) throws ParseException {             
+                        Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),7);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                     
+			return true;
+    }
+    
+    public boolean inserirEditarEstoqueSaia(String[] dadosEstoque) throws ParseException {             
+                       Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),8);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                      
+			return true;
+    }
+    
+    public boolean inserirEditarEstoqueShorte(String[] dadosEstoque) throws ParseException {             
+                        Estoque e = new Estoque(dadosEstoque[2],Integer.parseInt(dadosEstoque[3]),Integer.parseInt(dadosEstoque[1]),9);
+                        dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));                             
+			return true;
+    }
+        
+    public boolean removerEstoqueCalca(int i) {
+                        int qtdCalca = dados.getQtdCalca();
+                        int qtdVendas = dados.getQtdVenda();
+                        String calcaRemovida = dados.getEstoque()[i].getNomeRoupa();
+                        String aux;
+                        for (int j = 0; j < qtdVendas; j++) { 
+                                aux = dados.getVenda()[j].getCalca().getNome();
+                                if(calcaRemovida.compareTo(aux) == 0) 
+                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                        }
+                        
+                    if(i == (dados.getQtdCalca() - 1)) { // O aluno a ser removido está no final do array
+			dados.setQtdCalca(dados.getQtdCalca() - 1);
+			dados.getEstoque()[dados.getQtdCalca()] = null;
+			return true;
+                    } else { // o aluno a ser removido está no meio do array
+			int cont = 0;
+			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(calcaRemovida) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < dados.getQtdCalca()- 1; j++) {
+				dados.getEstoque()[j] = null;
+				dados.getEstoque()[j] = dados.getEstoque()[j+1];
+			}
+			dados.getEstoque()[dados.getQtdEstoque()] = null;
+			dados.setQtdEstoque(dados.getQtdEstoque() - 1);
+			return true;
+		}
+        }
     
 }
