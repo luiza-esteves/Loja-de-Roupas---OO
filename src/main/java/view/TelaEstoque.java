@@ -27,13 +27,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 	private  JButton refreshSaia;
         private  JButton estoqueShorte;
 	private  JButton refreshShorte;
-        
-        
-	private final JButton cadastroEstoque = new JButton("Cadastrar Estoque");
-	private final JButton refreshEstoque = new JButton("Atualizar Estoque");
-   
-        
-
+        	
         private static final JButton calca = new JButton("Calça");
         private static final JButton camisa = new JButton("Camisa");
         private static final JButton camiseta = new JButton("Camiseta");
@@ -89,7 +83,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
             
             
-            jan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
             jan.setVisible(true);
             calca.addActionListener(this);
             camisa.addActionListener(this);
@@ -158,6 +152,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     
                     janela.setSize(600, 600);
                     janela.setVisible(true);
+                    estoqueCamisa.addActionListener(this);
+                    refreshCamisa.addActionListener(this);
                     listaCamisaCadastrados.addListSelectionListener(this);
                     break;
                     
@@ -183,6 +179,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshCamiseta);
                     janela.add(titulo);
                     
+                    estoqueCamiseta.addActionListener(this);
+                    refreshCamiseta.addActionListener(this);
                     listaCamisetaCadastrados.addListSelectionListener(this);
                     janela.setSize(600, 600);
                     janela.setVisible(true);
@@ -210,6 +208,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshCasaco);
                     janela.add(titulo);
                     
+                    estoqueCasaco.addActionListener(this);
+                    refreshCasaco.addActionListener(this);
                     listaCasacoCadastrados.addListSelectionListener(this);
                     janela.setSize(600, 600);
                     janela.setVisible(true);
@@ -236,6 +236,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshCinto);
                     janela.add(titulo);
                     
+                    estoqueCinto.addActionListener(this);
+                    refreshCinto.addActionListener(this);
                     listaCintoCadastrados.addListSelectionListener(this);
                     
                     
@@ -263,6 +265,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshCropped);
                     janela.add(titulo);
                     
+                    estoqueCropped.addActionListener(this);
+                    refreshCropped.addActionListener(this);
                     listaCroppedCadastrados.addListSelectionListener(this);
                     
                     janela.setSize(600, 600);
@@ -289,6 +293,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshMacacao);
                     janela.add(titulo);
                     
+                    estoqueMacacao.addActionListener(this);
+                    refreshMacacao.addActionListener(this);
                     listaMacacaoCadastrados.addListSelectionListener(this);
                                       
                     janela.setSize(600, 600);
@@ -315,6 +321,9 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(estoqueSaia);
                     janela.add(refreshSaia);
                     janela.add(titulo);
+                    
+                    estoqueSaia.addActionListener(this);
+                    refreshSaia.addActionListener(this);
                     listaSaiaCadastrados.addListSelectionListener(this);
                     
                     janela.setSize(600, 600);
@@ -340,6 +349,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     janela.add(refreshShorte);
                     janela.add(titulo);
                     
+                    estoqueShorte.addActionListener(this);
+                    refreshShorte.addActionListener(this);
                     listaShorteCadastrados.addListSelectionListener(this);
                     janela.setSize(600, 600);
                     janela.setVisible(true);
@@ -350,6 +361,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
         }
         
 
+        @Override
         public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		

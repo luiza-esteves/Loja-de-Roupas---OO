@@ -98,6 +98,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 
 	//Captura eventos relacionados aos botões da interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		

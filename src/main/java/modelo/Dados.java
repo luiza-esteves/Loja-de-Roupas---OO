@@ -53,11 +53,11 @@ public class Dados {
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
-                        casaco[i] = new Casaco("Capuz"+i,"Z�per"+i,"Gola"+i,i,"nome"+i,"P",
+                        casaco[i] = new Casaco("Capuz"+i,"Zíper"+i,"Gola"+i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
-                        cinto[i] = new Cinto("Ocasi�o"+i,i,i,"nome"+i,"P",
+                        cinto[i] = new Cinto("Ocasião"+i,i,i,"nome"+i,"P",
                                 "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
                         "estampa"+i,i,i);
                         
@@ -177,6 +177,8 @@ public class Dados {
     public void setCalca(Calca[] calca) {
         this.calca = calca;
     }
+    
+    
 
     public int getQtdCalca() {
         return qtdCalca;

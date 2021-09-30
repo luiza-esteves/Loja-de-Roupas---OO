@@ -1,5 +1,4 @@
 package controle;
-import java.text.ParseException;
 import modelo.*;
 
 public class ControleCalca {
@@ -21,6 +20,59 @@ public class ControleCalca {
 
                     return s;
         }
-        
-        
+
+    public Calca[] getCalca() {
+        return calca;
+    }
+
+    public void setCalca(Calca[] calca) {
+        this.calca = calca;
+    }
+
+    public String getLavagem(int i) {		
+        return calca[i].getLavagem();
+    }
+
+    public String getTipoCalca(int i) {		
+        return calca[i].getTipoCalca();
+    }
+    public String getCos(int i) {		
+        return calca[i].getCos();
+    }
+
+    
+    public String getNome(int i) {
+        return calca[i].getNome();
+    }
+    public String getTamanho(int i) {
+        return calca[i].getTamanho();
+    }
+    public String getCor(int i) {
+        return calca[i].getCor();
+    }
+    public String getMaterial(int i) {
+        return calca[i].getMaterial();
+    }
+    public String getMarca(int i) {
+        return calca[i].getMarca();
+    }
+    public String getCategoria(int i) {
+        return calca[i].getCategoria();
+    }
+    public String getGenero(int i) {
+        return calca[i].getGenero();
+    }
+    public String getEstampa(int i) {
+        return calca[i].getEstampa();
+    }
+    public String getComprimento(int i) {
+        String compr = String.valueOf(calca[i].getComprimento());
+        return compr;
+    }
+    public String getPreco(int i) {
+        String compr = String.valueOf(calca[i].getPreco());
+        return compr;
+    }
+    
+    
 }

@@ -95,7 +95,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 jan.add(shorte);
 		
 		jan.setSize(400, 600);
-		jan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		jan.setVisible(true);
                 
                 calca.addActionListener(this);
@@ -417,6 +417,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 
 	}
         
+        @Override
         public void actionPerformed(ActionEvent e) {
             Object src = e.getSource(); 
             if(src == calca){     
@@ -438,7 +439,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
             }else if(src == shorte){
                 new TelaRoupa(dados).mostrarDados(9, dados);
             }else if (src == cadastroCalca){
-                new TelaDetalheRoupa().inserirEditar(1, dados, this, listaCalcaCadastrados.getSelectedIndex());
+                new TelaDetalheRoupa().inserirEditar(1, dados, this, 0);
             }else if (src == cadastroCamisa){
                 new TelaDetalheRoupa().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());
             }else if (src == cadastroCamiseta){
@@ -485,6 +486,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
             }
         }
         
+        @Override
     public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 

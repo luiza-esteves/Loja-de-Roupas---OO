@@ -5,18 +5,7 @@ import java.util.Scanner;
     
 public class Estoque {
      Scanner ler = new Scanner(System.in);
-     
-     private Calca calca = new Calca();
-     private Camisa camisa = new Camisa();
-     private Camiseta camiseta = new Camiseta();
-     private Casaco casaco = new Casaco();
-     private Cinto cinto = new Cinto();
-     private Cropped cropped = new Cropped();
-     private Macacao macacao = new Macacao();
-     private Saia saia = new Saia();
-     private Shorte shorte = new Shorte();
-     
-     
+
      private  int qtdDispobnivel,codRoupa;
      private String nomeRoupa;
      

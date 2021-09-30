@@ -73,7 +73,7 @@ public class TelaDetalheRoupa implements ActionListener{
            
 	private final JButton botaoExcluir = new JButton("Excluir");
 	private final JButton botaoSalvar = new JButton("Salvar");
-	private final String[] novoDado = new String[15];
+	private final String[] novoDado = new String[16];
 	private static ControleDados dados;
 
 	private int posicao;
@@ -308,7 +308,7 @@ public class TelaDetalheRoupa implements ActionListener{
                         valorTipoShort= new JTextField(200);
                         valorTipoBoca= new JTextField(200);
 
-			botaoSalvar.setBounds(245, 580, 115, 30);
+			botaoSalvar.setBounds(245, 650, 115, 30);
 		}
 
                 labelCodigo.setBounds(30, 20, 150, 25);
@@ -475,8 +475,8 @@ public class TelaDetalheRoupa implements ActionListener{
 
 		//Coloca botoes de excluir e salvar
 		if (op == 10 || op == 11 || op == 12 || op == 13 || op == 14 || op == 15 || op == 16 || op == 17 || op == 18) {
-			botaoSalvar.setBounds(120, 480, 115, 30);
-			botaoExcluir.setBounds(245, 480, 115, 30);
+			botaoSalvar.setBounds(120, 580, 115, 30);
+			botaoExcluir.setBounds(245, 580, 115, 30);
 			this.janela.add(botaoExcluir);
 		}
                 
@@ -611,6 +611,7 @@ public class TelaDetalheRoupa implements ActionListener{
 				mensagemErroCadastro();
 			} catch (ParseException ex) {
                         Logger.getLogger(TelaDetalhePessoa.class.getName()).log(Level.SEVERE, null, ex);
+                            
                     }
 		}
 
