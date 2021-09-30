@@ -10,7 +10,10 @@ public class Funcionario extends Pessoa {
     public Funcionario(){
         super();
     }
-
+	
+    public Funcionario(String n){
+    	this.nome = n;
+    }
     public Funcionario(double salario,String n, int cp, Telefone t, Endereco e,String d) {
         this.salario = salario;
         this.nome = n;
