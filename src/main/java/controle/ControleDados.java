@@ -111,14 +111,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCliente().getNome();
                                 if(clienteRemovido.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCliente() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCliente() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCliente(dados.getQtdCliente() - 1);
 			dados.getCliente()[dados.getQtdCliente()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCliente()[cont].getNome().compareTo(clienteRemovido) != 0) {
 				cont++;
@@ -158,14 +158,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getFuncionario().getNome();
                                 if(funcionarioRemovido.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (qtdFuncionario - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (qtdFuncionario - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdFuncionario(dados.getQtdFuncionario() - 1);
 			dados.getFuncionario()[dados.getQtdFuncionario()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getFuncionario()[cont].getNome().compareTo(funcionarioRemovido) != 0) {
 				cont++;
@@ -242,14 +242,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCalca; j++) { 
                                 aux = dados.getVenda()[j].getCalca().getNome();
                                 if(calcaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCalca()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCalca()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCalca(dados.getQtdCalca() - 1);
 			dados.getCalca()[dados.getQtdCalca()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCalca()[cont].getNome().compareTo(calcaRemovida) != 0) {
 				cont++;
@@ -285,14 +285,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCamisa; j++) { 
                                 aux = dados.getVenda()[j].getCamisa().getNome();
                                 if(camisaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCamisa()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCamisa()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCamisa(dados.getQtdCamisa() - 1);
 			dados.getCamisa()[dados.getQtdCamisa()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCamisa()[cont].getNome().compareTo(camisaRemovida) != 0) {
 				cont++;
@@ -328,14 +328,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCamiseta; j++) { 
                                 aux = dados.getVenda()[j].getCamiseta().getNome();
                                 if(camisetaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCamiseta()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCamiseta()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCamiseta(dados.getQtdCamiseta() - 1);
 			dados.getCamiseta()[dados.getQtdCamiseta()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCamiseta()[cont].getNome().compareTo(camisetaRemovida) != 0) {
 				cont++;
@@ -371,14 +371,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCasaco; j++) { 
                                aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(casacoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCasaco()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCasaco()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCasaco(dados.getQtdCasaco() - 1);
 			dados.getCasaco()[dados.getQtdCasaco()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCasaco()[cont].getNome().compareTo(casacoRemovida) != 0) {
 				cont++;
@@ -414,14 +414,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCinto; j++) { 
                                 aux = dados.getVenda()[j].getCinto().getNome();
                                 if(cintoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCinto()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCinto()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCinto(dados.getQtdCinto() - 1);
 			dados.getCinto()[dados.getQtdCinto()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCinto()[cont].getNome().compareTo(cintoRemovida) != 0) {
 				cont++;
@@ -457,14 +457,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdCropped; j++) { 
                                 aux = dados.getVenda()[j].getCropped().getNome();
                                 if(croppedRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdCropped()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdCropped()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdCropped(dados.getQtdCropped() - 1);
 			dados.getCropped()[dados.getQtdCropped()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getCropped()[cont].getNome().compareTo(croppedRemovida) != 0) {
 				cont++;
@@ -500,14 +500,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdMacacao; j++) { 
                                 aux = dados.getVenda()[j].getMacacao().getNome();
                                 if(macacaoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdMacacao()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdMacacao()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdMacacao(dados.getQtdMacacao() - 1);
 			dados.getMacacao()[dados.getQtdMacacao()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getMacacao()[cont].getNome().compareTo(macacaoRemovida) != 0) {
 				cont++;
@@ -543,14 +543,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdSaia; j++) { 
                                 aux = dados.getVenda()[j].getSaia().getNome();
                                 if(saiaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdSaia()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdSaia()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdSaia(dados.getQtdSaia() - 1);
 			dados.getSaia()[dados.getQtdSaia()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getSaia()[cont].getNome().compareTo(saiaRemovida) != 0) {
 				cont++;
@@ -586,14 +586,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdShorte; j++) { 
                                 aux = dados.getVenda()[j].getShorte().getNome();
                                 if(shorteRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover a calça, pois ela está vinculada à uma venda
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover a calï¿½a, pois ela estï¿½ vinculada ï¿½ uma venda
                         }
                         
-                    if(i == (dados.getQtdShorte()- 1)) { // A calça a ser removido está no final do array
+                    if(i == (dados.getQtdShorte()- 1)) { // A calï¿½a a ser removido estï¿½ no final do array
 			dados.setQtdShorte(dados.getQtdShorte() - 1);
 			dados.getShorte()[dados.getQtdShorte()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getShorte()[cont].getNome().compareTo(shorteRemovida) != 0) {
 				cont++;
@@ -674,14 +674,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCalca().getNome();
                                 if(calcaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCalca() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCalca() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCalca(dados.getQtdCalca() - 1);
 			dados.getEstoque()[dados.getQtdCalca()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(calcaRemovida) != 0) {
 				cont++;
@@ -705,14 +705,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCamisa().getNome();
                                 if(camisaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCamisa() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCamisa() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCamisa(dados.getQtdCamisa() - 1);
 			dados.getEstoque()[dados.getQtdCamisa()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(camisaRemovida) != 0) {
 				cont++;
@@ -736,14 +736,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCamiseta().getNome();
                                 if(camisetaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCamiseta() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCamiseta() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCamiseta(dados.getQtdCamiseta() - 1);
 			dados.getEstoque()[dados.getQtdCamiseta()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(camisetaRemovida) != 0) {
 				cont++;
@@ -767,14 +767,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(casacoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCasaco() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCasaco() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCasaco(dados.getQtdCasaco() - 1);
 			dados.getEstoque()[dados.getQtdCasaco()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(casacoRemovida) != 0) {
 				cont++;
@@ -798,14 +798,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(cintoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCinto() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCinto() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCinto(dados.getQtdCinto() - 1);
 			dados.getEstoque()[dados.getQtdCinto()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(cintoRemovida) != 0) {
 				cont++;
@@ -829,14 +829,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(croppedRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdCropped() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdCropped() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdCropped(dados.getQtdCropped() - 1);
 			dados.getEstoque()[dados.getQtdCropped()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(croppedRemovida) != 0) {
 				cont++;
@@ -860,14 +860,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(macacaoRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdMacacao() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdMacacao() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdMacacao(dados.getQtdMacacao() - 1);
 			dados.getEstoque()[dados.getQtdMacacao()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(macacaoRemovida) != 0) {
 				cont++;
@@ -891,14 +891,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(saiaRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdSaia() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdSaia() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdSaia(dados.getQtdSaia() - 1);
 			dados.getEstoque()[dados.getQtdSaia()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(saiaRemovida) != 0) {
 				cont++;
@@ -922,14 +922,14 @@ public class ControleDados {
                         for (int j = 0; j < qtdVendas; j++) { 
                                 aux = dados.getVenda()[j].getCasaco().getNome();
                                 if(shorteRemovida.compareTo(aux) == 0) 
-                                        return false; //não é possível remover aluno pois ele está matriculado em um curso
+                                        return false; //nï¿½o ï¿½ possï¿½vel remover aluno pois ele estï¿½ matriculado em um curso
                         }
                         
-                    if(i == (dados.getQtdShorte() - 1)) { // O aluno a ser removido está no final do array
+                    if(i == (dados.getQtdShorte() - 1)) { // O aluno a ser removido estï¿½ no final do array
 			dados.setQtdShorte(dados.getQtdShorte() - 1);
 			dados.getEstoque()[dados.getQtdShorte()] = null;
 			return true;
-                    } else { // o aluno a ser removido está no meio do array
+                    } else { // o aluno a ser removido estï¿½ no meio do array
 			int cont = 0;
 			while(dados.getEstoque()[cont].getNomeRoupa().compareTo(shorteRemovida) != 0) {
 				cont++;
