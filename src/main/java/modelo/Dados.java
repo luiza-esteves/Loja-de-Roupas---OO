@@ -107,6 +107,11 @@ public class Dados {
                 
                 
 	}
+    
+     public void inserirEditarVenda(Venda v, int pos) {
+ 		this.venda[pos] = v;
+ 		if(pos == qtdVenda) qtdVenda++;
+     } 
      
     public void inserirEditarCliente(Cliente c, int pos) {
 		this.cliente[pos] = c;

@@ -205,7 +205,7 @@ public class Venda {
 		this.shorte = shorte;
 	}
 
-	public int getCodCompra() {
+	public Integer getCodCompra() {
 		return codCompra;
 	}
 
