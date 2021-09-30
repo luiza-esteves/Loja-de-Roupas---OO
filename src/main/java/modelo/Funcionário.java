@@ -2,44 +2,38 @@ package modelo;
 import java.util.Date;
 
 import java.util.Scanner;
-
-public class Cliente extends Pessoa {
+public class Funcionario extends Pessoa {
     Scanner ler = new Scanner(System.in);
-    private int totalCompras;
     
-    public Cliente(){
+    private double salario;
+    
+    public Funcionario(){
         super();
     }
     
-    public Cliente(String n) {
+    public Funcionario(String n) {
     	this.nome = n;
     }
     
-    public Cliente(int totalCompras, String n, int cp, Telefone t, Endereco e,String d) {
-        this.totalCompras = totalCompras;
+    public Funcionario(double salario,String n, int cp, Telefone t, Endereco e,String d) {
+        this.salario = salario;
         this.nome = n;
         this.cpf = cp;
         this.telefone = t;
         this.endereco = e;
         this.dataNascimento = d;
-           
     }
     
-    public void cadastrarVenda(){
-        int qtd;
-        totalCompras=this.totalCompras++;
-    }
-    
-     @Override
+    @Override
         public String toString() {
 		return "Nome:" + nome+
                         "Cpf:" + cpf+
                         "Telefone:" + telefone+
                         "Endereço:" + endereco+
                         "Data de nascimento:" + dataNascimento+
-                        "Total de compras:" + totalCompras;
+                        "Salário:" + salario;
 	}
-
+    
     public Scanner getLer() {
         return ler;
     }
@@ -48,12 +42,12 @@ public class Cliente extends Pessoa {
         this.ler = ler;
     }
 
-    public int getTotalCompras() {
-        return totalCompras;
+    public double getSalario() {
+        return salario;
     }
 
-    public void setTotalCompras(int totalCompras) {
-        this.totalCompras = totalCompras;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     public String getDataNascimento() {
@@ -95,5 +89,6 @@ public class Cliente extends Pessoa {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-     
+    
+
 }
