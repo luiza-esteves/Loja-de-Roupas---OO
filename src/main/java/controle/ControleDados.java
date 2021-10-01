@@ -181,14 +181,13 @@ public class ControleDados {
     
     public boolean inserirEditarVenda(String[] dadosVendas){
         
-		if(!dadosVendas[3].matches("[0-9]+") || !dadosVendas[5].matches("[0-9]+") || 
-				  !dadosVendas[6].matches("[0-9]+")) {
+		if(!dadosVendas[1].matches("[0-9]+")) {
                     
 			return false;
 		} else {
                 System.out.println("teste");
 				Venda v = new Venda(Integer.parseInt(dadosVendas[1]), Double.parseDouble(dadosVendas[4]), dadosVendas[5], 
-				new Funcionario (dadosVendas[7]),new Cliente(dadosVendas[6]),new Cinto(dadosVendas[3]));
+				new Funcionario (dadosVendas[7]),new Cliente(dadosVendas[6]),dadosVendas[3]);
                                         
 				dados.inserirEditarVenda(v, Integer.parseInt(dadosVendas[0]));
 				return true;
@@ -201,7 +200,7 @@ public class ControleDados {
         String aux;
         
         if(i == (dados.getQtdVenda()- 1)) { 
-        	dados.setQtdCamisa(dados.getQtdCamisa() - 1);
+        	dados.setQtdVenda(dados.getQtdVenda() - 1);
         	dados.getVenda()[dados.getQtdVenda()] = null;
         	return true;
         } else { 

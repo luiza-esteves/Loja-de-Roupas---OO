@@ -384,7 +384,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 if(src == shorte)
 			new TelaEstoque(dados).mostrarDados(9, dados);
             if (src == estoqueCalca){
-                new TelaDetalheEstoque().inserirEditar(1, dados, this,listaCalcaCadastrados.getSelectedIndex() );
+                new TelaDetalheEstoque().inserirEditar(1, dados, this,0 );
             }
             if (src == estoqueCamisa){
                 new TelaDetalheEstoque().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());

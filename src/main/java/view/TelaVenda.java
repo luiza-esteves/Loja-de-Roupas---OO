@@ -17,6 +17,8 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 	public void mostrarDados (ControleDados d, int op) {
 		dados = d;
 		
+                
+                
 		listaCods = new ControleVenda(dados).getCodigosCompras(); 
                 listaVendasCadastradas = new JList<String>(listaCods);
 		janela = new JFrame("Vendas");	
@@ -30,8 +32,8 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		listaVendasCadastradas.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		listaVendasCadastradas.setVisibleRowCount(10);
 		
-		cadastroVenda.setBounds(70, 177, 100, 30);
-		refreshVenda.setBounds(200, 177, 100, 30);
+		cadastroVenda.setBounds(70, 400, 100, 30);
+		refreshVenda.setBounds(200, 400, 100, 30);
 		
 		janela.setLayout(null);
 		
@@ -40,7 +42,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		janela.add(cadastroVenda);
 		janela.add(refreshVenda);
 		
-		janela.setSize(400, 250);
+		janela.setSize(400, 500);
 		janela.setVisible(true);
 		
 		cadastroVenda.addActionListener(this);
@@ -49,6 +51,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		
 		}
 		
+        @Override
     public void actionPerformed (ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -66,7 +69,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 
 		if(e.getValueIsAdjusting() && src == listaVendasCadastradas) {
-			new TelaDetalheVenda().inserirEditar(3, dados, this, 
+			new TelaDetalheVenda().inserirEditar(2, dados, this, 
 				listaVendasCadastradas.getSelectedIndex());
 		}
  

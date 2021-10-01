@@ -9,26 +9,25 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
-import view.TelaPessoa;
 
 public class TelaDetalheVenda implements ActionListener{
 	private JFrame janela;
 	
-	private JLabel labelCod = new JLabel("C�digo da compra: ");
+	private final JLabel labelCod = new JLabel("Código da compra: ");
 	private JTextField valorCod;
-	private JLabel labelNomeRoupa = new JLabel("Pe�a: ");
+	private final JLabel labelNomeRoupa = new JLabel("Peça: ");
 	private JTextField valorRoupa;
-	private JLabel labelValorTotal = new JLabel("Valor total: ");
+	private final JLabel labelValorTotal = new JLabel("Valor total: ");
 	private JTextField valorValor;
-	private JLabel labelForma = new JLabel("Forma de pagamento: ");
+	private final JLabel labelForma = new JLabel("Forma de pagamento: ");
 	private JTextField valorForma;
-	private JLabel labelCliente = new JLabel("Cliente: ");
+	private final JLabel labelCliente = new JLabel("Cliente: ");
 	private JTextField valorCliente;
-	private JLabel labelFuncionario = new JLabel("Funcion�rio: ");
+	private final JLabel labelFuncionario = new JLabel("Funcionário: ");
 	private JTextField valorFuncionario;
 	
-	private JButton botaoExcluir = new JButton("Excluir");
-	private JButton botaoSalvar = new JButton("Salvar");
+	private final JButton botaoExcluir = new JButton("Excluir");
+	private final JButton botaoSalvar = new JButton("Salvar");
 	
 	private String[] novoDado = new String[9];
 	private static ControleDados dados;
@@ -48,7 +47,7 @@ public class TelaDetalheVenda implements ActionListener{
 		
 		if (op == 2) {
 			valorCod = new JTextField(String.valueOf(dados.getVenda()[pos].getCodCompra()), 200);
-			valorRoupa = new JTextField(String.valueOf(dados.getVenda()[pos].getCamisa()),200);
+			valorRoupa = new JTextField(String.valueOf(dados.getVenda()[pos].getNomeRoupa()),200);
 			valorValor = new JTextField(String.valueOf(dados.getVenda()[pos].getValorTotal()),200);
 			valorForma = new JTextField(String.valueOf(dados.getVenda()[pos].getFormaPagamento()), 200);
 			valorCliente = new JTextField(String.valueOf(dados.getVenda()[pos].getCliente().getNome()), 200);
@@ -61,26 +60,27 @@ public class TelaDetalheVenda implements ActionListener{
 			valorForma = new JTextField(200);
 			valorCliente = new JTextField(200);
 			valorFuncionario = new JTextField(200);
-
-			botaoSalvar.setBounds(245, 175, 115, 30);
+                        
+			botaoSalvar.setBounds(245, 300, 115, 30);
+                        botaoSalvar.addActionListener(this);
 		}
 		
 		labelCod.setBounds(30, 20, 150, 25);
 		valorCod.setBounds(180, 20, 180, 25);
-		labelNomeRoupa.setBounds(30, 50, 150, 25);
-		valorRoupa.setBounds(180, 50, 180, 25);
-		labelValorTotal.setBounds(30, 50, 180, 25);
-		valorValor.setBounds(180, 50, 180, 25);		
-		labelForma.setBounds(30, 80, 150, 25);
-		valorForma.setBounds(180, 80, 180, 25);
-		labelCliente.setBounds(30, 110, 150, 25);
-		valorCliente.setBounds(180, 110, 180, 25);
-		labelFuncionario.setBounds(30, 140, 150, 25);
-		valorFuncionario.setBounds(180, 140, 28, 25);
+		labelNomeRoupa.setBounds(30, 60, 150, 25);
+		valorRoupa.setBounds(180, 60, 180, 25);
+		labelValorTotal.setBounds(30, 100, 180, 25);
+		valorValor.setBounds(180, 100, 180, 25);		
+		labelForma.setBounds(30, 140, 150, 25);
+		valorForma.setBounds(180, 140, 180, 25);
+		labelCliente.setBounds(30, 180, 150, 25);
+		valorCliente.setBounds(180, 180, 180, 25);
+		labelFuncionario.setBounds(30, 220, 150, 25);
+		valorFuncionario.setBounds(180, 220, 180, 25);
 		
 		if (op == 2) {
-			botaoSalvar.setBounds(120, 175, 115, 30);
-			botaoExcluir.setBounds(245, 175, 115, 30);
+			botaoSalvar.setBounds(120, 300, 115, 30);
+			botaoExcluir.setBounds(245, 300, 115, 30);
 			this.janela.add(botaoExcluir);
 		}
 		
@@ -100,13 +100,14 @@ public class TelaDetalheVenda implements ActionListener{
 
 		this.janela.setLayout(null);
 
-		this.janela.setSize(400, 250);
+		this.janela.setSize(450, 600);
 		this.janela.setVisible(true);
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
 	}
 	
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
@@ -134,21 +135,17 @@ public class TelaDetalheVenda implements ActionListener{
 				}
 				else mensagemErroCadastro();
 
-			} catch (NullPointerException exc1) {
-				mensagemErroCadastro();
-			} catch (NumberFormatException exc2) {
+			} catch (NullPointerException | NumberFormatException exc1) {
 				mensagemErroCadastro();
 			}
 		}
 
 		if(src == botaoExcluir) {
-			boolean res = false;
-
-			if (opcao == 3) {
+			boolean res = false;	
 				res = dados.removerVenda(posicao);
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusao(); 
-			}			
+						
 		}
 	}
 	
@@ -168,7 +165,7 @@ public class TelaDetalheVenda implements ActionListener{
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone n�o cont�m apenas n�meros", null, 
+				+ "2. Código não contem apenas números", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	

@@ -25,7 +25,7 @@ public class TelaMenu implements ActionListener {
 		funcionario.setBounds(140, 100, 100, 30);	
                 estoque.setBounds(140, 200, 100, 30);
                 venda.setBounds(140, 150, 100, 30);
-                roupa.setBounds(140, 300, 100, 30);
+                roupa.setBounds(140, 200, 100, 30);
 		
 		janela.setLayout(null);
 		
@@ -36,7 +36,7 @@ public class TelaMenu implements ActionListener {
                 janela.add(venda);
                  janela.add(roupa);
 		
-		janela.setSize(400, 600);
+		janela.setSize(400, 400);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
 	}

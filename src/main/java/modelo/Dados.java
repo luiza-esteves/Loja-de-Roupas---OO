@@ -83,7 +83,7 @@ public class Dados {
                         
                         estoque[i] = new Estoque(calca[i].getNome(),2,1,1);
                         
-                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i]);
+                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i].getNome());
                         
 				
 		} 

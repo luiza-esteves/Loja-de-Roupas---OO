@@ -17,97 +17,28 @@ public class Venda {
     private Shorte shorte = new Shorte();
     
     private int codCompra; 
-	private double valorTotal;
-	private String formaPagamento;
+    private double valorTotal;
+    private String formaPagamento, nomeRoupa;
 	
 	public Venda() {
 		
 	}
 	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Calca cl) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.calca = cl;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Camisa cms) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.camisa = cms;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Camiseta cmst) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.camiseta = cmst;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Casaco casac) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.casaco= casac;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cinto cin) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.cinto = cin;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Cropped crop) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.cropped = crop;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Macacao mac) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.macacao = mac;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Saia s) {
-		this.codCompra = cod;
-		this.valorTotal = valorTotal;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.saia = s;
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, Shorte shor) {
+	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, String nomeRoupa) {
 		this.codCompra = cod;
 		this.valorTotal = valorT;
 		this.formaPagamento = formaPag;
 		this.funcionario = func;
 		this.cliente = c;
-		this.shorte = shor;
+		this.nomeRoupa = nomeRoupa;
 	}
 	
+	
+	
+    @Override
 	 public String toString() {
 
-	        return("C�digo da compra: \n"+ codCompra
+	        return("Código da compra: \n"+ codCompra
 	        	+  "Valor total: \n"+ valorTotal
 	        	+  "Forma de pagamento: \n" +formaPagamento
 	        	+  "Vendedor: \n" +funcionario
@@ -115,7 +46,7 @@ public class Venda {
 	            +  ""    
 	        );
 	        
-	    }
+	}
 	
 	public Funcionario getFuncionario() {
 		return funcionario;
@@ -228,15 +159,14 @@ public class Venda {
 	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+    public String getNomeRoupa() {
+        return nomeRoupa;
+    }
+
+    public void setNomeRoupa(String nomeRoupa) {
+        this.nomeRoupa = nomeRoupa;
+    }
 	
 	
 }
