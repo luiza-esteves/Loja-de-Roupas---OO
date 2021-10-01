@@ -388,28 +388,28 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 new TelaDetalheEstoque().inserirEditar(1, dados, this,0 );
             }
             if (src == estoqueCamisa){
-                new TelaDetalheEstoque().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(2, dados, this, 0);
             }
             if (src == estoqueCamiseta){
-                new TelaDetalheEstoque().inserirEditar(3, dados, this, listaCamisetaCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(3, dados, this, 0);
             }
             if (src == estoqueCasaco){
-                new TelaDetalheEstoque().inserirEditar(4, dados, this, listaCasacoCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(4, dados, this, 0);
             }
             if (src == estoqueCinto){
-                new TelaDetalheEstoque().inserirEditar(5, dados, this, listaCintoCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(5, dados, this, 0);
             }
             if (src == estoqueCropped){
-                new TelaDetalheEstoque().inserirEditar(6, dados, this, listaCroppedCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(6, dados, this, 0);
             }
             if (src == estoqueMacacao){
-                new TelaDetalheEstoque().inserirEditar(7, dados, this, listaMacacaoCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(7, dados, this, 0);
             }
             if (src == estoqueSaia){
-                new TelaDetalheEstoque().inserirEditar(8, dados, this, listaSaiaCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(8, dados, this, 0);
             }
             if (src == estoqueShorte){
-                new TelaDetalheEstoque().inserirEditar(9, dados, this, listaShorteCadastrados.getSelectedIndex());
+                new TelaDetalheEstoque().inserirEditar(9, dados, this, 0);
             }
                 
             if(src == refreshCalca) {

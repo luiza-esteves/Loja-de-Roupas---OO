@@ -38,7 +38,7 @@ public class Dados {
      
      
      public void fillWithSomeData() {
-		Date d = Calendar.getInstance().getTime();
+		
 		for(int i = 0; i < 5; i++) {
 			telefone[i] = new Telefone((i+1)*100, (i+1)*1000000);
                         endereco[i] = new Endereco("cidade"+i,"estado"+i,"bairro"+i,11111111+i,i+2,i,i+1);
@@ -131,11 +131,7 @@ public class Dados {
     
     public void inserirEditarCalca(Calca c, int pos) {
 		this.calca[pos] = c;               
-		if(pos == qtdCalca) qtdCalca++;
-                
-                
-                
-                    
+		if(pos == qtdCalca) qtdCalca++;         
     }
     
     public void inserirEditarCamisa(Camisa c, int pos) {

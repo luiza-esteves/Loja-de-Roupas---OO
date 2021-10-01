@@ -16,8 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import modelo.Estoque;
-
 
 
 public class TelaDetalheEstoque implements ActionListener, ListSelectionListener{
@@ -42,17 +40,12 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
     JList listaNome = null;
     
     private final JButton botaoExcluir = new JButton("Excluir");
-	private final JButton botaoSalvar = new JButton("Salvar");
-        private String nome ;
-//    list = new JList(d.get); //data has type Object[]
-    //JScrollPane listScroller = new JScrollPane(list);
+    private final JButton botaoSalvar = new JButton("Salvar");
+    private String nome ;
+
     
     public void inserirEditar(int op, ControleDados d, 
                                     TelaEstoque p, int pos) {
-                e = new ControleEstoque(d);
-          
-        
-
 		opcao = op;
 		posicao = pos;
 		dados = d;
