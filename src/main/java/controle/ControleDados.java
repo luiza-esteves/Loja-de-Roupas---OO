@@ -918,7 +918,7 @@ public class ControleDados {
                         String saiaRemovida = dados.getEstoque()[i].getNomeRoupa();
                         String aux;
                         for (int j = 0; j < qtdVendas; j++) { 
-                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                aux = dados.getVenda()[j].getSaia().getNome();
                                 if(saiaRemovida.compareTo(aux) == 0) 
                                         return false; //n�o � poss�vel remover aluno pois ele est� matriculado em um curso
                         }
@@ -949,7 +949,7 @@ public class ControleDados {
                         String shorteRemovida = dados.getEstoque()[i].getNomeRoupa();
                         String aux;
                         for (int j = 0; j < qtdVendas; j++) { 
-                                aux = dados.getVenda()[j].getCasaco().getNome();
+                                aux = dados.getVenda()[j].getShorte().getNome();
                                 if(shorteRemovida.compareTo(aux) == 0) 
                                         return false; //n�o � poss�vel remover aluno pois ele est� matriculado em um curso
                         }

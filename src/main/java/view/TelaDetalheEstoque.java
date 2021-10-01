@@ -127,97 +127,12 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
                     valorQtdEstoque = new JTextField(qtdDisp, 200);              
                 }
                 else{
-  
+                    valorNome = new JTextField(200);    
                     valorCodigo = new JTextField(200);               
                     valorQtdEstoque = new JTextField(200);                    
                     botaoSalvar.setBounds(245, 580, 115, 30);
                                       
-                    if(op==1){
-                        
-                        ControleCalca calca = new ControleCalca(dados);
-                        roupa = calca.getNomesCalcas();
-                        listaNome = new JList(calca.getNomesCalcas());
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount(-1);
-                        listaNome.addListSelectionListener(this);
-                           
-                    }else if(op==2){
-                     
-                        ControleCamisa camisa = new ControleCamisa(dados);
-                        roupa = camisa.getNomesCamisa();
-                        listaNome = new JList(camisa.getNomesCamisa());
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        listaNome.addListSelectionListener(this);
-                        nome = String.valueOf(listaNome.getSelectedValue());                        
-                    }else if(op==3){
-                        ControleCamiseta camiseta = new ControleCamiseta(dados);
-                        listaNome = new JList(camiseta.getNomesCamiseta());
-                        roupa = camiseta.getNomesCamiseta();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                    }else if(op==4){
-                        ControleCasaco casaco = new ControleCasaco(dados);
-                        roupa = casaco.getNomesCasaco();
-                        listaNome = new JList(casaco.getNomesCasaco());
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                        
-                    }else if(op==5){
-                        ControleCinto cinto = new ControleCinto(dados);
-                        listaNome = new JList(cinto.getNomesCinto());
-                        roupa = cinto.getNomesCinto();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                        
-                    }else if(op==6){
-                        ControleCropped cropped = new ControleCropped(dados);
-                        listaNome = new JList(cropped.getNomesCropped());
-                        roupa = cropped.getNomesCropped();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                        
-                    }else if(op==7){
-                        ControleMacacao macacao = new ControleMacacao(dados);
-                        listaNome = new JList(macacao.getNomesMacacao());
-                        roupa = macacao.getNomesMacacao();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                    }else if(op==8){
-                        ControleSaia saia = new ControleSaia(dados);
-                        listaNome = new JList(saia.getNomesSaia());
-                        roupa = saia.getNomesSaia();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                        
-                    }else if(op==9){
-                        ControleShorte shorte = new ControleShorte(dados);
-                        listaNome = new JList(shorte.getNomesShorte());
-                        roupa = shorte.getNomesShorte();
-                        listaNome.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-                        listaNome.setLayoutOrientation(JList.VERTICAL_WRAP);
-                        listaNome.setVisibleRowCount (-1);
-                        nome = String.valueOf(listaNome.getSelectedValue());
-                    }
-                    
-                    JScrollPane listScroller = new JScrollPane(listaNome);
-                    listScroller.setBounds(180, 60, 180, 100);
-                    this.janela.add(listScroller);
-                    
+    
                 }
                 
                 if (op == 10 || op == 11 || op == 12 || op == 13 || op == 14 || op == 15 || op == 16 || op == 17 || op == 18) {
@@ -231,13 +146,13 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
                 labelCodigo.setBounds(30, 200, 150, 25);
                 valorCodigo.setBounds(180, 200, 180, 25);
 		labelNome.setBounds(30, 70, 150, 25);
-		
+		valorNome.setBounds(180, 70, 180, 25);
                 labelQtdEstoque.setBounds(30, 250, 150, 25);
                 valorQtdEstoque.setBounds(180, 250, 180, 25); 
                 
                 
                 this.janela.add(labelNome);
-		
+		this.janela.add(valorNome);
                 this.janela.add(labelCodigo);
 		this.janela.add(valorCodigo);
 
@@ -272,12 +187,27 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
 				
 
 				novoDado[1] =  valorCodigo.getText();
-                                novoDado[2] =  nome;
-                                System.out.println(novoDado[2]);
+                                novoDado[2] =  valorNome.getText();                              
 				novoDado[3] =  valorQtdEstoque.getText();
                                 int qtd = Integer.parseInt(novoDado[3]);
                                 if (opcao == 1 || opcao == 10) {
                                     res = dados.inserirEditarEstoqueCalca(novoDado);
+                                }else if (opcao == 2 || opcao == 11) {
+                                    res = dados.inserirEditarEstoqueCamisa(novoDado);
+                                }else if (opcao == 3 || opcao == 12) {
+                                    res = dados.inserirEditarEstoqueCamiseta(novoDado);
+                                }else if (opcao == 4 || opcao == 13) {
+                                    res = dados.inserirEditarEstoqueCasaco(novoDado);
+                                }else if (opcao == 5 || opcao == 14) {
+                                    res = dados.inserirEditarEstoqueCinto(novoDado);
+                                }else if (opcao == 6 || opcao == 15) {
+                                    res = dados.inserirEditarEstoqueCropped(novoDado);
+                                }else if (opcao == 7 || opcao == 16) {
+                                    res = dados.inserirEditarEstoqueMacacao(novoDado);
+                                }else if (opcao == 8 || opcao == 17) {
+                                    res = dados.inserirEditarEstoqueSaia(novoDado);
+                                }else if (opcao == 9 || opcao == 18) {
+                                    res = dados.inserirEditarEstoqueShorte(novoDado);
                                 }
 				if(res) {
                                     mensagemSucessoCadastro();
@@ -377,23 +307,17 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+				+ "2. código não contém apenas números", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void mensagemErroExclusaoAluno() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o aluno está matriculado\n"
-				+ "em alguma disciplina. Se sim, cancele\n "
-				+ "a matricula e tente novamente.", null, 
+		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n ", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void mensagemErroExclusaoProf() {
-		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o professor está responsável\n"
-				+ "por alguma disciplina. Se sim, substitua\n "
-				+ "o professor e tente novamente.", null, 
+		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n ", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 

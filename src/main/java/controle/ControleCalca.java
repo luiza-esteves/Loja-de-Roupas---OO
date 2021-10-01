@@ -17,7 +17,6 @@ public class ControleCalca {
                     for(int i = 0; i < qtdCalca; i++) {
                             s[i] = calca[i].getNome();
                     }
-
                     return s;
         }
 

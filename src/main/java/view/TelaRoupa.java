@@ -16,7 +16,7 @@ import javax.swing.event.ListSelectionListener;
 public class TelaRoupa implements ActionListener, ListSelectionListener{
     
         private JFrame janela;
-	private JLabel titulo = new JLabel("Menu de Estoque");
+	private JLabel titulo = new JLabel("Menu de Roupas");
 	private JButton cadastroCalca ;
 	private JButton refreshCalca;
 	private JButton cadastroCamisa;
@@ -37,7 +37,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
 	private JButton refreshShorte;
         
         
-        private static final JFrame jan = new JFrame("Estoque");
+        private static final JFrame jan = new JFrame("Roupas");
         private static final JLabel tit = new JLabel("Roupas");     
         private static final JButton calca = new JButton("Calça");
         private static final JButton camisa = new JButton("Camisa");
@@ -107,9 +107,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 macacao.addActionListener(this);
                 saia.addActionListener(this);
                 shorte.addActionListener(this);
-                
-                
-                            
+                     
     }
     
         

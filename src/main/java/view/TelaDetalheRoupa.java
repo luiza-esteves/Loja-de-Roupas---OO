@@ -696,15 +696,15 @@ public class TelaDetalheRoupa implements ActionListener{
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+				+ "2. código, preço, comprimento não contém apenas números", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void mensagemErroExclusaoAluno() {
 		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o aluno está matriculado\n"
-				+ "em alguma disciplina. Se sim, cancele\n "
-				+ "a matricula e tente novamente.", null, 
+				+ "Verifique se o aluno a roupa está\n"
+				+ "cadastrada em alguma venda.\n "
+				, null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
