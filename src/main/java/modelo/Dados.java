@@ -29,10 +29,10 @@ public class Dados {
      private int qtdTelefone;
      private Endereco[] endereco = new Endereco[50];
      private int qtdEndereco;
-     private Departamento[] departamento = new Departamento[50];
-     private int qtdDepartamento;
+     
      private Estoque[] estoque = new Estoque[50];
      private int qtdEstoque;
+     
      private Funcionario[] funcionario = new Funcionario[50];
      private int qtdFuncionario;
      
@@ -88,14 +88,14 @@ public class Dados {
 				
 		} 
 		
-		qtdCalca= 5;
+		qtdCalca = 5;
 		qtdCamisa = 5;
 		qtdCamiseta = 5;
 		qtdCasaco = 5;
 		qtdCinto = 5;
                 qtdCliente =5; 
                 qtdCropped =5; 
-                qtdDepartamento =5; 
+              
                 qtdEndereco =5; 
                 qtdEstoque =5; 
                 qtdFuncionario =5; 
@@ -130,8 +130,12 @@ public class Dados {
     }
     
     public void inserirEditarCalca(Calca c, int pos) {
-		this.calca[pos] = c;
+		this.calca[pos] = c;               
 		if(pos == qtdCalca) qtdCalca++;
+                
+                
+                
+                    
     }
     
     public void inserirEditarCamisa(Camisa c, int pos) {
@@ -186,6 +190,8 @@ public class Dados {
     public int getQtdCalca() {
         return qtdCalca;
     }
+
+    
 
     public void setQtdCalca(int qtdCalca) {
         this.qtdCalca = qtdCalca;
@@ -366,6 +372,7 @@ public class Dados {
     public void setQtdTelefone(int qtdTelefone) {
         this.qtdTelefone = qtdTelefone;
     }
+ 
 
     public Endereco[] getEndereco() {
         return endereco;
@@ -383,21 +390,6 @@ public class Dados {
         this.qtdEndereco = qtdEndereco;
     }
 
-    public Departamento[] getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(Departamento[] departamento) {
-        this.departamento = departamento;
-    }
-
-    public int getQtdDepartamento() {
-        return qtdDepartamento;
-    }
-
-    public void setQtdDepartamento(int qtdDepartamento) {
-        this.qtdDepartamento = qtdDepartamento;
-    }
 
     public Estoque[] getEstoque() {
         return estoque;

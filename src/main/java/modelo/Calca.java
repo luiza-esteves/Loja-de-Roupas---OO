@@ -35,10 +35,10 @@ public class Calca extends Roupa{
 
     @Override
     public String toString() {
-        return("Nome: /n"+nome
-                +"Código: /n"+codigo
-                +"Tamanho: /n"+tamanho
-                +"Cor: /n"+cor
+        return("Nome: "+nome
+                +"Código: "+codigo
+                +"Tamanho: "+tamanho
+                +"Cor: "+cor
                 +"Material: "+material
                 +"Marca: "+marca
                 +"Categoria: "+categoria

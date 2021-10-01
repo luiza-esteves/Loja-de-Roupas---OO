@@ -21,9 +21,7 @@ public class ControleCalca {
                     return s;
         }
 
-    public Calca[] getCalca() {
-        return calca;
-    }
+
 
     public void setCalca(Calca[] calca) {
         this.calca = calca;

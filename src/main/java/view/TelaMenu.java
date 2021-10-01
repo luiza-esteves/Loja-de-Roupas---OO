@@ -7,36 +7,37 @@ import controle.*;
 
 public class TelaMenu implements ActionListener {
     
-        private static JFrame janela = new JFrame("Loja de roupas");
-	private static JLabel titulo = new JLabel("Menu Principal");
-	private static JButton cliente = new JButton("Cliente");
-	private static JButton funcionario = new JButton("Funcionário");
-        private static JButton estoque = new JButton("Estoque");
-	private static JButton venda = new JButton("Nova venda");
-        private static JButton roupa = new JButton("Roupa");
+        private static final JFrame janela = new JFrame("Loja de roupas");
+	private static final JLabel titulo = new JLabel("Menu Principal");
+	private static final JButton cliente = new JButton("Cliente");
+	private static final JButton funcionario = new JButton("Funcionário");
+        private static final JButton estoque = new JButton("Estoque");
+	private static final JButton venda = new JButton("Nova venda");
+        private static final JButton roupa = new JButton("Roupa");
 	
         
-        public static ControleDados dados = new ControleDados();//carrega os dados
+        public static ControleDados dados = new ControleDados();//carrega os dados 
         
-        public TelaMenu() {
+        public TelaMenu() { 
+            //tela inicial com opções
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
 		cliente.setBounds(140, 50, 100, 30);
 		funcionario.setBounds(140, 100, 100, 30);	
-                estoque.setBounds(140, 200, 100, 30);
-                venda.setBounds(140, 150, 100, 30);
-                roupa.setBounds(140, 200, 100, 30);
+                estoque.setBounds(140, 150, 100, 30);
+                venda.setBounds(140, 200, 100, 30);
+                roupa.setBounds(140, 250, 100, 30);
 		
 		janela.setLayout(null);
-		
+		janela.setSize(400, 400);
 		janela.add(titulo);
 		janela.add(cliente);
 		janela.add(funcionario);
                 janela.add(estoque);
                 janela.add(venda);
-                 janela.add(roupa);
+                janela.add(roupa);
 		
-		janela.setSize(400, 400);
+		
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
 	}
@@ -51,6 +52,7 @@ public class TelaMenu implements ActionListener {
                 roupa.addActionListener(menu);
 	}
 
+        @Override
     public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource(); // pega a opção escolhida pelo usuário
 		

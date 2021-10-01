@@ -49,7 +49,7 @@ public class TelaDetalheEstoque implements ActionListener, ListSelectionListener
     
     public void inserirEditar(int op, ControleDados d, 
                                     TelaEstoque p, int pos) {
-        e= new ControleEstoque(d);
+                e = new ControleEstoque(d);
           
         
 

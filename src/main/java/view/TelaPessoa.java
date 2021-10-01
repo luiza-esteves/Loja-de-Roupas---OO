@@ -18,6 +18,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private String[] listaNomes = new String[50];
 
 	public void mostrarDados(ControleDados d, int op){
+            //mostra lista de clientes ou funcionários, dependendo do parâmetro op passado
 		dados = d;
 
 		switch (op) {
@@ -101,7 +102,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
-		//Cadastro de novo aluno
+		//Cadastro de novo cliente
 		if(src == cadastroCliente){
 			new TelaDetalhePessoa().inserirEditar(1, dados, this, 0);
                 }
@@ -109,7 +110,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 		if(src == cadastroVendedor){
 			new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
                 }
-		// Atualiza a lista de nomes de alunos mostrada no JList
+		// Atualiza a lista de nomes de clientes mostrada no JList
 		if(src == refreshCliente) {
 			listaClientesCadastrados.setListData(new ControleCliente(dados).getNomesCliente());			
 			listaClientesCadastrados.updateUI();

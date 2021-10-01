@@ -80,11 +80,8 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
             jan.add(saia);
             jan.add(shorte);
             jan.setLayout(null);
-
-            
-            
-            
             jan.setVisible(true);
+            
             calca.addActionListener(this);
             camisa.addActionListener(this);
             camiseta.addActionListener(this);
@@ -93,9 +90,13 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
             cropped.addActionListener(this);
             macacao.addActionListener(this);
             saia.addActionListener(this);
-            shorte.addActionListener(this);        
+            shorte.addActionListener(this); 
+            
+              
            
         }
+        
+  
         public void mostrarDados(int op, ControleDados d){
             switch (op) {
                 case 1:

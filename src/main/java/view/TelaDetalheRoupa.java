@@ -49,7 +49,7 @@ public class TelaDetalheRoupa implements ActionListener{
 	private JTextField valorManga;
         private final JLabel labelGola = new JLabel("Gola:");
 	private JTextField valorGola;
-        private final JLabel labelBoatao = new JLabel("Botão:");
+        private final JLabel labelBotao = new JLabel("Botão:");
 	private JTextField valorBotao;
         private final JLabel labelEstilo = new JLabel("Estilo:");
 	private JTextField valorEstilo;
@@ -331,7 +331,7 @@ public class TelaDetalheRoupa implements ActionListener{
 		labelComprimento.setBounds(30, 380, 150, 25);
 		valorComprimento.setBounds(180, 380, 180, 25);
 		labelPreco.setBounds(30, 420, 150, 25);
-		valorPreco.setBounds(180, 420, 28, 25);
+		valorPreco.setBounds(180, 420, 100, 25);
                 
 
 		//Coloca os campos relacionados a calça
@@ -360,7 +360,7 @@ public class TelaDetalheRoupa implements ActionListener{
                         valorManga.setBounds(180, 500, 180, 25);
                         labelGola.setBounds(30, 540, 150, 25);
                         valorGola.setBounds(180, 540, 180, 25);
-                        labelBoatao.setBounds(30, 540, 150, 25);
+                        labelBotao.setBounds(30, 540, 150, 25);
                         valorBotao.setBounds(180, 540, 180, 25);
 
 			this.janela.add(labelModelagem);
@@ -369,7 +369,7 @@ public class TelaDetalheRoupa implements ActionListener{
 			this.janela.add(valorManga);
                         this.janela.add(labelGola);
 			this.janela.add(valorGola);
-                        this.janela.add(labelBoatao);
+                        this.janela.add(labelBotao);
 			this.janela.add(valorBotao);
                 }
                 
@@ -521,8 +521,10 @@ public class TelaDetalheRoupa implements ActionListener{
                    
 			try {                           
 				boolean res = false;
-				if(opcao == 1) //cadastro de novo calça
+				if(opcao == 1){ //cadastro de novo calça
 					novoDado[0] = Integer.toString(dados.getDados().getQtdCalca());
+                                       
+                                }
 				else if (opcao == 2) // cadastro de novo prof
 					novoDado[0] = Integer.toString(dados.getDados().getQtdCamisa());
                                 else if (opcao == 3) // cadastro de novo prof
@@ -562,7 +564,7 @@ public class TelaDetalheRoupa implements ActionListener{
                                     novoDado[13] =  valorCos.getText();
                                     novoDado[14] =  valorLavagem.getText();
                                     res = dados.inserirEditarCalca(novoDado);
-                                    System.out.println(novoDado[1]);
+                                   
                                 }else if (opcao == 2 || opcao == 11){
                                     novoDado[12] =  valorModelagem.getText();
                                     novoDado[13] =  valorManga.getText();
@@ -708,9 +710,9 @@ public class TelaDetalheRoupa implements ActionListener{
 	
 	public void mensagemErroExclusaoProf() {
 		JOptionPane.showMessageDialog(null,"Ocorreu um erro ao excluir o dado.\n "
-				+ "Verifique se o professor está responsável\n"
-				+ "por alguma disciplina. Se sim, substitua\n "
-				+ "o professor e tente novamente.", null, 
+				+ "Verifique se o a roupa está presente \n"
+				+ "em alguma venda. \n "
+				, null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 }

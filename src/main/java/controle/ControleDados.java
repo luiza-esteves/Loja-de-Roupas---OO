@@ -33,6 +33,33 @@ public class ControleDados {
     public int getQtdFuncionarios() {
 	return this.dados.getQtdFuncionario();
     }
+    public int getQtdCalca() {
+	return this.dados.getQtdCalca();
+    }
+    public int getQtdCamisa() {
+	return this.dados.getQtdCamisa();
+    }
+    public int getQtdCamiseta() {
+	return this.dados.getQtdCamiseta();
+    }
+    public int getQtdCasaco() {
+	return this.dados.getQtdCasaco();
+    }
+    public int getQtdCinto() {
+	return this.dados.getQtdCinto();
+    }
+    public int getQtdCropped() {
+	return this.dados.getQtdCropped();
+    }
+    public int getQtdMacacao() {
+	return this.dados.getQtdMacacao();
+    }
+    public int getQtdSaia() {
+	return this.dados.getQtdSaia();
+    }
+    public int getQtdShorte() {
+	return this.dados.getQtdShorte();
+    }
 	
     public Funcionario[] getFuncionarios() {
 	return this.dados.getFuncionario();
@@ -218,6 +245,11 @@ public class ControleDados {
         return true;
         }
     }
+    public String[] getNomesCalcas(ControleCalca c) {
+        
+       return c.getNomesCalcas();
+        
+    }
     
     public boolean inserirEditarCalca(String[] dadosCalca) throws ParseException {
 		if(!dadosCalca[1].matches("[0-9]+") || !dadosCalca[10].matches("[0-9]+") || 
@@ -228,7 +260,6 @@ public class ControleDados {
                                         dadosCalca[2],dadosCalca[3],dadosCalca[4],dadosCalca[5],dadosCalca[6],
                                         dadosCalca[7],dadosCalca[8],dadosCalca[9],Double.parseDouble(dadosCalca[10]),Double.parseDouble(dadosCalca[11]));
 			dados.inserirEditarCalca(c, Integer.parseInt(dadosCalca[0]));
-                        
 			return true;
 		}
 	}
