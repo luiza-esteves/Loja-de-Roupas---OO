@@ -1,5 +1,4 @@
 package view;
-import controle.ControleCamisa;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -563,6 +562,7 @@ public class TelaDetalheRoupa implements ActionListener{
                                     novoDado[13] =  valorCos.getText();
                                     novoDado[14] =  valorLavagem.getText();
                                     res = dados.inserirEditarCalca(novoDado);
+                                    System.out.println(novoDado[1]);
                                 }else if (opcao == 2 || opcao == 11){
                                     novoDado[12] =  valorModelagem.getText();
                                     novoDado[13] =  valorManga.getText();

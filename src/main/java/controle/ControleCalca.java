@@ -40,7 +40,6 @@ public class ControleCalca {
         return calca[i].getCos();
     }
 
-    
     public String getNome(int i) {
         return calca[i].getNome();
     }
@@ -73,6 +72,21 @@ public class ControleCalca {
         String compr = String.valueOf(calca[i].getPreco());
         return compr;
     }
-    
-    
+
+    public int getQtdCalca() {
+        return qtdCalca;
+    }
+
+    public void setQtdCalca(int qtdCalca) {
+        this.qtdCalca = qtdCalca;
+    }
+
+    public Dados getDados() {
+        return dados;
+    }
+
+    public void setDados(Dados dados) {
+        this.dados = dados;
+    }
+
 }

@@ -11,6 +11,10 @@ public class Cinto extends Roupa {
     public Cinto(){
         super();
     }
+    
+    public Cinto(String n) {
+    	this.nome = n;
+    }
 
     public Cinto(String ocasiao, double largura, int c, 
             String no, String t,String cor, String mat, String marca, String categ,

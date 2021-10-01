@@ -35,7 +35,7 @@ public class Cliente extends Pessoa {
 		return "Nome:" + nome+
                         "Cpf:" + cpf+
                         "Telefone:" + telefone+
-                        "Endereço:" + endereco+
+                        "Endereï¿½o:" + endereco+
                         "Data de nascimento:" + dataNascimento+
                         "Total de compras:" + totalCompras;
 	}
@@ -56,42 +56,52 @@ public class Cliente extends Pessoa {
         this.totalCompras = totalCompras;
     }
 
+    @Override
     public String getDataNascimento() {
         return dataNascimento;
     }
 
+    @Override
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
+    @Override
     public String getNome() {
         return nome;
     }
 
+    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    @Override
     public long getCpf() {
         return cpf;
     }
 
+    @Override
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
+    @Override
     public Telefone getTelefone() {
         return telefone;
     }
 
+    @Override
     public void setTelefone(Telefone telefone) {
         this.telefone = telefone;
     }
 
+    @Override
     public Endereco getEndereco() {
         return endereco;
     }
 
+    @Override
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }

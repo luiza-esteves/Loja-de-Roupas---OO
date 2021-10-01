@@ -14,13 +14,16 @@ public class ControleDados {
         return dados;
     }
 
-
     public void setDados(Dados dados) {
         this.dados = dados;
     }
     
     public Cliente[] getCliente() {
 	return this.dados.getCliente();
+    }
+    
+    public Calca[] getCalca() {
+	return this.dados.getCalca();
     }
 	
     public int getQtdCliente() {
@@ -45,11 +48,6 @@ public class ControleDados {
     
     public Estoque[] getEstoques() {
 	return this.dados.getEstoque();
-    }
-    
-	
-    public Calca[] getCalca() {
-	return this.dados.getCalca();
     }
     
     public Camisa[] getCamisa() {
@@ -89,7 +87,7 @@ public class ControleDados {
                     
 			return false;
 		} else {
-                    System.out.println("teste");
+                    
 				Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1], Integer.parseInt(dadosClientes[3]), 
 					new Telefone(Integer.parseInt(dadosClientes[5]),Integer.parseInt(dadosClientes[6])), 
                                         new Endereco(dadosClientes[9],dadosClientes[10],dadosClientes[7],Integer.parseInt(dadosClientes[8]),
@@ -223,14 +221,15 @@ public class ControleDados {
     }
     
     public boolean inserirEditarCalca(String[] dadosCalca) throws ParseException {
-		if(!dadosCalca[3].matches("[0-9]+") || !dadosCalca[5].matches("[0-9]+") || 
-				  !dadosCalca[6].matches("[0-9]+")) {
+		if(!dadosCalca[1].matches("[0-9]+") || !dadosCalca[10].matches("[0-9]+") || 
+				  !dadosCalca[11].matches("[0-9]+")) {
 			return false;
 		} else {
 			Calca c = new Calca(dadosCalca[12], dadosCalca[13], dadosCalca[14],Integer.parseInt(dadosCalca[1]),
                                         dadosCalca[2],dadosCalca[3],dadosCalca[4],dadosCalca[5],dadosCalca[6],
                                         dadosCalca[7],dadosCalca[8],dadosCalca[9],Double.parseDouble(dadosCalca[10]),Double.parseDouble(dadosCalca[11]));
 			dados.inserirEditarCalca(c, Integer.parseInt(dadosCalca[0]));
+                        
 			return true;
 		}
 	}

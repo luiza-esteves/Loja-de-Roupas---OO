@@ -3,10 +3,10 @@ package modelo;
 import java.util.Scanner;
 
 public class Venda {
-	Scanner ler = new Scanner(System.in);
-	private Funcionario funcionario = new Funcionario();
-	private Cliente cliente = new Cliente();
-	private Calca calca = new Calca();
+    Scanner ler = new Scanner(System.in);
+    private Funcionario funcionario = new Funcionario();
+    private Cliente cliente = new Cliente();
+    private Calca calca = new Calca();
     private Camisa camisa = new Camisa();
     private Camiseta camiseta = new Camiseta();
     private Casaco casaco = new Casaco();
@@ -107,7 +107,7 @@ public class Venda {
 	
 	 public String toString() {
 
-	        return("Código da compra: \n"+ codCompra
+	        return("Cï¿½digo da compra: \n"+ codCompra
 	        	+  "Valor total: \n"+ valorTotal
 	        	+  "Forma de pagamento: \n" +formaPagamento
 	        	+  "Vendedor: \n" +funcionario

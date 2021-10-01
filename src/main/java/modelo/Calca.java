@@ -187,10 +187,6 @@ public class Calca extends Roupa{
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    
-    
-    
-
-    
+   
 
 }

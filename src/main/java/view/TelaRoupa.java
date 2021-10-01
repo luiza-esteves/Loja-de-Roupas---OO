@@ -438,7 +438,9 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 new TelaRoupa(dados).mostrarDados(8, dados);
             }else if(src == shorte){
                 new TelaRoupa(dados).mostrarDados(9, dados);
-            }else if (src == cadastroCalca){
+            }
+            
+            if (src == cadastroCalca){
                 new TelaDetalheRoupa().inserirEditar(1, dados, this, 0);
             }else if (src == cadastroCamisa){
                 new TelaDetalheRoupa().inserirEditar(2, dados, this, listaCamisaCadastrados.getSelectedIndex());
@@ -456,9 +458,12 @@ public class TelaRoupa implements ActionListener, ListSelectionListener{
                 new TelaDetalheRoupa().inserirEditar(8, dados, this, listaSaiaCadastrados.getSelectedIndex());
             }else if (src == cadastroShorte){
                 new TelaDetalheRoupa().inserirEditar(9, dados, this, listaShorteCadastrados.getSelectedIndex());
-            }else if(src == refreshCalca) {
-		listaCalcaCadastrados.setListData(new ControleCalca(dados).getNomesCalcas());			
+            }
+            
+            if(src == refreshCalca) {
+		listaCalcaCadastrados.setListData(new ControleCalca(dados).getNomesCalcas());
 		listaCalcaCadastrados.updateUI();
+                System.out.println(listaCalcaCadastrados);
             }else if(src == refreshCamisa) {
 		listaCamisaCadastrados.setListData(new ControleCamisa(dados).getNomesCamisa());			
 		listaCamisaCadastrados.updateUI();

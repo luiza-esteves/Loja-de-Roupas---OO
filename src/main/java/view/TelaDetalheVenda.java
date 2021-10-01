@@ -14,9 +14,9 @@ import view.TelaPessoa;
 public class TelaDetalheVenda implements ActionListener{
 	private JFrame janela;
 	
-	private JLabel labelCod = new JLabel("Código da compra: ");
+	private JLabel labelCod = new JLabel("Cï¿½digo da compra: ");
 	private JTextField valorCod;
-	private JLabel labelNomeRoupa = new JLabel("Peça: ");
+	private JLabel labelNomeRoupa = new JLabel("Peï¿½a: ");
 	private JTextField valorRoupa;
 	private JLabel labelValorTotal = new JLabel("Valor total: ");
 	private JTextField valorValor;
@@ -24,7 +24,7 @@ public class TelaDetalheVenda implements ActionListener{
 	private JTextField valorForma;
 	private JLabel labelCliente = new JLabel("Cliente: ");
 	private JTextField valorCliente;
-	private JLabel labelFuncionario = new JLabel("Funcionário: ");
+	private JLabel labelFuncionario = new JLabel("Funcionï¿½rio: ");
 	private JTextField valorFuncionario;
 	
 	private JButton botaoExcluir = new JButton("Excluir");
@@ -49,7 +49,7 @@ public class TelaDetalheVenda implements ActionListener{
 		if (op == 2) {
 			valorCod = new JTextField(String.valueOf(dados.getVenda()[pos].getCodCompra()), 200);
 			valorRoupa = new JTextField(String.valueOf(dados.getVenda()[pos].getCamisa()),200);
-			valorValor = new JTextField(dados.getVenda()[pos].getValorTotal(),200);
+			valorValor = new JTextField(String.valueOf(dados.getVenda()[pos].getValorTotal()),200);
 			valorForma = new JTextField(String.valueOf(dados.getVenda()[pos].getFormaPagamento()), 200);
 			valorCliente = new JTextField(String.valueOf(dados.getVenda()[pos].getCliente().getNome()), 200);
 			valorFuncionario = new JTextField(String.valueOf(dados.getVenda()[pos].getFuncionario().getNome()), 200);		
@@ -111,7 +111,7 @@ public class TelaDetalheVenda implements ActionListener{
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
 			try {
-				boolean res;
+				boolean res = false;
 				if(opcao == 1) 
 					novoDado[0] = Integer.toString(dados.getQtdVenda());
 				else 
@@ -147,7 +147,7 @@ public class TelaDetalheVenda implements ActionListener{
 			if (opcao == 3) {
 				res = dados.removerVenda(posicao);
 				if (res) mensagemSucessoExclusao(); 
-				else mensagemErroExclusaoAluno(); 
+				else mensagemErroExclusao(); 
 			}			
 		}
 	}
@@ -168,7 +168,7 @@ public class TelaDetalheVenda implements ActionListener{
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
 				+ "Pode ter ocorrido um dos dois erros a seguir:  \n"
 				+ "1. Nem todos os campos foram preenchidos \n"
-				+ "2. CPF, identidade, DDD e telefone não contém apenas números", null, 
+				+ "2. CPF, identidade, DDD e telefone nï¿½o contï¿½m apenas nï¿½meros", null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
@@ -178,4 +178,6 @@ public class TelaDetalheVenda implements ActionListener{
 				JOptionPane.ERROR_MESSAGE);
 	
 	
+        }
 }
+        

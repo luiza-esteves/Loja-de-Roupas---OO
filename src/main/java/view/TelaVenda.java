@@ -11,13 +11,14 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 	private JButton cadastroVenda;
 	private JButton refreshVenda;
 	private ControleDados dados;
-	private JList<Integer> listaVendasCadastradas; 
-	private Integer[] listaCods = new Integer [50];
+	private JList<String> listaVendasCadastradas; 
+	private String[] listaCods = new String [50];
 	 
 	public void mostrarDados (ControleDados d, int op) {
 		dados = d;
 		
 		listaCods = new ControleVenda(dados).getCodigosCompras(); 
+                listaVendasCadastradas = new JList<String>(listaCods);
 		janela = new JFrame("Vendas");	
 		titulo = new JLabel("Vendas Cadastradas");
 		cadastroVenda = new JButton("Cadastrar");
@@ -48,7 +49,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		
 		}
 		
-	public void ActionPerformed (ActionEvent e) {
+    public void actionPerformed (ActionEvent e) {
 		Object src = e.getSource();
 		
 		if(src == cadastroVenda)
@@ -60,6 +61,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		}
 	}
 		
+        @Override
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
@@ -69,8 +71,6 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
 		}
  
 	}	
-		
-		
 	
 }
 	

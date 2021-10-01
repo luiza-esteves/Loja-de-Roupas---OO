@@ -183,8 +183,6 @@ public class Dados {
         this.calca = calca;
     }
     
-    
-
     public int getQtdCalca() {
         return qtdCalca;
     }
@@ -432,9 +430,5 @@ public class Dados {
     public void setQtdFuncionario(int qtdFuncionario) {
         this.qtdFuncionario = qtdFuncionario;
     }
-     
-
-    
-     
-    
+ 
 }
