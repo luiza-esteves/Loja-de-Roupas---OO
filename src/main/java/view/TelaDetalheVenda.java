@@ -12,11 +12,8 @@ import controle.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
-import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -41,6 +38,8 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
         private JLabel t;
         
         private JList<String> listaRoupasCadastrados;
+        private JList<String> listaClientesCadastrados;
+        private JList<String> listaFuncionariosCadastrados;
 
 	private final JButton botaoExcluir = new JButton("Excluir");
 	private final JButton botaoSalvar = new JButton("Salvar");
@@ -96,7 +95,8 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
 		valorCod.setBounds(180, 20, 180, 25);
 		labelNomeRoupa.setBounds(30, 60, 150, 25);
 		valorRoupa.setBounds(180, 60, 180, 25);
-                valorRoupa.addMouseListener(this);
+                
+                
 		labelValorTotal.setBounds(30, 100, 180, 25);
 		valorValor.setBounds(180, 100, 180, 25);		
 		labelForma.setBounds(30, 140, 150, 25);
@@ -133,6 +133,10 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
 
 		this.janela.setSize(450, 600);
 		this.janela.setVisible(true);
+                
+                valorRoupa.addMouseListener(this);
+                valorCliente.addMouseListener(this);
+                valorFuncionario.addMouseListener(this);
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
@@ -232,6 +236,7 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
                     ControleShorte sho = new ControleShorte(dados);
                     for(int x=0;x<cal.getNomesCalcas().length;x++){
                         todasRoupas.add(cal.getNomesCalcas()[x]);
+                        
                     }
                     for(int x=0;x<cam.getNomesCamisa().length;x++){
                         todasRoupas.add(cam.getNomesCamisa()[x]);
@@ -257,9 +262,12 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
                     for(int x=0;x<sho.getNomesShorte().length;x++){
                         todasRoupas.add(sho.getNomesShorte()[x]);
                     }
-                    String z[]=todasRoupas.toArray(new String[0]);
+                    String z[]=new String[todasRoupas.size()];
+                    for(int cont=0;cont<todasRoupas.size();cont++){
+                        z[cont]=todasRoupas.get(cont);                       
+                    }                   
+                    listaRoupasCadastrados = new JList<>(z);
                     
-                    listaRoupasCadastrados = new JList<String>(z);
                     listaRoupasCadastrados.setBounds(20, 50, 400, 400);
                     
                     listaRoupasCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -271,7 +279,58 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
                     j.setVisible(true);
                     listaRoupasCadastrados.addListSelectionListener(this);
                 }
-
+        
+        if(src==valorCliente){
+                    
+                    j = new JFrame("Clientes cadastrados");
+                    t = new JLabel("Clientes disponíveis");
+                     ArrayList<String> clientes= new ArrayList();
+                     ControleCliente cli = new ControleCliente(dados);
+                     for(int x=0;x<cli.getNomesCliente().length;x++){
+                        clientes.add(cli.getNomesCliente()[x]);
+                    }
+                    String z[]=clientes.toArray(new String[0]);
+                    for(int cont=0;cont<clientes.size();cont++){
+                        z[cont]=clientes.get(cont);                       
+                    }  
+                    listaClientesCadastrados = new JList<String>(z);
+                    listaClientesCadastrados.setBounds(20, 50, 400, 400);
+                    
+                    listaClientesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                    listaClientesCadastrados.setVisibleRowCount(100);
+                    JScrollPane scroll = new JScrollPane(listaClientesCadastrados);
+                    j.add(t);
+                    j.add(scroll);
+                    j.setSize(600, 600);
+                    j.setVisible(true);
+                    listaClientesCadastrados.addListSelectionListener(this);
+        }
+        
+        if(src==valorFuncionario){
+                    
+                    j = new JFrame("Funcinários cadastrados");
+                    t = new JLabel("Funcinários disponíveis");
+                     ArrayList<String> funcio= new ArrayList();
+                     ControleFuncionario func = new ControleFuncionario(dados);
+                    for(int x=0;x<func.getNomefuncionario().length;x++){
+                        funcio.add(func.getNomefuncionario()[x]);
+                    }
+                     String z[]=funcio.toArray(new String[0]);
+                     for(int cont=0;cont<funcio.size();cont++){
+                        z[cont]=funcio.get(cont);                       
+                    }  
+                    listaFuncionariosCadastrados = new JList<String>(z);
+                    listaFuncionariosCadastrados.setBounds(20, 50, 400, 400);
+                    
+                    listaFuncionariosCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+                    listaFuncionariosCadastrados.setVisibleRowCount(100);
+                    JScrollPane scroll = new JScrollPane(listaFuncionariosCadastrados);
+                    j.add(t);
+                    j.add(scroll);
+                    j.setSize(600, 600);
+                    j.setVisible(true);
+                    listaFuncionariosCadastrados.addListSelectionListener(this);
+        }
     }
 
     @Override
@@ -297,18 +356,25 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();
-       
-
-		if(e.getValueIsAdjusting() && src == listaRoupasCadastrados) {
-                    
-                    valorRoupa.setText(listaRoupasCadastrados.getName());                   
-                    this.janela.add(valorRoupa);                    
+		if(src == listaRoupasCadastrados) {          
+                    String r = listaRoupasCadastrados.getSelectedValue();
+                    valorRoupa.setText(r);
                     this.j.dispose();
-                    
-                    
+
+		}
+                if(e.getValueIsAdjusting() && src == listaClientesCadastrados) {     
+                    String c = listaClientesCadastrados.getSelectedValue();
+                    valorCliente.setText(c);
                    
-                    
-			
+                    this.j.dispose();
+
+		}
+                if(e.getValueIsAdjusting() && src == listaFuncionariosCadastrados) {   
+                    String f = listaFuncionariosCadastrados.getSelectedValue();
+                    valorFuncionario.setText(f);
+                   
+                    this.j.dispose();
+
 		}
         
     }
