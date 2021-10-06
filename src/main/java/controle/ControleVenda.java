@@ -27,46 +27,5 @@ public class ControleVenda {
         return s;
     }
 
-//	public boolean inserirEditarVenda(String[] dadosVenda) {
-//		if(!dadosVenda[3].matches("[0-9]+") || !dadosVenda[5].matches("[0-9]+") || 
-//				  !dadosVenda[6].matches("[0-9]+")) {
-//			return false;
-//		} else {
-//			Venda v = new Venda(dadosCamiseta[12], dadosCamiseta[13],Integer.parseInt(dadosCamiseta[1]),
-//                                        dadosCamiseta[2],dadosCamiseta[3],dadosCamiseta[4],dadosCamiseta[5],dadosCamiseta[6],
-//                                        dadosCamiseta[7],dadosCamiseta[8],dadosCamiseta[9],Double.parseDouble(dadosCamiseta[10]),Double.parseDouble(dadosCamiseta[11]));
-//			dados.inserirEditarCamiseta(c, Integer.parseInt(dadosCamiseta[0]));
-//			return true;
-//		}
-//	}
-//	
-//    public boolean removerVenda(int i) {
-//        int qtdVenda = dados.getQtdVenda();
-//        int vendaRemovida = dados.getVenda()[i].getCodCompra();
-//        int aux;
-//        for (int j = 0; j < qtdVenda; j++) { 
-//                aux = dados.getVenda()[j];
-//                if(camisetaRemovida.compareTo(aux) == 0) 
-//                        return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
-//        }
-//        
-//        if(i == (dados.getQtdCamiseta()- 1)) { // A cal�a a ser removido est� no final do array
-//        	dados.setQtdCamiseta(dados.getQtdCamiseta() - 1);
-//        	dados.getCamiseta()[dados.getQtdCamiseta()] = null;
-//        	return true;
-//        } else { // o aluno a ser removido est� no meio do array
-//        	int cont = 0;
-//        	while(dados.getCamiseta()[cont].getNome().compareTo(camisetaRemovida) != 0) {
-//        		cont++;
-//        	}
-//        //Rotina swap
-//        for(int j = cont; j < dados.getQtdCamiseta() - 1; j++) {
-//        	dados.getCamiseta()[j] = null;
-//        	dados.getCamiseta()[j] = dados.getCamiseta()[j+1];
-//        }
-//        dados.getCamiseta()[dados.getQtdCamiseta()] = null;
-//        dados.setQtdCamiseta(dados.getQtdCamiseta() - 1);
-//        return true;
-//        }
-//}	
+
 }

@@ -47,8 +47,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
     private JButton botaoFiltroMacacao = new JButton("Filtrar");
     private JButton botaoFiltroSaia = new JButton("Filtrar");
     private JButton botaoFiltroShorte = new JButton("Filtrar");
-    
-    
+
     private static final JButton calca = new JButton("Calça");
     private static final JButton camisa = new JButton("Camisa");
     private static final JButton camiseta = new JButton("Camiseta");
@@ -119,17 +118,17 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
             case 1:
                 listaNomes = new ControleEstoque(dados).getNomesEstoques(1);
                 listaCalcaCadastrados = new JList<String>(listaNomes);
-                
+
                 filtroCodCalca = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCalca = new JButton("Filtrar");
                 botaoFiltroCalca.setBounds(200, 50, 100, 30);
                 filtroCodCalca.setBounds(20, 50, 150, 30);
                 estoqueCalca = new JButton("Cadastrar");
                 refreshCalca = new JButton("Refresh");
-  
+
                 janela = new JFrame("Calças em estoque");
-                titulo = new JLabel("Calças em estoque");            
-                
+                titulo = new JLabel("Calças em estoque");
+
                 titulo.setFont(new Font("Arial", Font.BOLD, 20));
                 titulo.setBounds(90, 10, 250, 30);
                 estoqueCalca.setBounds(70, 300, 100, 30);
@@ -160,7 +159,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
                 janela = new JFrame("Camisas em estoque");
                 titulo = new JLabel("Camisas em estoque");
-                
+
                 filtroCodCamisa = new JTextField("Pesquisar nome da camisa");
                 botaoFiltroCamisa = new JButton("Filtrar");
                 botaoFiltroCamisa.setBounds(200, 50, 100, 30);
@@ -197,7 +196,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
                 janela = new JFrame("Camisetas em estoque");
                 titulo = new JLabel("Camisetas em estoque");
-                
+
                 filtroCodCamiseta = new JTextField("Pesquisar nome da camiseta");
                 botaoFiltroCamiseta = new JButton("Filtrar");
                 botaoFiltroCamiseta.setBounds(200, 50, 100, 30);
@@ -234,7 +233,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
                 janela = new JFrame("Casaco em estoque");
                 titulo = new JLabel("Casaco em estoque");
-                
+
                 filtroCodCasaco = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCasaco = new JButton("Filtrar");
                 botaoFiltroCasaco.setBounds(200, 50, 100, 30);
@@ -270,7 +269,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
                 janela = new JFrame("Cinto em estoque");
                 titulo = new JLabel("Cinto em estoque");
-                
+
                 filtroCodCinto = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCinto = new JButton("Filtrar");
                 botaoFiltroCinto.setBounds(200, 50, 100, 30);
@@ -311,7 +310,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 botaoFiltroCropped = new JButton("Filtrar");
                 botaoFiltroCropped.setBounds(200, 50, 100, 30);
                 filtroCodCropped.setBounds(20, 50, 150, 30);
-                
+
                 titulo.setFont(new Font("Arial", Font.BOLD, 20));
                 titulo.setBounds(90, 10, 250, 30);
                 estoqueCropped.setBounds(70, 300, 100, 30);
@@ -342,7 +341,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 refreshMacacao = new JButton("Refresh");
                 janela = new JFrame("Macacao em estoque");
                 titulo = new JLabel("Macacao em estoque");
-                
+
                 filtroCodMacacao = new JTextField("Pesquisar nome da calça");
                 botaoFiltroMacacao = new JButton("Filtrar");
                 botaoFiltroMacacao.setBounds(200, 50, 100, 30);
@@ -379,7 +378,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 refreshSaia = new JButton("Refresh");
                 janela = new JFrame("Saia em estoque");
                 titulo = new JLabel("Saia em estoque");
-                
+
                 filtroCodSaia = new JTextField("Pesquisar nome da calça");
                 botaoFiltroSaia = new JButton("Filtrar");
                 botaoFiltroSaia.setBounds(200, 50, 100, 30);
@@ -414,7 +413,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                 estoqueShorte = new JButton("Cadastrar");
                 refreshShorte = new JButton("Refresh");
                 titulo = new JLabel("Short em estoque");
-                
+
                 filtroCodShorte = new JTextField("Pesquisar nome da calça");
                 botaoFiltroShorte = new JButton("Filtrar");
                 botaoFiltroShorte.setBounds(200, 50, 100, 30);
@@ -533,214 +532,214 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
             listaShorteCadastrados.setListData(new ControleEstoque(dados).getNomesEstoques(9));
             listaShorteCadastrados.updateUI();
         }
-        
+
         if (src == botaoFiltroCalca) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCalca.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCalca.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(1)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCalcaCadastrados.setListData(nome);
                     listaCalcaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(1).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(1).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
-        
+
         if (src == botaoFiltroCamisa) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCamisa.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCamisa.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(2)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCamisaCadastrados.setListData(nome);
                     listaCamisaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(2).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(2).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCamiseta) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCamiseta.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCamiseta.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(3)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCamisetaCadastrados.setListData(nome);
                     listaCamisetaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(3).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(3).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCasaco) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCasaco.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCasaco.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(4)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCasacoCadastrados.setListData(nome);
                     listaCasacoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(4).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(4).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCinto) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCinto.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCinto.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(5)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCintoCadastrados.setListData(nome);
                     listaCintoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(5).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(5).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCropped) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodCropped.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodCropped.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(6)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCroppedCadastrados.setListData(nome);
                     listaCroppedCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(6).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(6).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroMacacao) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodMacacao.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodMacacao.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(7)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaMacacaoCadastrados.setListData(nome);
                     listaMacacaoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(7).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(7).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroSaia) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodSaia.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodSaia.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(8)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaSaiaCadastrados.setListData(nome);
                     listaSaiaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(8).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(8).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroShorte) {
-           
-            ControleEstoque nomeEstoque = new ControleEstoque(dados);          
-            String nomeDig =filtroCodShorte.getText();
+
+            ControleEstoque nomeEstoque = new ControleEstoque(dados);
+            String nomeDig = filtroCodShorte.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesEstoques(9)[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaShorteCadastrados.setListData(nome);
                     listaShorteCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesEstoques(9).length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesEstoques(9).length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
 
     }
@@ -788,7 +787,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     listaShorteCadastrados.getSelectedIndex());
         }
     }
-    
+
     public void mensagemErroBusca() {
         JOptionPane.showMessageDialog(null, "Roupa não encontrada!.\n ", null,
                 JOptionPane.ERROR_MESSAGE);

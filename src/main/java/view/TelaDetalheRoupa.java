@@ -767,7 +767,7 @@ public class TelaDetalheRoupa implements ActionListener {
         JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir o dado.\n "
                 + "Verifique se o aluno a roupa está\n"
                 + "cadastrada em alguma venda.\n ",
-                 null,
+                null,
                 JOptionPane.ERROR_MESSAGE);
     }
 
@@ -775,7 +775,7 @@ public class TelaDetalheRoupa implements ActionListener {
         JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir o dado.\n "
                 + "Verifique se o a roupa está presente \n"
                 + "em alguma venda. \n ",
-                 null,
+                null,
                 JOptionPane.ERROR_MESSAGE);
     }
 }

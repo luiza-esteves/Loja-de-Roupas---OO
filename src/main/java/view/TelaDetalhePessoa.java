@@ -93,9 +93,11 @@ public class TelaDetalhePessoa implements ActionListener {
             String compras = String.valueOf(dados.getCliente()[pos].getTotalCompras());
             valorTotalCompras = new JTextField(compras, 200);
             valorCPF = new JTextField(String.valueOf(dados.getCliente()[pos].getCpf()), 200);
-            valorDataNascimento = new JTextField(String.valueOf(dados.getCliente()[pos].getDataNascimento()), 200);
+            valorDataNascimento = new JTextField(String.valueOf
+                                                    (dados.getCliente()[pos].getDataNascimento()), 200);
             valorDDD = new JTextField(String.valueOf(dados.getCliente()[pos].getTelefone().getDDD()), 3);
-            valorTelefone = new JTextField(String.valueOf(dados.getCliente()[pos].getTelefone().getNumero()), 10);
+            valorTelefone = new JTextField(String.valueOf
+                                                    (dados.getCliente()[pos].getTelefone().getNumero()), 10);
 
         } else if (op == 4) { //Preenche dados com dados do professor clicado 
             valorNome = new JTextField(dados.getFuncionarios()[pos].getNome(), 200);
@@ -113,9 +115,11 @@ public class TelaDetalhePessoa implements ActionListener {
             String salario = String.valueOf(dados.getFuncionarios()[pos].getSalario());
             valorsalario = new JTextField(salario, 200);
             valorCPF = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getCpf()), 200);
-            valorDataNascimento = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getDataNascimento()), 200);
+            valorDataNascimento = new JTextField(String.valueOf
+                                                    (dados.getFuncionarios()[pos].getDataNascimento()), 200);
             valorDDD = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getTelefone().getDDD()), 3);
-            valorTelefone = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getTelefone().getNumero()), 10);
+            valorTelefone = new JTextField(String.valueOf
+                                                (dados.getFuncionarios()[pos].getTelefone().getNumero()), 10);
         } else { //Não preenche com dados 
             valorNome = new JTextField(80);
             valorCidade = new JTextField(80);

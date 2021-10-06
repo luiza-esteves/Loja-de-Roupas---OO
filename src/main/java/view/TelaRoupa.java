@@ -44,7 +44,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
     private JButton refreshSaia;
     private JButton cadastroShorte;
     private JButton refreshShorte;
-    
+
     private JTextField filtroCalca;
     private JTextField filtroCamisa;
     private JTextField filtroCamiseta;
@@ -143,7 +143,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 listaNomes = new ControleCalca(dados).getNomesCalcas();
 
                 listaCalcaCadastrados = new JList<String>(listaNomes);
-                
+
                 filtroCalca = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCalca = new JButton("Filtrar");
                 botaoFiltroCalca.setBounds(200, 50, 100, 30);
@@ -188,7 +188,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Camisa Cadastrados");
                 cadastroCamisa = new JButton("Cadastrar");
                 refreshCamisa = new JButton("Refresh");
-                
+
                 filtroCamisa = new JTextField("Pesquisar nome da camisa");
                 botaoFiltroCamisa = new JButton("Filtrar");
                 botaoFiltroCamisa.setBounds(200, 50, 100, 30);
@@ -228,12 +228,11 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Camiseta Cadastrados");
                 cadastroCamiseta = new JButton("Cadastrar");
                 refreshCamiseta = new JButton("Refresh");
-                
+
                 filtroCamiseta = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCamiseta = new JButton("Filtrar");
                 botaoFiltroCamiseta.setBounds(200, 50, 100, 30);
                 filtroCamiseta.setBounds(20, 50, 150, 30);
-                
 
                 titulo.setFont(new Font("Arial", Font.BOLD, 20));
                 titulo.setBounds(90, 10, 250, 30);
@@ -270,7 +269,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Casacos Cadastrados");
                 cadastroCasaco = new JButton("Cadastrar");
                 refreshCasaco = new JButton("Refresh");
-                
+
                 filtroCasaco = new JTextField("Pesquisar nome do casaco");
                 botaoFiltroCasaco = new JButton("Filtrar");
                 botaoFiltroCasaco.setBounds(200, 50, 100, 30);
@@ -311,7 +310,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Cintos Cadastrados");
                 cadastroCinto = new JButton("Cadastrar");
                 refreshCinto = new JButton("Refresh");
-                
+
                 filtroCinto = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCinto = new JButton("Filtrar");
                 botaoFiltroCinto.setBounds(200, 50, 100, 30);
@@ -352,7 +351,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Cropped Cadastrados");
                 cadastroCropped = new JButton("Cadastrar");
                 refreshCropped = new JButton("Refresh");
-                
+
                 filtroCropped = new JTextField("Pesquisar nome da calça");
                 botaoFiltroCropped = new JButton("Filtrar");
                 botaoFiltroCropped.setBounds(200, 50, 100, 30);
@@ -393,7 +392,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Macacão Cadastrados");
                 cadastroMacacao = new JButton("Cadastrar");
                 refreshMacacao = new JButton("Refresh");
-                
+
                 filtroMacacao = new JTextField("Pesquisar nome da calça");
                 botaoFiltroMacacao = new JButton("Filtrar");
                 botaoFiltroMacacao.setBounds(200, 50, 100, 30);
@@ -434,7 +433,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Saias Cadastrados");
                 cadastroSaia = new JButton("Cadastrar");
                 refreshSaia = new JButton("Refresh");
-                
+
                 filtroSaia = new JTextField("Pesquisar nome da calça");
                 botaoFiltroSaia = new JButton("Filtrar");
                 botaoFiltroSaia.setBounds(200, 50, 100, 30);
@@ -475,7 +474,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Saias Cadastrados");
                 cadastroShorte = new JButton("Cadastrar");
                 refreshShorte = new JButton("Refresh");
-                
+
                 filtroShorte = new JTextField("Pesquisar nome da calça");
                 botaoFiltroShorte = new JButton("Filtrar");
                 botaoFiltroShorte.setBounds(200, 50, 100, 30);
@@ -610,214 +609,214 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             listaShorteCadastrados.setListData(new ControleShorte(dados).getNomesShorte());
             listaShorteCadastrados.updateUI();
         }
-        
+
         if (src == botaoFiltroCalca) {
-           
-            ControleCalca nomeEstoque = new ControleCalca(dados);          
-            String nomeDig =filtroCalca.getText();
+
+            ControleCalca nomeEstoque = new ControleCalca(dados);
+            String nomeDig = filtroCalca.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCalcas()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCalcaCadastrados.setListData(nome);
                     listaCalcaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCalcas().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCalcas().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
-        
+
         if (src == botaoFiltroCamisa) {
-           
-            ControleCamisa nomeEstoque = new ControleCamisa(dados);          
-            String nomeDig =filtroCamisa.getText();
+
+            ControleCamisa nomeEstoque = new ControleCamisa(dados);
+            String nomeDig = filtroCamisa.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCamisa()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCamisaCadastrados.setListData(nome);
                     listaCamisaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCamisa().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCamisa().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCamiseta) {
-           
-            ControleCamiseta nomeEstoque = new ControleCamiseta(dados);          
-            String nomeDig =filtroCamiseta.getText();
+
+            ControleCamiseta nomeEstoque = new ControleCamiseta(dados);
+            String nomeDig = filtroCamiseta.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCamiseta()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCamisetaCadastrados.setListData(nome);
                     listaCamisetaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCamiseta().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCamiseta().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCasaco) {
-           
-            ControleCasaco nomeEstoque = new ControleCasaco(dados);          
-            String nomeDig =filtroCasaco.getText();
+
+            ControleCasaco nomeEstoque = new ControleCasaco(dados);
+            String nomeDig = filtroCasaco.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCasaco()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCasacoCadastrados.setListData(nome);
                     listaCasacoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCasaco().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCasaco().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCinto) {
-           
-            ControleCinto nomeEstoque = new ControleCinto(dados);          
-            String nomeDig =filtroCinto.getText();
+
+            ControleCinto nomeEstoque = new ControleCinto(dados);
+            String nomeDig = filtroCinto.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCinto()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCintoCadastrados.setListData(nome);
                     listaCintoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCinto().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCinto().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroCropped) {
-           
-            ControleCropped nomeEstoque = new ControleCropped(dados);          
-            String nomeDig =filtroCropped.getText();
+
+            ControleCropped nomeEstoque = new ControleCropped(dados);
+            String nomeDig = filtroCropped.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCropped()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaCroppedCadastrados.setListData(nome);
                     listaCroppedCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCropped().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCropped().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroMacacao) {
-           
-            ControleMacacao nomeEstoque = new ControleMacacao(dados);          
-            String nomeDig =filtroMacacao.getText();
+
+            ControleMacacao nomeEstoque = new ControleMacacao(dados);
+            String nomeDig = filtroMacacao.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesMacacao()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaMacacaoCadastrados.setListData(nome);
                     listaMacacaoCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesMacacao().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesMacacao().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroSaia) {
-           
-            ControleSaia nomeEstoque = new ControleSaia(dados);          
-            String nomeDig =filtroSaia.getText();
+
+            ControleSaia nomeEstoque = new ControleSaia(dados);
+            String nomeDig = filtroSaia.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesSaia()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaSaiaCadastrados.setListData(nome);
                     listaSaiaCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesSaia().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesSaia().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
         if (src == botaoFiltroShorte) {
-           
-            ControleShorte nomeEstoque = new ControleShorte(dados);          
-            String nomeDig =filtroShorte.getText();
+
+            ControleShorte nomeEstoque = new ControleShorte(dados);
+            String nomeDig = filtroShorte.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesShorte()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaShorteCadastrados.setListData(nome);
                     listaShorteCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesShorte().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesShorte().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
 
     }
@@ -946,7 +945,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
         this.listaShorteCadastrados = listaShorteCadastrados;
     }
 
-     public void mensagemErroBusca() {
+    public void mensagemErroBusca() {
         JOptionPane.showMessageDialog(null, "Roupa não encontrada!.\n ", null,
                 JOptionPane.ERROR_MESSAGE);
     }

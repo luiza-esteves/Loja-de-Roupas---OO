@@ -72,7 +72,8 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
             valorValor = new JTextField(String.valueOf(dados.getVenda()[pos].getValorTotal()), 200);
             valorForma = new JTextField(String.valueOf(dados.getVenda()[pos].getFormaPagamento()), 200);
             valorCliente = new JTextField(String.valueOf(dados.getVenda()[pos].getCliente().getNome()), 200);
-            valorFuncionario = new JTextField(String.valueOf(dados.getVenda()[pos].getFuncionario().getNome()), 200);
+            valorFuncionario = new JTextField(String.valueOf
+                                                    (dados.getVenda()[pos].getFuncionario().getNome()), 200);
         } else {
 
             valorCod = new JTextField(200);

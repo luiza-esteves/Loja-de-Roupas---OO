@@ -35,7 +35,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Clientes Cadastrados");
                 cadastroCliente = new JButton("Cadastrar");
                 refreshCliente = new JButton("Refresh");
-                
+
                 filtroNomeCliente = new JTextField("Pesquisar nome do cliente");
                 botaoFiltroCliente = new JButton("Filtrar");
                 botaoFiltroCliente.setBounds(200, 50, 100, 30);
@@ -76,7 +76,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Funcionários Cadastrados");
                 cadastroVendedor = new JButton("Cadastrar");
                 refreshVendedor = new JButton("Refresh");
-                
+
                 filtroNomeFuncionario = new JTextField("Pesquisar nome do funcionário");
                 botaoFiltroFuncionario = new JButton("Filtrar");
                 botaoFiltroFuncionario.setBounds(200, 50, 100, 30);
@@ -140,53 +140,53 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
             listaVendedoresCadastrados.setListData(new ControleFuncionario(dados).getNomefuncionario());
             listaVendedoresCadastrados.updateUI();
         }
-        
+
         if (src == botaoFiltroCliente) {
-           
-            ControleCliente nomeEstoque = new ControleCliente(dados);          
-            String nomeDig =filtroNomeCliente.getText();
+
+            ControleCliente nomeEstoque = new ControleCliente(dados);
+            String nomeDig = filtroNomeCliente.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomesCliente()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaClientesCadastrados.setListData(nome);
                     listaClientesCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomesCliente().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomesCliente().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
-        
+
         if (src == botaoFiltroFuncionario) {
-           
-            ControleFuncionario nomeEstoque = new ControleFuncionario(dados);          
-            String nomeDig =filtroNomeFuncionario.getText();
+
+            ControleFuncionario nomeEstoque = new ControleFuncionario(dados);
+            String nomeDig = filtroNomeFuncionario.getText();
             String[] nome = new String[1];
             boolean encontrar = false;
-            int x=0;
-            do{
+            int x = 0;
+            do {
 
                 nome[0] = nomeEstoque.getNomefuncionario()[x];
-                if(nomeDig.equals(nome[0])){                             
+                if (nomeDig.equals(nome[0])) {
                     listaVendedoresCadastrados.setListData(nome);
                     listaVendedoresCadastrados.updateUI();
-                    encontrar= true;
-                    
+                    encontrar = true;
+
                 }
                 x++;
-            }while(encontrar==false && x<nomeEstoque.getNomefuncionario().length);
-            if(!encontrar){
+            } while (encontrar == false && x < nomeEstoque.getNomefuncionario().length);
+            if (!encontrar) {
                 mensagemErroBusca();
             }
-           
+
         }
 
     }
@@ -286,6 +286,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
     public void setListaNomes(String[] listaNomes) {
         this.listaNomes = listaNomes;
     }
+
     public void mensagemErroBusca() {
         JOptionPane.showMessageDialog(null, "Roupa não encontrada!.\n ", null,
                 JOptionPane.ERROR_MESSAGE);
