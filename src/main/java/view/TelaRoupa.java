@@ -17,6 +17,14 @@ import javax.swing.event.ListSelectionListener;
 public class TelaRoupa implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
+    private JFrame janelaCamisa;
+    private JFrame janelaCamiseta;
+    private JFrame janelaCasaco;
+    private JFrame janelaCinto;
+    private JFrame janelaCropped;
+    private JFrame janelaMacacao;
+    private JFrame janelaSaia;
+    private JFrame janelaShorte;
     private JLabel titulo = new JLabel("Menu de Roupas");
     private JButton cadastroCalca;
     private JButton refreshCalca;
@@ -176,7 +184,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 2:// Mostrar dados de camisas cadastrados (JList)
                 listaNomes = new ControleCamisa(dados).getNomesCamisa();
                 listaCamisaCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Camisa");
+                janelaCamisa = new JFrame("Camisa");
                 titulo = new JLabel("Camisa Cadastrados");
                 cadastroCamisa = new JButton("Cadastrar");
                 refreshCamisa = new JButton("Refresh");
@@ -195,17 +203,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroCamisa.setBounds(70, 300, 100, 30);
                 refreshCamisa.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaCamisa.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroCamisa);
-                janela.add(botaoFiltroCamisa);
-                janela.add(listaCamisaCadastrados);
-                janela.add(cadastroCamisa);
-                janela.add(refreshCamisa);
+                janelaCamisa.add(titulo);
+                janelaCamisa.add(filtroCamisa);
+                janelaCamisa.add(botaoFiltroCamisa);
+                janelaCamisa.add(listaCamisaCadastrados);
+                janelaCamisa.add(cadastroCamisa);
+                janelaCamisa.add(refreshCamisa);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaCamisa.setSize(600, 600);
+                janelaCamisa.setVisible(true);
 
                 cadastroCamisa.addActionListener(this);
                 refreshCamisa.addActionListener(this);
@@ -216,7 +224,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 3:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleCamiseta(dados).getNomesCamiseta();
                 listaCamisetaCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Camiseta");
+                janelaCamiseta = new JFrame("Camiseta");
                 titulo = new JLabel("Camiseta Cadastrados");
                 cadastroCamiseta = new JButton("Cadastrar");
                 refreshCamiseta = new JButton("Refresh");
@@ -236,17 +244,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroCamiseta.setBounds(70, 300, 100, 30);
                 refreshCamiseta.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaCamiseta.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroCamiseta);
-                janela.add(botaoFiltroCamiseta);
-                janela.add(listaCamisetaCadastrados);
-                janela.add(cadastroCamiseta);
-                janela.add(refreshCamiseta);
+                janelaCamiseta.add(titulo);
+                janelaCamiseta.add(filtroCamiseta);
+                janelaCamiseta.add(botaoFiltroCamiseta);
+                janelaCamiseta.add(listaCamisetaCadastrados);
+                janelaCamiseta.add(cadastroCamiseta);
+                janelaCamiseta.add(refreshCamiseta);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaCamiseta.setSize(600, 600);
+                janelaCamiseta.setVisible(true);
 
                 cadastroCamiseta.addActionListener(this);
                 botaoFiltroCamiseta.addActionListener(this);
@@ -258,12 +266,12 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 4:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleCasaco(dados).getNomesCasaco();
                 listaCasacoCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Casaco");
+                janelaCasaco = new JFrame("Casaco");
                 titulo = new JLabel("Casacos Cadastrados");
                 cadastroCasaco = new JButton("Cadastrar");
-                cadastroCasaco = new JButton("Refresh");
+                refreshCasaco = new JButton("Refresh");
                 
-                filtroCasaco = new JTextField("Pesquisar nome da calça");
+                filtroCasaco = new JTextField("Pesquisar nome do casaco");
                 botaoFiltroCasaco = new JButton("Filtrar");
                 botaoFiltroCasaco.setBounds(200, 50, 100, 30);
                 filtroCasaco.setBounds(20, 50, 150, 30);
@@ -277,17 +285,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroCasaco.setBounds(70, 300, 100, 30);
                 refreshCasaco.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaCasaco.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroCasaco);
-                janela.add(botaoFiltroCasaco);
-                janela.add(listaCasacoCadastrados);
-                janela.add(cadastroCasaco);
-                janela.add(refreshCasaco);
+                janelaCasaco.add(titulo);
+                janelaCasaco.add(filtroCasaco);
+                janelaCasaco.add(botaoFiltroCasaco);
+                janelaCasaco.add(listaCasacoCadastrados);
+                janelaCasaco.add(cadastroCasaco);
+                janelaCasaco.add(refreshCasaco);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaCasaco.setSize(600, 600);
+                janelaCasaco.setVisible(true);
 
                 cadastroCasaco.addActionListener(this);
                 refreshCasaco.addActionListener(this);
@@ -299,7 +307,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 5:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleCinto(dados).getNomesCinto();
                 listaCintoCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Cinto");
+                janelaCinto = new JFrame("Cinto");
                 titulo = new JLabel("Cintos Cadastrados");
                 cadastroCinto = new JButton("Cadastrar");
                 refreshCinto = new JButton("Refresh");
@@ -318,17 +326,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroCinto.setBounds(70, 300, 100, 30);
                 refreshCinto.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaCinto.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroCinto);
-                janela.add(botaoFiltroCinto);
-                janela.add(listaCintoCadastrados);
-                janela.add(cadastroCinto);
-                janela.add(refreshCinto);
+                janelaCinto.add(titulo);
+                janelaCinto.add(filtroCinto);
+                janelaCinto.add(botaoFiltroCinto);
+                janelaCinto.add(listaCintoCadastrados);
+                janelaCinto.add(cadastroCinto);
+                janelaCinto.add(refreshCinto);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaCinto.setSize(600, 600);
+                janelaCinto.setVisible(true);
 
                 cadastroCinto.addActionListener(this);
                 botaoFiltroCinto.addActionListener(this);
@@ -340,7 +348,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 6:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleCropped(dados).getNomesCropped();
                 listaCroppedCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Cropped");
+                janelaCropped = new JFrame("Cropped");
                 titulo = new JLabel("Cropped Cadastrados");
                 cadastroCropped = new JButton("Cadastrar");
                 refreshCropped = new JButton("Refresh");
@@ -359,17 +367,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroCropped.setBounds(70, 300, 100, 30);
                 refreshCropped.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaCropped.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroCropped);
-                janela.add(botaoFiltroCropped);
-                janela.add(listaCroppedCadastrados);
-                janela.add(cadastroCropped);
-                janela.add(refreshCropped);
+                janelaCropped.add(titulo);
+                janelaCropped.add(filtroCropped);
+                janelaCropped.add(botaoFiltroCropped);
+                janelaCropped.add(listaCroppedCadastrados);
+                janelaCropped.add(cadastroCropped);
+                janelaCropped.add(refreshCropped);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaCropped.setSize(600, 600);
+                janelaCropped.setVisible(true);
 
                 cadastroCropped.addActionListener(this);
                 refreshCropped.addActionListener(this);
@@ -381,7 +389,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 7:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleMacacao(dados).getNomesMacacao();
                 listaMacacaoCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Macacão");
+                janelaMacacao = new JFrame("Macacão");
                 titulo = new JLabel("Macacão Cadastrados");
                 cadastroMacacao = new JButton("Cadastrar");
                 refreshMacacao = new JButton("Refresh");
@@ -400,17 +408,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroMacacao.setBounds(70, 300, 100, 30);
                 refreshMacacao.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaMacacao.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroMacacao);
-                janela.add(botaoFiltroMacacao);
-                janela.add(listaMacacaoCadastrados);
-                janela.add(cadastroMacacao);
-                janela.add(refreshMacacao);
+                janelaMacacao.add(titulo);
+                janelaMacacao.add(filtroMacacao);
+                janelaMacacao.add(botaoFiltroMacacao);
+                janelaMacacao.add(listaMacacaoCadastrados);
+                janelaMacacao.add(cadastroMacacao);
+                janelaMacacao.add(refreshMacacao);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaMacacao.setSize(600, 600);
+                janelaMacacao.setVisible(true);
 
                 cadastroMacacao.addActionListener(this);
                 refreshMacacao.addActionListener(this);
@@ -422,7 +430,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 8:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleSaia(dados).getNomesSaia();
                 listaSaiaCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Saia");
+                janelaSaia = new JFrame("Saia");
                 titulo = new JLabel("Saias Cadastrados");
                 cadastroSaia = new JButton("Cadastrar");
                 refreshSaia = new JButton("Refresh");
@@ -441,17 +449,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroSaia.setBounds(70, 300, 100, 30);
                 refreshSaia.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaSaia.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(filtroSaia);
-                janela.add(botaoFiltroSaia);
-                janela.add(listaSaiaCadastrados);
-                janela.add(cadastroSaia);
-                janela.add(refreshSaia);
+                janelaSaia.add(titulo);
+                janelaSaia.add(filtroSaia);
+                janelaSaia.add(botaoFiltroSaia);
+                janelaSaia.add(listaSaiaCadastrados);
+                janelaSaia.add(cadastroSaia);
+                janelaSaia.add(refreshSaia);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaSaia.setSize(600, 600);
+                janelaSaia.setVisible(true);
 
                 cadastroSaia.addActionListener(this);
                 refreshSaia.addActionListener(this);
@@ -463,7 +471,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
             case 9:// Mostrar dados de alunos cadastrados (JList)
                 listaNomes = new ControleShorte(dados).getNomesShorte();
                 listaShorteCadastrados = new JList<String>(listaNomes);
-                janela = new JFrame("Saia");
+                janelaShorte = new JFrame("Saia");
                 titulo = new JLabel("Saias Cadastrados");
                 cadastroShorte = new JButton("Cadastrar");
                 refreshShorte = new JButton("Refresh");
@@ -482,17 +490,17 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 cadastroShorte.setBounds(70, 300, 100, 30);
                 refreshShorte.setBounds(200, 300, 100, 30);
 
-                janela.setLayout(null);
+                janelaShorte.setLayout(null);
 
-                janela.add(titulo);
-                janela.add(listaShorteCadastrados);
-                janela.add(cadastroShorte);
-                janela.add(refreshShorte);
-                janela.add(filtroShorte);
-                janela.add(botaoFiltroShorte);
+                janelaShorte.add(titulo);
+                janelaShorte.add(listaShorteCadastrados);
+                janelaShorte.add(cadastroShorte);
+                janelaShorte.add(refreshShorte);
+                janelaShorte.add(filtroShorte);
+                janelaShorte.add(botaoFiltroShorte);
 
-                janela.setSize(600, 600);
-                janela.setVisible(true);
+                janelaShorte.setSize(600, 600);
+                janelaShorte.setVisible(true);
 
                 cadastroShorte.addActionListener(this);
                 refreshShorte.addActionListener(this);
