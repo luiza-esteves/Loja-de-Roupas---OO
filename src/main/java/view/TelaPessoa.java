@@ -14,6 +14,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
     private JButton refreshCliente;
     private JButton cadastroVendedor;
     private JButton refreshVendedor;
+    private JTextField filtroNomeCliente;
+    private JButton botaoFiltroCliente = new JButton("Filtrar");
+    private JTextField filtroNomeFuncionario;
+    private JButton botaoFiltroFuncionario = new JButton("Filtrar");
     private static ControleDados dados;
     private JList<String> listaClientesCadastrados;
     private JList<String> listaVendedoresCadastrados;
@@ -31,28 +35,36 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Clientes Cadastrados");
                 cadastroCliente = new JButton("Cadastrar");
                 refreshCliente = new JButton("Refresh");
+                
+                filtroNomeCliente = new JTextField("Pesquisar nome do cliente");
+                botaoFiltroCliente = new JButton("Filtrar");
+                botaoFiltroCliente.setBounds(200, 50, 100, 30);
+                filtroNomeCliente.setBounds(20, 50, 150, 30);
 
                 titulo.setFont(new Font("Arial", Font.BOLD, 20));
                 titulo.setBounds(90, 10, 250, 30);
-                listaClientesCadastrados.setBounds(20, 50, 350, 120);
+                listaClientesCadastrados.setBounds(20, 100, 350, 120);
                 listaClientesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
                 listaClientesCadastrados.setVisibleRowCount(10);
 
-                cadastroCliente.setBounds(70, 177, 100, 30);
-                refreshCliente.setBounds(200, 177, 100, 30);
+                cadastroCliente.setBounds(70, 300, 100, 30);
+                refreshCliente.setBounds(200, 300, 100, 30);
 
                 janela.setLayout(null);
 
                 janela.add(titulo);
+                janela.add(botaoFiltroCliente);
+                janela.add(filtroNomeCliente);
                 janela.add(listaClientesCadastrados);
                 janela.add(cadastroCliente);
                 janela.add(refreshCliente);
 
-                janela.setSize(400, 250);
+                janela.setSize(500, 500);
                 janela.setVisible(true);
 
                 cadastroCliente.addActionListener(this);
                 refreshCliente.addActionListener(this);
+                botaoFiltroCliente.addActionListener(this);
                 listaClientesCadastrados.addListSelectionListener(this);
 
                 break;
@@ -64,27 +76,35 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
                 titulo = new JLabel("Funcionários Cadastrados");
                 cadastroVendedor = new JButton("Cadastrar");
                 refreshVendedor = new JButton("Refresh");
+                
+                filtroNomeFuncionario = new JTextField("Pesquisar nome do funcionário");
+                botaoFiltroFuncionario = new JButton("Filtrar");
+                botaoFiltroFuncionario.setBounds(200, 50, 100, 30);
+                filtroNomeFuncionario.setBounds(20, 50, 150, 30);
 
                 titulo.setFont(new Font("Arial", Font.BOLD, 20));
                 titulo.setBounds(90, 10, 250, 30);
-                listaVendedoresCadastrados.setBounds(20, 50, 350, 120);
+                listaVendedoresCadastrados.setBounds(20, 100, 350, 120);
                 listaVendedoresCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
                 listaVendedoresCadastrados.setVisibleRowCount(10);
 
-                cadastroVendedor.setBounds(70, 177, 100, 30);
-                refreshVendedor.setBounds(200, 177, 100, 30);
+                cadastroVendedor.setBounds(70, 300, 100, 30);
+                refreshVendedor.setBounds(200, 300, 100, 30);
 
                 janela.setLayout(null);
 
                 janela.add(titulo);
+                janela.add(botaoFiltroFuncionario);
+                janela.add(filtroNomeFuncionario);
                 janela.add(listaVendedoresCadastrados);
                 janela.add(cadastroVendedor);
                 janela.add(refreshVendedor);
 
-                janela.setSize(400, 250);
+                janela.setSize(500, 500);
                 janela.setVisible(true);
 
                 cadastroVendedor.addActionListener(this);
+                botaoFiltroFuncionario.addActionListener(this);
                 refreshVendedor.addActionListener(this);
                 listaVendedoresCadastrados.addListSelectionListener(this);
                 break;
@@ -119,6 +139,54 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
         if (src == refreshVendedor) {
             listaVendedoresCadastrados.setListData(new ControleFuncionario(dados).getNomefuncionario());
             listaVendedoresCadastrados.updateUI();
+        }
+        
+        if (src == botaoFiltroCliente) {
+           
+            ControleCliente nomeEstoque = new ControleCliente(dados);          
+            String nomeDig =filtroNomeCliente.getText();
+            String[] nome = new String[1];
+            boolean encontrar = false;
+            int x=0;
+            do{
+
+                nome[0] = nomeEstoque.getNomesCliente()[x];
+                if(nomeDig.equals(nome[0])){                             
+                    listaClientesCadastrados.setListData(nome);
+                    listaClientesCadastrados.updateUI();
+                    encontrar= true;
+                    
+                }
+                x++;
+            }while(encontrar==false && x<nomeEstoque.getNomesCliente().length);
+            if(!encontrar){
+                mensagemErroBusca();
+            }
+           
+        }
+        
+        if (src == botaoFiltroFuncionario) {
+           
+            ControleFuncionario nomeEstoque = new ControleFuncionario(dados);          
+            String nomeDig =filtroNomeFuncionario.getText();
+            String[] nome = new String[1];
+            boolean encontrar = false;
+            int x=0;
+            do{
+
+                nome[0] = nomeEstoque.getNomefuncionario()[x];
+                if(nomeDig.equals(nome[0])){                             
+                    listaVendedoresCadastrados.setListData(nome);
+                    listaVendedoresCadastrados.updateUI();
+                    encontrar= true;
+                    
+                }
+                x++;
+            }while(encontrar==false && x<nomeEstoque.getNomefuncionario().length);
+            if(!encontrar){
+                mensagemErroBusca();
+            }
+           
         }
 
     }
@@ -217,6 +285,10 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
     public void setListaNomes(String[] listaNomes) {
         this.listaNomes = listaNomes;
+    }
+    public void mensagemErroBusca() {
+        JOptionPane.showMessageDialog(null, "Roupa não encontrada!.\n ", null,
+                JOptionPane.ERROR_MESSAGE);
     }
 
 }
