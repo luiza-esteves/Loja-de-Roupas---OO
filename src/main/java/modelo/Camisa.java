@@ -3,18 +3,18 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Camisa extends Roupa{
-     Scanner ler = new Scanner(System.in);
-     
+public class Camisa extends Roupa {
+
+    Scanner ler = new Scanner(System.in);
+
     private String modelagem, manga, gola, botao;
-     
-    
-    public Camisa(){
+
+    public Camisa() {
         super();
     }
 
-    public Camisa(String modelagem, String manga, String gola, String botao,int c,
-            String no, String t,String cor, String mat, String marca, String categ,
+    public Camisa(String modelagem, String manga, String gola, String botao, int c,
+            String no, String t, String cor, String mat, String marca, String categ,
             String gen, String est, double comp, double pr) {
         this.modelagem = modelagem;
         this.manga = manga;
@@ -22,40 +22,38 @@ public class Camisa extends Roupa{
         this.botao = botao;
         this.codigo = c;
         this.nome = no;
-        this.tamanho =t; 
-        this.cor=cor;
-        this.material= mat;
-        this.marca=marca;
-        this.categoria=categ;
-        this.genero=gen;
-        this.estampa=est;
-        this.comprimento=comp;
-        this.preco=pr;
+        this.tamanho = t;
+        this.cor = cor;
+        this.material = mat;
+        this.marca = marca;
+        this.categoria = categ;
+        this.genero = gen;
+        this.estampa = est;
+        this.comprimento = comp;
+        this.preco = pr;
     }
 
     @Override
     public String toString() {
 
-        return("Nome: /n"+nome
-                +"Código: /n"+codigo
-                +"Tamanho: /n"+tamanho
-                +"Cor: /n"+cor
-                +"Material: "+material
-                +"Marca: "+marca
-                +"Categoria: "+categoria
-                +"Gênero: "+genero
-                +"Estampa: "+estampa
-                +"Comprimento: "+comprimento
-                +"Preço: "+preco
-                +"Modelagem: "+modelagem
-                +"Manga: "+manga
-                +"Gola: "+gola
-                +"Botão: "+botao
-                
-        );
-        
+        return ("Nome: /n" + nome
+                + "Código: /n" + codigo
+                + "Tamanho: /n" + tamanho
+                + "Cor: /n" + cor
+                + "Material: " + material
+                + "Marca: " + marca
+                + "Categoria: " + categoria
+                + "Gênero: " + genero
+                + "Estampa: " + estampa
+                + "Comprimento: " + comprimento
+                + "Preço: " + preco
+                + "Modelagem: " + modelagem
+                + "Manga: " + manga
+                + "Gola: " + gola
+                + "Botão: " + botao);
+
     }
-    
+
     public String getModelagem() {
         return modelagem;
     }
@@ -157,12 +155,12 @@ public class Camisa extends Roupa{
     public void setEstampa(String estampa) {
         this.estampa = estampa;
     }
-    
+
     @Override
     public double getComprimento() {
         return comprimento;
     }
-    
+
     @Override
     public void setComprimento(double comprimento) {
         this.comprimento = comprimento;
@@ -177,7 +175,5 @@ public class Camisa extends Roupa{
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    
-    
 
 }

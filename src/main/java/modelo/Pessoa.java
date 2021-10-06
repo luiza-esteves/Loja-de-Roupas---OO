@@ -1,18 +1,19 @@
 package modelo;
 
 import java.util.Date;
+
 public abstract class Pessoa {
-    
+
     protected String dataNascimento;
     protected String nome;
     protected long cpf;
     protected Telefone telefone;
     protected Endereco endereco;
-    
-    public Pessoa(){
+
+    public Pessoa() {
         super();
     }
-    
+
     public String getDataNascimento() {
         return dataNascimento;
     }
@@ -53,6 +54,4 @@ public abstract class Pessoa {
         this.endereco = endereco;
     }
 
- 
-    
 }

@@ -1,15 +1,15 @@
-package modelo;    
+package modelo;
 
 public abstract class Roupa {
+
     // atributos da classe 
     protected int codigo;
     protected String nome, tamanho, cor, material, marca,
             categoria, genero, estampa;
     protected double comprimento, preco;
 
-    
     // método construtor
-    public Roupa(){
+    public Roupa() {
         super();
     }
 

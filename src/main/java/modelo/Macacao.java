@@ -2,65 +2,62 @@ package modelo;
 
 import java.util.Scanner;
 
-public class Macacao extends Roupa{
+public class Macacao extends Roupa {
+
     Scanner ler = new Scanner(System.in);
 
     private String modelagem, lavagem;
-       
-    public Macacao(){
+
+    public Macacao() {
         super();
     }
 
-    public Macacao(String modelagem, String lavagem,int c,
-            String no, String t,String cor, String mat, String marca, String categ,
+    public Macacao(String modelagem, String lavagem, int c,
+            String no, String t, String cor, String mat, String marca, String categ,
             String gen, String est, double comp, double pr) {
         this.modelagem = modelagem;
         this.lavagem = lavagem;
         this.codigo = c;
         this.nome = no;
-        this.tamanho =t; 
-        this.cor=cor;
-        this.material= mat;
-        this.marca=marca;
-        this.categoria=categ;
-        this.genero=gen;
-        this.estampa=est;
-        this.comprimento=comp;
-        this.preco=pr;
+        this.tamanho = t;
+        this.cor = cor;
+        this.material = mat;
+        this.marca = marca;
+        this.categoria = categ;
+        this.genero = gen;
+        this.estampa = est;
+        this.comprimento = comp;
+        this.preco = pr;
     }
-    
+
     @Override
     public String toString() {
-        return("Nome: /n"+nome
-                +"Código: /n"+codigo
-                +"Tamanho: /n"+tamanho
-                +"Cor: /n"+cor
-                +"Material: "+material
-                +"Marca: "+marca
-                +"Categoria: "+categoria
-                +"Gênero: "+genero
-                +"Estampa: "+estampa
-                +"Comprimento: "+comprimento
-                +"Preço: "+preco
-                +"Modelagem: "+modelagem
-                +"Lavagem: "+lavagem              
-        );
-    
-    
- 
-    
+        return ("Nome: /n" + nome
+                + "Código: /n" + codigo
+                + "Tamanho: /n" + tamanho
+                + "Cor: /n" + cor
+                + "Material: " + material
+                + "Marca: " + marca
+                + "Categoria: " + categoria
+                + "Gênero: " + genero
+                + "Estampa: " + estampa
+                + "Comprimento: " + comprimento
+                + "Preço: " + preco
+                + "Modelagem: " + modelagem
+                + "Lavagem: " + lavagem);
+
     }
-    
-    
+
     @Override
     public int getCodigo() {
         return codigo;
     }
+
     @Override
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
+
     @Override
     public String getNome() {
         return nome;
@@ -140,12 +137,12 @@ public class Macacao extends Roupa{
     public void setEstampa(String estampa) {
         this.estampa = estampa;
     }
-    
+
     @Override
     public double getComprimento() {
         return comprimento;
     }
-    
+
     @Override
     public void setComprimento(double comprimento) {
         this.comprimento = comprimento;
@@ -176,5 +173,5 @@ public class Macacao extends Roupa{
     public void setLavagem(String lavagem) {
         this.lavagem = lavagem;
     }
-    
+
 }

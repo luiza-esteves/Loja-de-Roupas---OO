@@ -1,57 +1,52 @@
-
 package modelo;
 
 import java.util.Scanner;
 
-public class Shorte extends Roupa{
+public class Shorte extends Roupa {
+
     Scanner ler = new Scanner(System.in);
-    
+
     private String tipoShort, tipoBoca;
-    
-       
-    public Shorte(){
+
+    public Shorte() {
         super();
     }
 
-    public Shorte(String tipoShort, String tipoBoca,  int c, 
-            String no, String t,String cor, String mat, String marca, String categ,
+    public Shorte(String tipoShort, String tipoBoca, int c,
+            String no, String t, String cor, String mat, String marca, String categ,
             String gen, String est, double comp, double pr) {
-        
+
         this.tipoShort = tipoShort;
         this.tipoBoca = tipoBoca;
         this.codigo = c;
         this.nome = no;
-        this.tamanho =t; 
-        this.cor=cor;
-        this.material= mat;
-        this.marca=marca;
-        this.categoria=categ;
-        this.genero=gen;
-        this.estampa=est;
-        this.comprimento=comp;
-        this.preco=pr;
+        this.tamanho = t;
+        this.cor = cor;
+        this.material = mat;
+        this.marca = marca;
+        this.categoria = categ;
+        this.genero = gen;
+        this.estampa = est;
+        this.comprimento = comp;
+        this.preco = pr;
     }
-    
-    
-        @Override
+
+    @Override
     public String toString() {
-        return("Nome: /n"+nome
-                +"Código: /n"+codigo
-                +"Tamanho: /n"+tamanho
-                +"Cor: /n"+cor
-                +"Material: "+material
-                +"Marca: "+marca
-                +"Categoria: "+categoria
-                +"Gênero: "+genero
-                +"Estampa: "+estampa
-                +"Comprimento: "+comprimento
-                +"Preço: "+preco
-                +"Tipo de Short: "+tipoShort
-                +"Tipo de boca: "+tipoBoca
-                           
-        );
+        return ("Nome: /n" + nome
+                + "Código: /n" + codigo
+                + "Tamanho: /n" + tamanho
+                + "Cor: /n" + cor
+                + "Material: " + material
+                + "Marca: " + marca
+                + "Categoria: " + categoria
+                + "Gênero: " + genero
+                + "Estampa: " + estampa
+                + "Comprimento: " + comprimento
+                + "Preço: " + preco
+                + "Tipo de Short: " + tipoShort
+                + "Tipo de boca: " + tipoBoca);
     }
-    
 
     public Scanner getLer() {
         return ler;
@@ -164,7 +159,5 @@ public class Shorte extends Roupa{
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    
-    
-    
+
 }

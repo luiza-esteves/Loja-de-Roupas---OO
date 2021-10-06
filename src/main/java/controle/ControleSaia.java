@@ -9,30 +9,24 @@ import java.text.ParseException;
 import modelo.Saia;
 import modelo.Dados;
 
-/**
- *
- * @author luiza
- */
 public class ControleSaia {
-     private Saia[] saia;
-        private int qtdSaia;
-        private Dados dados = new Dados();
 
-        public ControleSaia(ControleDados d) {
-            saia = d.getSaia();
-            qtdSaia = d.getQtdEstoque();
-        }
-        
-        public String[] getNomesSaia() {
-                    String[] s = new String[qtdSaia];
-                    for(int i = 0; i < qtdSaia; i++) {
-                            s[i] = saia[i].getNome();
-                    }
+    private Saia[] saia;
+    private int qtdSaia;
+    private Dados dados = new Dados();
 
-                    return s;
+    public ControleSaia(ControleDados d) {
+        saia = d.getSaia();
+        qtdSaia = d.getQtdEstoque();
+    }
+
+    public String[] getNomesSaia() {
+        String[] s = new String[qtdSaia];
+        for (int i = 0; i < qtdSaia; i++) {
+            s[i] = saia[i].getNome();
         }
-        
-        
-    
-    
+
+        return s;
+    }
+
 }

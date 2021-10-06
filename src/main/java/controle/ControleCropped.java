@@ -9,30 +9,24 @@ import java.text.ParseException;
 import modelo.Cropped;
 import modelo.Dados;
 
-/**
- *
- * @author luiza
- */
 public class ControleCropped {
 
     private Cropped[] cropped;
-        private int qtdCropped;
-        private Dados dados = new Dados();
+    private int qtdCropped;
+    private Dados dados = new Dados();
 
-        public ControleCropped(ControleDados d) {
-            cropped = d.getCropped();
-            qtdCropped = d.getQtdEstoque();
-        }
-        
-        public String[] getNomesCropped() {
-                    String[] s = new String[qtdCropped];
-                    for(int i = 0; i < qtdCropped; i++) {
-                            s[i] = cropped[i].getNome();
-                    }
+    public ControleCropped(ControleDados d) {
+        cropped = d.getCropped();
+        qtdCropped = d.getQtdEstoque();
+    }
 
-                    return s;
+    public String[] getNomesCropped() {
+        String[] s = new String[qtdCropped];
+        for (int i = 0; i < qtdCropped; i++) {
+            s[i] = cropped[i].getNome();
         }
-        
-        
-    
+
+        return s;
+    }
+
 }

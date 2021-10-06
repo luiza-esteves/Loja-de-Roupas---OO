@@ -1,179 +1,202 @@
 package modelo;
+
 import java.util.*;
 
 public class Dados {
-    
-     private Calca[] calca = new Calca[50];
-     private int qtdCalca ;
-     private Camisa[] camisa = new Camisa[50];
-     private int qtdCamisa;
-     private Camiseta[] camiseta = new Camiseta[50];
-     private int qtdCamiseta;
-     private Casaco[] casaco = new Casaco[50];
-     private int qtdCasaco;
-     private Cinto[] cinto = new Cinto[50];
-     private int qtdCinto;
-     private Cropped[] cropped = new Cropped[50];
-     private int qtdCropped;
-     private Macacao[] macacao = new Macacao[50];
-     private int qtdMacacao;
-     private Saia[] saia = new Saia[50];
-     private int qtdSaia;
-     private Shorte[] shorte = new Shorte[50];
-     private int qtdShorte;
-     private Cliente[] cliente = new Cliente[50];
-     private int qtdCliente;
-     private Venda[] venda = new Venda[50];
-     private int qtdVenda;
-     private Telefone[] telefone = new Telefone[50];
-     private int qtdTelefone;
-     private Endereco[] endereco = new Endereco[50];
-     private int qtdEndereco;
-     
-     private Estoque[] estoque = new Estoque[50];
-     private int qtdEstoque;
-     
-     private Funcionario[] funcionario = new Funcionario[50];
-     private int qtdFuncionario;
-     
-     
-     public void fillWithSomeData() {
-		
-		for(int i = 0; i < 5; i++) {
-			telefone[i] = new Telefone((i+1)*100, (i+1)*1000000);
-                        endereco[i] = new Endereco("cidade"+i,"estado"+i,"bairro"+i,11111111+i,i+2,i,i+1);
-                        calca[i] = new Calca("Tipo de cal�a"+i,"Cos"+i,"lavagem"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        camisa[i] = new Camisa("Modelagem"+i,"Manga"+i,"Gola"+i,"Bot�o"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        camiseta[i] = new Camiseta("Modelagem"+i,"Decote"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        casaco[i] = new Casaco("Capuz"+i,"Zíper"+i,"Gola"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        cinto[i] = new Cinto("Ocasião"+i,i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        cropped[i] = new Cropped("Estilo"+i,"Modelagem"+i,"Manga"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        macacao[i] = new Macacao("Modelagem"+i,"Lavagem"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        saia[i] = new Saia("Modelagem"+i,"Tipo de cintura"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-                        shorte[i] = new Shorte("Tipo de short"+i,"Tipo de boca"+i,i,"nome"+i,"P",
-                                "cor "+i, "material"+i,"marca"+i,"categoria"+i,"genero"+i,
-                        "estampa"+i,i,i);
-                        
-			cliente[i] = new Cliente(0,"Nome: "+i,000000000+i,telefone[i],endereco[i],"data"+i);
-                        
-                        funcionario[i] = new Funcionario(i*608.21,"Nome: "+i,000000044+i,telefone[i],endereco[i],"data"+i);
-                        
-                        estoque[i] = new Estoque(calca[i].getNome(),2,1,1);
-                        
-                        venda[i]=new Venda(i,50*i,"Cartão",funcionario[i],cliente[i],calca[i].getNome());
-                        
-				
-		} 
-		
-		qtdCalca = 5;
-		qtdCamisa = 5;
-		qtdCamiseta = 5;
-		qtdCasaco = 5;
-		qtdCinto = 5;
-                qtdCliente =5; 
-                qtdCropped =5; 
-              
-                qtdEndereco =5; 
-                qtdEstoque =5; 
-                qtdFuncionario =5; 
-                qtdMacacao =5; 
-                qtdSaia =5; 
-                qtdShorte =5; 
-                qtdTelefone =5; 
-                qtdVenda =5;
-                
-                
-	}
-    
-     public void inserirEditarVenda(Venda v, int pos) {
- 		this.venda[pos] = v;
- 		if(pos == qtdVenda) qtdVenda++;
-     } 
-     
+
+    private Calca[] calca = new Calca[50];
+    private int qtdCalca;
+    private Camisa[] camisa = new Camisa[50];
+    private int qtdCamisa;
+    private Camiseta[] camiseta = new Camiseta[50];
+    private int qtdCamiseta;
+    private Casaco[] casaco = new Casaco[50];
+    private int qtdCasaco;
+    private Cinto[] cinto = new Cinto[50];
+    private int qtdCinto;
+    private Cropped[] cropped = new Cropped[50];
+    private int qtdCropped;
+    private Macacao[] macacao = new Macacao[50];
+    private int qtdMacacao;
+    private Saia[] saia = new Saia[50];
+    private int qtdSaia;
+    private Shorte[] shorte = new Shorte[50];
+    private int qtdShorte;
+    private Cliente[] cliente = new Cliente[50];
+    private int qtdCliente;
+    private Venda[] venda = new Venda[50];
+    private int qtdVenda;
+    private Telefone[] telefone = new Telefone[50];
+    private int qtdTelefone;
+    private Endereco[] endereco = new Endereco[50];
+    private int qtdEndereco;
+
+    private Estoque[] estoque = new Estoque[50];
+    private int qtdEstoque;
+
+    private Funcionario[] funcionario = new Funcionario[50];
+    private int qtdFuncionario;
+
+    public void fillWithSomeData() {
+
+        for (int i = 0; i < 5; i++) {
+            telefone[i] = new Telefone((i + 1) * 100, (i + 1) * 1000000);
+            endereco[i] = new Endereco("cidade" + i, "estado" + i, "bairro" + i, 11111111 + i, i + 2, i, i + 1);
+            calca[i] = new Calca("Tipo de calça" + i, "Cos" + i, "lavagem" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+            camisa[i] = new Camisa("Modelagem" + i, "Manga" + i, "Gola" + i, "Bot�o" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            camiseta[i] = new Camiseta("Modelagem" + i, "Decote" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            casaco[i] = new Casaco("Capuz" + i, "Zíper" + i, "Gola" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            cinto[i] = new Cinto("Ocasião" + i, i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            cropped[i] = new Cropped("Estilo" + i, "Modelagem" + i, "Manga" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            macacao[i] = new Macacao("Modelagem" + i, "Lavagem" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            saia[i] = new Saia("Modelagem" + i, "Tipo de cintura" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            shorte[i] = new Shorte("Tipo de short" + i, "Tipo de boca" + i, i, "nome" + i, "P",
+                    "cor " + i, "material" + i, "marca" + i, "categoria" + i, "genero" + i,
+                    "estampa" + i, i, i);
+
+            cliente[i] = new Cliente(0, "Nome: " + i, 000000000 + i, telefone[i], endereco[i], "data" + i);
+
+            funcionario[i] = new Funcionario(i * 608.21, "Nome: " + i, 000000044 + i, telefone[i], endereco[i], "data" + i);
+
+            estoque[i] = new Estoque(calca[i].getNome(), 2, 1, 1);
+
+            venda[i] = new Venda(i, 50 * i, "Cartão", funcionario[i], cliente[i], calca[i].getNome());
+
+        }
+
+        qtdCalca = 5;
+        qtdCamisa = 5;
+        qtdCamiseta = 5;
+        qtdCasaco = 5;
+        qtdCinto = 5;
+        qtdCliente = 5;
+        qtdCropped = 5;
+
+        qtdEndereco = 5;
+        qtdEstoque = 5;
+        qtdFuncionario = 5;
+        qtdMacacao = 5;
+        qtdSaia = 5;
+        qtdShorte = 5;
+        qtdTelefone = 5;
+        qtdVenda = 5;
+
+    }
+
+    public void inserirEditarVenda(Venda v, int pos) {
+        this.venda[pos] = v;
+        if (pos == qtdVenda) {
+            qtdVenda++;
+        }
+    }
+
     public void inserirEditarCliente(Cliente c, int pos) {
-		this.cliente[pos] = c;
-		if(pos == qtdCliente) qtdCliente++;
+        this.cliente[pos] = c;
+        if (pos == qtdCliente) {
+            qtdCliente++;
+        }
     }
-    
-    public void inserirEditarEstoque(Estoque e,int pos) {              
-		this.estoque[pos]=e;
-		if(pos == qtdEstoque) qtdEstoque++;
-                
+
+    public void inserirEditarEstoque(Estoque e, int pos) {
+        this.estoque[pos] = e;
+        if (pos == qtdEstoque) {
+            qtdEstoque++;
+        }
+
     }
-     
+
     public void inserirEditarFuncionario(Funcionario f, int pos) {
-		this.funcionario[pos] = f;
-		if(pos == qtdFuncionario) qtdFuncionario++;
+        this.funcionario[pos] = f;
+        if (pos == qtdFuncionario) {
+            qtdFuncionario++;
+        }
     }
-    
+
     public void inserirEditarCalca(Calca c, int pos) {
-		this.calca[pos] = c;               
-		if(pos == qtdCalca) qtdCalca++;         
+        this.calca[pos] = c;
+        if (pos == qtdCalca) {
+            qtdCalca++;
+        }
     }
-    
+
     public void inserirEditarCamisa(Camisa c, int pos) {
-		this.camisa[pos] = c;
-		if(pos == qtdCamisa) qtdCamisa++;
+        this.camisa[pos] = c;
+        if (pos == qtdCamisa) {
+            qtdCamisa++;
+        }
     }
-    
+
     public void inserirEditarCamiseta(Camiseta c, int pos) {
-		this.camiseta[pos] = c;
-		if(pos == qtdCamiseta) qtdCamiseta++;
+        this.camiseta[pos] = c;
+        if (pos == qtdCamiseta) {
+            qtdCamiseta++;
+        }
     }
-    
+
     public void inserirEditarCasaco(Casaco c, int pos) {
-		this.casaco[pos] = c;
-		if(pos == qtdCasaco) qtdCasaco++;
+        this.casaco[pos] = c;
+        if (pos == qtdCasaco) {
+            qtdCasaco++;
+        }
     }
-    
+
     public void inserirEditarCinto(Cinto c, int pos) {
-		this.cinto[pos] = c;
-		if(pos == qtdCinto) qtdCinto++;
+        this.cinto[pos] = c;
+        if (pos == qtdCinto) {
+            qtdCinto++;
+        }
     }
-    
+
     public void inserirEditarCropped(Cropped c, int pos) {
-		this.cropped[pos] = c;
-		if(pos == qtdCropped) qtdCropped++;
+        this.cropped[pos] = c;
+        if (pos == qtdCropped) {
+            qtdCropped++;
+        }
     }
-    
+
     public void inserirEditarMacacao(Macacao c, int pos) {
-		this.macacao[pos] = c;
-		if(pos == qtdMacacao) qtdMacacao++;
+        this.macacao[pos] = c;
+        if (pos == qtdMacacao) {
+            qtdMacacao++;
+        }
     }
-    
+
     public void inserirEditarSaia(Saia c, int pos) {
-		this.saia[pos] = c;
-		if(pos == qtdSaia) qtdSaia++;
+        this.saia[pos] = c;
+        if (pos == qtdSaia) {
+            qtdSaia++;
+        }
     }
-    
+
     public void inserirEditarShorte(Shorte c, int pos) {
-		this.shorte[pos] = c;
-		if(pos == qtdShorte) qtdShorte++;
+        this.shorte[pos] = c;
+        if (pos == qtdShorte) {
+            qtdShorte++;
+        }
     }
-     
 
     public Calca[] getCalca() {
         return calca;
@@ -182,12 +205,10 @@ public class Dados {
     public void setCalca(Calca[] calca) {
         this.calca = calca;
     }
-    
+
     public int getQtdCalca() {
         return qtdCalca;
     }
-
-    
 
     public void setQtdCalca(int qtdCalca) {
         this.qtdCalca = qtdCalca;
@@ -368,7 +389,6 @@ public class Dados {
     public void setQtdTelefone(int qtdTelefone) {
         this.qtdTelefone = qtdTelefone;
     }
- 
 
     public Endereco[] getEndereco() {
         return endereco;
@@ -385,7 +405,6 @@ public class Dados {
     public void setQtdEndereco(int qtdEndereco) {
         this.qtdEndereco = qtdEndereco;
     }
-
 
     public Estoque[] getEstoque() {
         return estoque;
@@ -418,5 +437,5 @@ public class Dados {
     public void setQtdFuncionario(int qtdFuncionario) {
         this.qtdFuncionario = qtdFuncionario;
     }
- 
+
 }

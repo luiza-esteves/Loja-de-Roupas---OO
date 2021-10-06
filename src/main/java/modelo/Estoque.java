@@ -2,25 +2,23 @@ package modelo;
 
 import java.util.Scanner;
 
-    
 public class Estoque {
-     Scanner ler = new Scanner(System.in);
 
-     private  int qtdDispobnivel,codRoupa;
-     private String nomeRoupa;
-     
-     public Estoque(){
-         super();
-     }
+    Scanner ler = new Scanner(System.in);
 
-      public Estoque(String nome, int qtd,int codRoupa, int codEstoque){
-          
-          this.qtdDispobnivel=qtd;
-          nomeRoupa = nome;
-          this.codRoupa=1; 
-     }
+    private int qtdDispobnivel, codRoupa;
+    private String nomeRoupa;
 
-   
+    public Estoque() {
+        super();
+    }
+
+    public Estoque(String nome, int qtd, int codRoupa, int codEstoque) {
+
+        this.qtdDispobnivel = qtd;
+        nomeRoupa = nome;
+        this.codRoupa = 1;
+    }
 
     public int getQtdDispobnivel() {
         return qtdDispobnivel;
@@ -45,8 +43,5 @@ public class Estoque {
     public void setNomeRoupa(String nomeRoupa) {
         this.nomeRoupa = nomeRoupa;
     }
-     
-     
 
-    
 }

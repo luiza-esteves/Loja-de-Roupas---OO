@@ -1,44 +1,46 @@
 package modelo;
+
 import java.util.Date;
 
 import java.util.Scanner;
 
 public class Cliente extends Pessoa {
+
     Scanner ler = new Scanner(System.in);
     private int totalCompras;
-    
-    public Cliente(){
+
+    public Cliente() {
         super();
     }
-    
+
     public Cliente(String n) {
-    	this.nome = n;
+        this.nome = n;
     }
-    
-    public Cliente(int totalCompras, String n, int cp, Telefone t, Endereco e,String d) {
+
+    public Cliente(int totalCompras, String n, int cp, Telefone t, Endereco e, String d) {
         this.totalCompras = totalCompras;
         this.nome = n;
         this.cpf = cp;
         this.telefone = t;
         this.endereco = e;
         this.dataNascimento = d;
-           
+
     }
-    
-    public void cadastrarVenda(){
+
+    public void cadastrarVenda() {
         int qtd;
-        totalCompras=this.totalCompras++;
+        totalCompras = this.totalCompras++;
     }
-    
-     @Override
-        public String toString() {
-		return "Nome:" + nome+
-                        "Cpf:" + cpf+
-                        "Telefone:" + telefone+
-                        "Endere�o:" + endereco+
-                        "Data de nascimento:" + dataNascimento+
-                        "Total de compras:" + totalCompras;
-	}
+
+    @Override
+    public String toString() {
+        return "Nome:" + nome
+                + "Cpf:" + cpf
+                + "Telefone:" + telefone
+                + "Endere�o:" + endereco
+                + "Data de nascimento:" + dataNascimento
+                + "Total de compras:" + totalCompras;
+    }
 
     public Scanner getLer() {
         return ler;
@@ -105,5 +107,5 @@ public class Cliente extends Pessoa {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-     
+
 }

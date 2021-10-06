@@ -1,20 +1,24 @@
 package modelo;
+
 import java.util.Date;
 
 import java.util.Scanner;
+
 public class Funcionario extends Pessoa {
+
     Scanner ler = new Scanner(System.in);
-    
+
     private double salario;
-    
-    public Funcionario(){
+
+    public Funcionario() {
         super();
     }
-	
-    public Funcionario(String n){
-    	this.nome = n;
+
+    public Funcionario(String n) {
+        this.nome = n;
     }
-    public Funcionario(double salario,String n, int cp, Telefone t, Endereco e,String d) {
+
+    public Funcionario(double salario, String n, int cp, Telefone t, Endereco e, String d) {
         this.salario = salario;
         this.nome = n;
         this.cpf = cp;
@@ -22,17 +26,17 @@ public class Funcionario extends Pessoa {
         this.endereco = e;
         this.dataNascimento = d;
     }
-    
+
     @Override
-        public String toString() {
-		return "Nome:" + nome+
-                        "Cpf:" + cpf+
-                        "Telefone:" + telefone+
-                        "Endereço:" + endereco+
-                        "Data de nascimento:" + dataNascimento+
-                        "Salário:" + salario;
-	}
-    
+    public String toString() {
+        return "Nome:" + nome
+                + "Cpf:" + cpf
+                + "Telefone:" + telefone
+                + "Endereço:" + endereco
+                + "Data de nascimento:" + dataNascimento
+                + "Salário:" + salario;
+    }
+
     public Scanner getLer() {
         return ler;
     }
@@ -88,6 +92,5 @@ public class Funcionario extends Pessoa {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
 
 }

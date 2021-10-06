@@ -1,51 +1,52 @@
 package modelo;
+
 import java.util.Scanner;
 
 public class Cropped extends Roupa {
+
     Scanner ler = new Scanner(System.in);
-    
+
     private String estilo, modelagem, manga;
-       
-    public Cropped(){
+
+    public Cropped() {
         super();
     }
 
-    public Cropped(String estilo, String modelagem, String manga,int c,
-            String no, String t,String cor, String mat, String marca, String categ,
+    public Cropped(String estilo, String modelagem, String manga, int c,
+            String no, String t, String cor, String mat, String marca, String categ,
             String gen, String est, double comp, double pr) {
         this.estilo = estilo;
         this.modelagem = modelagem;
         this.manga = manga;
         this.codigo = c;
         this.nome = no;
-        this.tamanho =t; 
-        this.cor=cor;
-        this.material= mat;
-        this.marca=marca;
-        this.categoria=categ;
-        this.genero=gen;
-        this.estampa=est;
-        this.comprimento=comp;
-        this.preco=pr;
+        this.tamanho = t;
+        this.cor = cor;
+        this.material = mat;
+        this.marca = marca;
+        this.categoria = categ;
+        this.genero = gen;
+        this.estampa = est;
+        this.comprimento = comp;
+        this.preco = pr;
     }
-    
+
     @Override
     public String toString() {
-        return("Nome: /n"+nome
-                +"Código: /n"+codigo
-                +"Tamanho: /n"+tamanho
-                +"Cor: /n"+cor
-                +"Material: "+material
-                +"Marca: "+marca
-                +"Categoria: "+categoria
-                +"Gênero: "+genero
-                +"Estampa: "+estampa
-                +"Comprimento: "+comprimento
-                +"Preço: "+preco
-                +"Estilo: "+estilo
-                +"Modelagem: "+modelagem
-                +"Manga: "+manga              
-        );
+        return ("Nome: /n" + nome
+                + "Código: /n" + codigo
+                + "Tamanho: /n" + tamanho
+                + "Cor: /n" + cor
+                + "Material: " + material
+                + "Marca: " + marca
+                + "Categoria: " + categoria
+                + "Gênero: " + genero
+                + "Estampa: " + estampa
+                + "Comprimento: " + comprimento
+                + "Preço: " + preco
+                + "Estilo: " + estilo
+                + "Modelagem: " + modelagem
+                + "Manga: " + manga);
     }
 
     public String getEstilo() {
@@ -72,15 +73,16 @@ public class Cropped extends Roupa {
         this.manga = manga;
     }
 
-  @Override
+    @Override
     public int getCodigo() {
         return codigo;
     }
+
     @Override
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
+
     @Override
     public String getNome() {
         return nome;
@@ -160,12 +162,12 @@ public class Cropped extends Roupa {
     public void setEstampa(String estampa) {
         this.estampa = estampa;
     }
-    
+
     @Override
     public double getComprimento() {
         return comprimento;
     }
-    
+
     @Override
     public void setComprimento(double comprimento) {
         this.comprimento = comprimento;
@@ -181,5 +183,4 @@ public class Cropped extends Roupa {
         this.preco = preco;
     }
 
-    
 }

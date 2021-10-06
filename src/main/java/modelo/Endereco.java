@@ -1,7 +1,7 @@
 package modelo;
 
-
 public class Endereco {
+
     private String cidade, estado, bairro;
     private int cep, rua, quadra, lote;
 
@@ -14,17 +14,17 @@ public class Endereco {
         this.quadra = quadra;
         this.lote = lote;
     }
-    
+
     @Override
-    	public String toString() {
-		return "Cidade: " + cidade+
-                        "Estado: "+ estado+
-                        "Bairro: "+ bairro+
-                        "CEP: "+ cep+
-                        "Rua: "+ rua+
-                        "Quadra: "+ quadra+
-                        "Lote: "+ lote;
-	}
+    public String toString() {
+        return "Cidade: " + cidade
+                + "Estado: " + estado
+                + "Bairro: " + bairro
+                + "CEP: " + cep
+                + "Rua: " + rua
+                + "Quadra: " + quadra
+                + "Lote: " + lote;
+    }
 
     public String getCidade() {
         return cidade;
@@ -81,7 +81,5 @@ public class Endereco {
     public void setLote(int lote) {
         this.lote = lote;
     }
- 
 
-    
 }

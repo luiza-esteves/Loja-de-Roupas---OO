@@ -3,6 +3,7 @@ package modelo;
 import java.util.Scanner;
 
 public class Venda {
+
     Scanner ler = new Scanner(System.in);
     private Funcionario funcionario = new Funcionario();
     private Cliente cliente = new Cliente();
@@ -15,150 +16,147 @@ public class Venda {
     private Macacao macacao = new Macacao();
     private Saia saia = new Saia();
     private Shorte shorte = new Shorte();
-    
-    private int codCompra; 
+
+    private int codCompra;
     private double valorTotal;
     private String formaPagamento, nomeRoupa;
-	
-	public Venda() {
-		
-	}
-	
-	public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, String nomeRoupa) {
-		this.codCompra = cod;
-		this.valorTotal = valorT;
-		this.formaPagamento = formaPag;
-		this.funcionario = func;
-		this.cliente = c;
-		this.nomeRoupa = nomeRoupa;
-	}
-	
-	
-	
+
+    public Venda() {
+
+    }
+
+    public Venda(int cod, double valorT, String formaPag, Funcionario func, Cliente c, String nomeRoupa) {
+        this.codCompra = cod;
+        this.valorTotal = valorT;
+        this.formaPagamento = formaPag;
+        this.funcionario = func;
+        this.cliente = c;
+        this.nomeRoupa = nomeRoupa;
+    }
+
     @Override
-	 public String toString() {
+    public String toString() {
 
-	        return("Código da compra: \n"+ codCompra
-	        	+  "Valor total: \n"+ valorTotal
-	        	+  "Forma de pagamento: \n" +formaPagamento
-	        	+  "Vendedor: \n" +funcionario
-	        	+  "Cliente: \n" +cliente
-	            +  ""    
-	        );
-	        
-	}
-	
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
+        return ("Código da compra: \n" + codCompra
+                + "Valor total: \n" + valorTotal
+                + "Forma de pagamento: \n" + formaPagamento
+                + "Vendedor: \n" + funcionario
+                + "Cliente: \n" + cliente
+                + "");
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
+    }
 
-	public Cliente getCliente() {
-		return cliente;
-	}
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
 
-	public Calca getCalca() {
-		return calca;
-	}
+    public Cliente getCliente() {
+        return cliente;
+    }
 
-	public void setCalca(Calca calca) {
-		this.calca = calca;
-	}
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
-	public Camisa getCamisa() {
-		return camisa;
-	}
+    public Calca getCalca() {
+        return calca;
+    }
 
-	public void setCamisa(Camisa camisa) {
-		this.camisa = camisa;
-	}
+    public void setCalca(Calca calca) {
+        this.calca = calca;
+    }
 
-	public Camiseta getCamiseta() {
-		return camiseta;
-	}
+    public Camisa getCamisa() {
+        return camisa;
+    }
 
-	public void setCamiseta(Camiseta camiseta) {
-		this.camiseta = camiseta;
-	}
+    public void setCamisa(Camisa camisa) {
+        this.camisa = camisa;
+    }
 
-	public Casaco getCasaco() {
-		return casaco;
-	}
+    public Camiseta getCamiseta() {
+        return camiseta;
+    }
 
-	public void setCasaco(Casaco casaco) {
-		this.casaco = casaco;
-	}
+    public void setCamiseta(Camiseta camiseta) {
+        this.camiseta = camiseta;
+    }
 
-	public Cinto getCinto() {
-		return cinto;
-	}
+    public Casaco getCasaco() {
+        return casaco;
+    }
 
-	public void setCinto(Cinto cinto) {
-		this.cinto = cinto;
-	}
+    public void setCasaco(Casaco casaco) {
+        this.casaco = casaco;
+    }
 
-	public Cropped getCropped() {
-		return cropped;
-	}
+    public Cinto getCinto() {
+        return cinto;
+    }
 
-	public void setCropped(Cropped cropped) {
-		this.cropped = cropped;
-	}
+    public void setCinto(Cinto cinto) {
+        this.cinto = cinto;
+    }
 
-	public Macacao getMacacao() {
-		return macacao;
-	}
+    public Cropped getCropped() {
+        return cropped;
+    }
 
-	public void setMacacao(Macacao macacao) {
-		this.macacao = macacao;
-	}
+    public void setCropped(Cropped cropped) {
+        this.cropped = cropped;
+    }
 
-	public Saia getSaia() {
-		return saia;
-	}
+    public Macacao getMacacao() {
+        return macacao;
+    }
 
-	public void setSaia(Saia saia) {
-		this.saia = saia;
-	}
+    public void setMacacao(Macacao macacao) {
+        this.macacao = macacao;
+    }
 
-	public Shorte getShorte() {
-		return shorte;
-	}
+    public Saia getSaia() {
+        return saia;
+    }
 
-	public void setShorte(Shorte shorte) {
-		this.shorte = shorte;
-	}
+    public void setSaia(Saia saia) {
+        this.saia = saia;
+    }
 
-	public Integer getCodCompra() {
-		return codCompra;
-	}
+    public Shorte getShorte() {
+        return shorte;
+    }
 
-	public void setCodCompra(int codCompra) {
-		this.codCompra = codCompra;
-	}
+    public void setShorte(Shorte shorte) {
+        this.shorte = shorte;
+    }
 
-	public double getValorTotal() {
-		return valorTotal;
-	}
+    public Integer getCodCompra() {
+        return codCompra;
+    }
 
-	public void setValorTotal(double valorTotal) {
-		this.valorTotal = valorTotal;
-	}
+    public void setCodCompra(int codCompra) {
+        this.codCompra = codCompra;
+    }
 
-	public String getFormaPagamento() {
-		return formaPagamento;
-	}
+    public double getValorTotal() {
+        return valorTotal;
+    }
 
-	public void setFormaPagamento(String formaPagamento) {
-		this.formaPagamento = formaPagamento;
-	}
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
 
     public String getNomeRoupa() {
         return nomeRoupa;
@@ -167,6 +165,5 @@ public class Venda {
     public void setNomeRoupa(String nomeRoupa) {
         this.nomeRoupa = nomeRoupa;
     }
-	
-	
+
 }
