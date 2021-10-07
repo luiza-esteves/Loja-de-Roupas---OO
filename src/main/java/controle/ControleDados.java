@@ -250,6 +250,7 @@ public class ControleDados {
 
                 dados.inserirEditarVenda(v, Integer.parseInt(dadosVendas[0]));
                 cli.setTotalCompras(cli.getTotalCompras() + 1);
+                es.alterarEstoque(dadosVendas[3]);
 
                 return true;
             } else {
@@ -310,7 +311,8 @@ public class ControleDados {
         String calcaRemovida = dados.getCalca()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCalca; j++) {
-            aux = dados.getVenda()[j].getCalca().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
+            System.out.println(aux);
             if (calcaRemovida.compareTo(aux) == 0) {
                 return false; //não é poss�vel remover a cal�a, pois ela est� vinculada a uma venda
             }
@@ -356,7 +358,7 @@ public class ControleDados {
         String camisaRemovida = dados.getCamisa()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCamisa; j++) {
-            aux = dados.getVenda()[j].getCamisa().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (camisaRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -403,7 +405,7 @@ public class ControleDados {
         String camisetaRemovida = dados.getCamiseta()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCamiseta; j++) {
-            aux = dados.getVenda()[j].getCamiseta().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (camisetaRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -449,7 +451,7 @@ public class ControleDados {
         String casacoRemovida = dados.getCasaco()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCasaco; j++) {
-            aux = dados.getVenda()[j].getCasaco().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (casacoRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -494,7 +496,7 @@ public class ControleDados {
         String cintoRemovida = dados.getCinto()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCinto; j++) {
-            aux = dados.getVenda()[j].getCinto().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (cintoRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -539,7 +541,7 @@ public class ControleDados {
         String croppedRemovida = dados.getCropped()[i].getNome();
         String aux;
         for (int j = 0; j < qtdCropped; j++) {
-            aux = dados.getVenda()[j].getCropped().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (croppedRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -584,7 +586,7 @@ public class ControleDados {
         String macacaoRemovida = dados.getMacacao()[i].getNome();
         String aux;
         for (int j = 0; j < qtdMacacao; j++) {
-            aux = dados.getVenda()[j].getMacacao().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (macacaoRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -628,7 +630,7 @@ public class ControleDados {
         String saiaRemovida = dados.getSaia()[i].getNome();
         String aux;
         for (int j = 0; j < qtdSaia; j++) {
-            aux = dados.getVenda()[j].getSaia().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (saiaRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
@@ -673,7 +675,7 @@ public class ControleDados {
         String shorteRemovida = dados.getShorte()[i].getNome();
         String aux;
         for (int j = 0; j < qtdShorte; j++) {
-            aux = dados.getVenda()[j].getShorte().getNome();
+            aux = dados.getVenda()[j].getNomeRoupa();
             if (shorteRemovida.compareTo(aux) == 0) {
                 return false; //n�o � poss�vel remover a cal�a, pois ela est� vinculada � uma venda
             }
