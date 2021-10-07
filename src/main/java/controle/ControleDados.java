@@ -125,17 +125,17 @@ public class ControleDados {
 
     public boolean inserirEditarCliente(String[] dadosClientes) {
 
-        if (!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+")
+        if (!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+") || !dadosClientes[2].matches("[0-9]+")
                 || !dadosClientes[6].matches("[0-9]+")) {
 
             return false;
         } else {
 
-            Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1], 
-                    Integer.parseInt(dadosClientes[3]),new Telefone(Integer.parseInt(dadosClientes[5]), 
-                            Integer.parseInt(dadosClientes[6])),
+            Cliente c = new Cliente(Integer.parseInt(dadosClientes[2]), dadosClientes[1],
+                    Integer.parseInt(dadosClientes[3]), new Telefone(Integer.parseInt(dadosClientes[5]),
+                    Integer.parseInt(dadosClientes[6])),
                     new Endereco(dadosClientes[9], dadosClientes[10], dadosClientes[7],
-                            Integer.parseInt(dadosClientes[8]),Integer.parseInt(dadosClientes[13]), 
+                            Integer.parseInt(dadosClientes[8]), Integer.parseInt(dadosClientes[13]),
                             Integer.parseInt(dadosClientes[12]), Integer.parseInt(dadosClientes[11])
                     ),
                     dadosClientes[4]
@@ -183,13 +183,13 @@ public class ControleDados {
                 || !dadosFuncionarios[6].matches("[0-9]+")) {
             return false;
         } else {
-            Funcionario f = new Funcionario(Integer.parseInt(dadosFuncionarios[2]), 
+            Funcionario f = new Funcionario(Integer.parseInt(dadosFuncionarios[2]),
                     dadosFuncionarios[1], Integer.parseInt(dadosFuncionarios[3]),
-                    new Telefone(Integer.parseInt(dadosFuncionarios[5]), 
+                    new Telefone(Integer.parseInt(dadosFuncionarios[5]),
                             Integer.parseInt(dadosFuncionarios[6])),
-                    new Endereco(dadosFuncionarios[9], dadosFuncionarios[10], dadosFuncionarios[7], 
+                    new Endereco(dadosFuncionarios[9], dadosFuncionarios[10], dadosFuncionarios[7],
                             Integer.parseInt(dadosFuncionarios[3]),
-                            Integer.parseInt(dadosFuncionarios[8]),Integer.parseInt(dadosFuncionarios[12]),
+                            Integer.parseInt(dadosFuncionarios[8]), Integer.parseInt(dadosFuncionarios[12]),
                             Integer.parseInt(dadosFuncionarios[11])),
                     dadosFuncionarios[4]
             );
@@ -231,18 +231,31 @@ public class ControleDados {
     }
 
     public boolean inserirEditarVenda(String[] dadosVendas) {
+        ControleCliente c = new ControleCliente(this);
+        ControleEstoque es = new ControleEstoque(this);
+        ControleFuncionario f = new ControleFuncionario(this);
+        Cliente cli = c.getCliente(dadosVendas[6]);
+        Funcionario fun = f.getFuncionario(dadosVendas[7]);
+        int est = es.qtdEstoque(dadosVendas[3]);
 
         if (!dadosVendas[1].matches("[0-9]+")) {
 
             return false;
         } else {
-            System.out.println("teste");
-            Venda v = new Venda(Integer.parseInt(dadosVendas[1]), Double.parseDouble(dadosVendas[4]), 
-                    dadosVendas[5],
-                    new Funcionario(dadosVendas[7]), new Cliente(dadosVendas[6]), dadosVendas[3]);
+            if (est > 0) {
+                System.out.println("teste");
+                Venda v = new Venda(Integer.parseInt(dadosVendas[1]), Double.parseDouble(dadosVendas[4]),
+                        dadosVendas[5],
+                        fun, cli, dadosVendas[3]);
 
-            dados.inserirEditarVenda(v, Integer.parseInt(dadosVendas[0]));
-            return true;
+                dados.inserirEditarVenda(v, Integer.parseInt(dadosVendas[0]));
+                cli.setTotalCompras(cli.getTotalCompras() + 1);
+
+                return true;
+            } else {
+                return false;
+            }
+
         }
     }
 
@@ -283,10 +296,10 @@ public class ControleDados {
             return false;
         } else {
             Calca c = new Calca(dadosCalca[12], dadosCalca[13], dadosCalca[14],
-                                    Integer.parseInt(dadosCalca[1]),dadosCalca[2], dadosCalca[3],
-                                    dadosCalca[4], dadosCalca[5], dadosCalca[6],dadosCalca[7], 
-                                    dadosCalca[8], dadosCalca[9],  Double.parseDouble(dadosCalca[10]), 
-                                    Double.parseDouble(dadosCalca[11]));
+                    Integer.parseInt(dadosCalca[1]), dadosCalca[2], dadosCalca[3],
+                    dadosCalca[4], dadosCalca[5], dadosCalca[6], dadosCalca[7],
+                    dadosCalca[8], dadosCalca[9], Double.parseDouble(dadosCalca[10]),
+                    Double.parseDouble(dadosCalca[11]));
             dados.inserirEditarCalca(c, Integer.parseInt(dadosCalca[0]));
             return true;
         }
@@ -328,11 +341,11 @@ public class ControleDados {
                 || !dadosCamisa[6].matches("[0-9]+")) {
             return false;
         } else {
-            Camisa c = new Camisa(dadosCamisa[12], dadosCamisa[13], dadosCamisa[14], dadosCamisa[15], 
-                                    Integer.parseInt(dadosCamisa[1]),dadosCamisa[2], dadosCamisa[3], 
-                                    dadosCamisa[4],dadosCamisa[5], dadosCamisa[6],dadosCamisa[7], 
-                                    dadosCamisa[8], dadosCamisa[9], Double.parseDouble(dadosCamisa[10]), 
-                                    Double.parseDouble(dadosCamisa[11]));
+            Camisa c = new Camisa(dadosCamisa[12], dadosCamisa[13], dadosCamisa[14], dadosCamisa[15],
+                    Integer.parseInt(dadosCamisa[1]), dadosCamisa[2], dadosCamisa[3],
+                    dadosCamisa[4], dadosCamisa[5], dadosCamisa[6], dadosCamisa[7],
+                    dadosCamisa[8], dadosCamisa[9], Double.parseDouble(dadosCamisa[10]),
+                    Double.parseDouble(dadosCamisa[11]));
             dados.inserirEditarCamisa(c, Integer.parseInt(dadosCamisa[0]));
             return true;
         }
@@ -374,12 +387,12 @@ public class ControleDados {
                 || !dadosCamiseta[6].matches("[0-9]+")) {
             return false;
         } else {
-            Camiseta c = new Camiseta(dadosCamiseta[12],dadosCamiseta[13],
-                                      Integer.parseInt(dadosCamiseta[1]),dadosCamiseta[2],
-                                      dadosCamiseta[3], dadosCamiseta[4], dadosCamiseta[5],
-                                      dadosCamiseta[6],dadosCamiseta[7],dadosCamiseta[8],dadosCamiseta[9],
-                                      Double.parseDouble(dadosCamiseta[10]), 
-                                      Double.parseDouble(dadosCamiseta[11]));
+            Camiseta c = new Camiseta(dadosCamiseta[12], dadosCamiseta[13],
+                    Integer.parseInt(dadosCamiseta[1]), dadosCamiseta[2],
+                    dadosCamiseta[3], dadosCamiseta[4], dadosCamiseta[5],
+                    dadosCamiseta[6], dadosCamiseta[7], dadosCamiseta[8], dadosCamiseta[9],
+                    Double.parseDouble(dadosCamiseta[10]),
+                    Double.parseDouble(dadosCamiseta[11]));
             dados.inserirEditarCamiseta(c, Integer.parseInt(dadosCamiseta[0]));
             return true;
         }
@@ -421,11 +434,11 @@ public class ControleDados {
                 || !dadosCasaco[6].matches("[0-9]+")) {
             return false;
         } else {
-            Casaco c = new Casaco(dadosCasaco[12], dadosCasaco[13], dadosCasaco[14], 
-                                  Integer.parseInt(dadosCasaco[1]),dadosCasaco[2], dadosCasaco[3], 
-                                  dadosCasaco[4], dadosCasaco[5], dadosCasaco[6],dadosCasaco[7], 
-                                  dadosCasaco[8], dadosCasaco[9], Double.parseDouble(dadosCasaco[10]), 
-                                  Double.parseDouble(dadosCasaco[11]));
+            Casaco c = new Casaco(dadosCasaco[12], dadosCasaco[13], dadosCasaco[14],
+                    Integer.parseInt(dadosCasaco[1]), dadosCasaco[2], dadosCasaco[3],
+                    dadosCasaco[4], dadosCasaco[5], dadosCasaco[6], dadosCasaco[7],
+                    dadosCasaco[8], dadosCasaco[9], Double.parseDouble(dadosCasaco[10]),
+                    Double.parseDouble(dadosCasaco[11]));
             dados.inserirEditarCasaco(c, Integer.parseInt(dadosCasaco[0]));
             return true;
         }
@@ -467,9 +480,9 @@ public class ControleDados {
                 || !dadosCinto[6].matches("[0-9]+")) {
             return false;
         } else {
-            Cinto c = new Cinto(dadosCinto[12], Double.parseDouble(dadosCinto[13]), 
-                    Integer.parseInt(dadosCinto[1]),dadosCinto[2], dadosCinto[3], dadosCinto[4], 
-                    dadosCinto[5], dadosCinto[6],dadosCinto[7], dadosCinto[8], dadosCinto[9], 
+            Cinto c = new Cinto(dadosCinto[12], Double.parseDouble(dadosCinto[13]),
+                    Integer.parseInt(dadosCinto[1]), dadosCinto[2], dadosCinto[3], dadosCinto[4],
+                    dadosCinto[5], dadosCinto[6], dadosCinto[7], dadosCinto[8], dadosCinto[9],
                     Double.parseDouble(dadosCinto[10]), Double.parseDouble(dadosCinto[11]));
             dados.inserirEditarCinto(c, Integer.parseInt(dadosCinto[0]));
             return true;
@@ -512,9 +525,9 @@ public class ControleDados {
                 || !dadosCropped[6].matches("[0-9]+")) {
             return false;
         } else {
-            Cropped c = new Cropped(dadosCropped[12],dadosCropped[13],dadosCropped[14],
-                    Integer.parseInt(dadosCropped[1]),dadosCropped[2], dadosCropped[3], dadosCropped[4],
-                    dadosCropped[5], dadosCropped[6],dadosCropped[7], dadosCropped[8], dadosCropped[9],
+            Cropped c = new Cropped(dadosCropped[12], dadosCropped[13], dadosCropped[14],
+                    Integer.parseInt(dadosCropped[1]), dadosCropped[2], dadosCropped[3], dadosCropped[4],
+                    dadosCropped[5], dadosCropped[6], dadosCropped[7], dadosCropped[8], dadosCropped[9],
                     Double.parseDouble(dadosCropped[10]), Double.parseDouble(dadosCropped[11]));
             dados.inserirEditarCropped(c, Integer.parseInt(dadosCropped[0]));
             return true;
@@ -559,7 +572,7 @@ public class ControleDados {
         } else {
             Macacao c = new Macacao(dadosMacacao[12], dadosMacacao[13], Integer.parseInt(dadosMacacao[1]),
                     dadosMacacao[2], dadosMacacao[3], dadosMacacao[4], dadosMacacao[5], dadosMacacao[6],
-                    dadosMacacao[7], dadosMacacao[8], dadosMacacao[9],Double.parseDouble(dadosMacacao[10]), 
+                    dadosMacacao[7], dadosMacacao[8], dadosMacacao[9], Double.parseDouble(dadosMacacao[10]),
                     Double.parseDouble(dadosMacacao[11]));
             dados.inserirEditarMacacao(c, Integer.parseInt(dadosMacacao[0]));
             return true;
@@ -602,8 +615,8 @@ public class ControleDados {
                 || !dadosSaia[6].matches("[0-9]+")) {
             return false;
         } else {
-            Saia c = new Saia(dadosSaia[12], dadosSaia[13], Integer.parseInt(dadosSaia[1]),dadosSaia[2], 
-                    dadosSaia[3], dadosSaia[4], dadosSaia[5], dadosSaia[6],dadosSaia[7], dadosSaia[8], 
+            Saia c = new Saia(dadosSaia[12], dadosSaia[13], Integer.parseInt(dadosSaia[1]), dadosSaia[2],
+                    dadosSaia[3], dadosSaia[4], dadosSaia[5], dadosSaia[6], dadosSaia[7], dadosSaia[8],
                     dadosSaia[9], Double.parseDouble(dadosSaia[10]), Double.parseDouble(dadosSaia[11]));
             dados.inserirEditarSaia(c, Integer.parseInt(dadosSaia[0]));
             return true;
@@ -688,7 +701,7 @@ public class ControleDados {
 
     public boolean inserirEditarEstoqueCalca(String[] dadosEstoqueCalca) throws ParseException {
 
-        Estoque e = new Estoque(dadosEstoqueCalca[2], Integer.parseInt(dadosEstoqueCalca[3]), 
+        Estoque e = new Estoque(dadosEstoqueCalca[2], Integer.parseInt(dadosEstoqueCalca[3]),
                 Integer.parseInt(dadosEstoqueCalca[1]), 1);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoqueCalca[0]));
 
@@ -696,7 +709,7 @@ public class ControleDados {
     }
 
     public boolean inserirEditarEstoqueCamisa(String[] dadosEstoque) throws ParseException {
-        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]), 
+        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]),
                 Integer.parseInt(dadosEstoque[1]), 2);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));
 
@@ -711,28 +724,28 @@ public class ControleDados {
     }
 
     public boolean inserirEditarEstoqueCasaco(String[] dadosEstoque) throws ParseException {
-        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]), 
+        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]),
                 Integer.parseInt(dadosEstoque[1]), 4);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));
         return true;
     }
 
     public boolean inserirEditarEstoqueCinto(String[] dadosEstoque) throws ParseException {
-        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]), 
+        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]),
                 Integer.parseInt(dadosEstoque[1]), 5);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));
         return true;
     }
 
     public boolean inserirEditarEstoqueCropped(String[] dadosEstoque) throws ParseException {
-        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]), 
+        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]),
                 Integer.parseInt(dadosEstoque[1]), 6);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));
         return true;
     }
 
     public boolean inserirEditarEstoqueMacacao(String[] dadosEstoque) throws ParseException {
-        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]), 
+        Estoque e = new Estoque(dadosEstoque[2], Integer.parseInt(dadosEstoque[3]),
                 Integer.parseInt(dadosEstoque[1]), 7);
         dados.inserirEditarEstoque(e, Integer.parseInt(dadosEstoque[0]));
         return true;

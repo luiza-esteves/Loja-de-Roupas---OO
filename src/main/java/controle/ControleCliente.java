@@ -17,9 +17,21 @@ public class ControleCliente {
         String[] s = new String[qtdCliente];
         for (int i = 0; i < qtdCliente; i++) {
             s[i] = cliente[i].getNome();
+            
         }
 
         return s;
+    }
+
+    public Cliente getCliente(String nome) {
+        Cliente c = null;
+        for (int i = 0; i < qtdCliente; i++) {
+            if (nome.equals(cliente[i].getNome())) {
+                c = cliente[i];
+            }
+
+        }
+        return c;
     }
 
     public int getQtdCliente() {

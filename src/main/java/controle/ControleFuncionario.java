@@ -24,6 +24,18 @@ public class ControleFuncionario {
 
         return s;
     }
+    
+    public Funcionario getFuncionario(String nome) {
+        Funcionario c = null;
+        for (int i = 0; i < qtdFuncionario; i++) {
+            if (nome.equals(funcionario[i].getNome())) {
+                c = funcionario[i];
+            }
+
+        }
+        return c;
+    }
+
 
     public int getQtd() {
         return qtdFuncionario;

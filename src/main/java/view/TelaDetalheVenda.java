@@ -198,7 +198,8 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
         JOptionPane.showMessageDialog(null, "ERRO AO SALVAR OS DADOS!\n "
                 + "Pode ter ocorrido um dos dois erros a seguir:  \n"
                 + "1. Nem todos os campos foram preenchidos \n"
-                + "2. Código não contem apenas números", null,
+                + "2. Código não contem apenas números \n"
+                + "3. Quantidade no estoque insuficiente", null,
                 JOptionPane.ERROR_MESSAGE);
     }
 

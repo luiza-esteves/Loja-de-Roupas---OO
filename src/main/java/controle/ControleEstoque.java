@@ -1,15 +1,11 @@
 package controle;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 import modelo.*;
 
 public class ControleEstoque {
 
     Estoque[] estoque = new Estoque[100];
     private int qtdEstoque;
-    private Dados dados = new Dados();
 
     public ControleEstoque(ControleDados d) {
         estoque = d.getEstoques();
@@ -28,4 +24,26 @@ public class ControleEstoque {
         return s;
     }
 
+    public int alterarEstoque(String roupa) {
+        int qtd = 0;
+        for (int i = 0; i < qtdEstoque; i++) {
+            if (estoque[i].getNomeRoupa() == roupa) {
+                estoque[i].setQtdDispobnivel(estoque[i].getQtdDispobnivel() - 1);
+                qtd = estoque[i].getQtdDispobnivel();
+            }
+        }
+
+        return qtd;
+    }
+
+    public int qtdEstoque(String roupa) {
+        int qtd = 0;
+
+        for (int i = 0; i < qtdEstoque; i++) {
+            if (estoque[i].getNomeRoupa().equals(roupa)) {
+                qtd = estoque[i].getQtdDispobnivel();
+            }
+        }
+        return qtd;
+    }
 }

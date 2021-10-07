@@ -20,10 +20,13 @@ public class TelaDetalheRoupaTest {
 
     @Test
     public void testInserirCalca() {
+       TelaRoupa t = new TelaRoupa(dados);
        int op=1;
        int pos=0;
        
-       this.tela.inserirEditar(op, dados, new TelaRoupa(dados), pos);
+       this.tela.inserirEditar(op, dados, t, pos);
+       
+       
  
     }
     
@@ -33,6 +36,7 @@ public class TelaDetalheRoupaTest {
        int pos=0;
        
        this.tela.inserirEditar(op, dados, new TelaRoupa(dados), pos);
+       
  
     }
 
