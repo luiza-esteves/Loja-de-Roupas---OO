@@ -16,7 +16,7 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
     private JList<String> listaVendasCadastradas;
     private String[] listaCods = new String[50];
 
-    public void mostrarDados(ControleDados d, int op) {
+    public void mostrarDados(ControleDados d) {
         dados = d;
 
         listaCods = new ControleVenda(dados).getCodigosCompras();
