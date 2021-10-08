@@ -2,6 +2,10 @@ package modelo;
 
 import java.util.Scanner;
 
+/**
+ * Classe que modela os estoques de todas as roupas
+ * @author Luíza Esteves
+ */
 public class Estoque {
 
     Scanner ler = new Scanner(System.in);

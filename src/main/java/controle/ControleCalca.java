@@ -2,6 +2,10 @@ package controle;
 
 import modelo.*;
 
+/**
+ * Classe que auxilia na montagem da tela onde as calças aparecem
+ * @author Luíza Esteves
+ */
 public class ControleCalca {
 
     private Calca[] calca;
@@ -12,7 +16,11 @@ public class ControleCalca {
         calca = d.getCalca();
         qtdCalca = d.getQtdEstoque();
     }
-
+    
+    /**
+     * Método que junta todos os nomes de todas as calças
+     * @return um vetor de nomes
+     */
     public String[] getNomesCalcas() {
         String[] s = new String[qtdCalca];
         for (int i = 0; i < qtdCalca; i++) {

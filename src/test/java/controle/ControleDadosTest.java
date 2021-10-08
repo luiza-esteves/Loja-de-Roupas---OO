@@ -10,8 +10,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author luiza
+ * Classe usada para testar o sistema
+ * @author Luíza Esteves
  */
 public class ControleDadosTest {
     Dados dados = new Dados();

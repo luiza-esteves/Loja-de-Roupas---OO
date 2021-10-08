@@ -1,5 +1,9 @@
 package modelo;
 
+/**
+ * Classe abstrata que modela atributos que todas as peças de roupa têm em comum
+ * @author Luíza Esteves
+ */
 public abstract class Roupa {
 
     // atributos da classe 
@@ -8,7 +12,9 @@ public abstract class Roupa {
             categoria, genero, estampa;
     protected double comprimento, preco;
 
-    // método construtor
+    /**
+     * Construtor padrão
+     */
     public Roupa() {
         super();
     }

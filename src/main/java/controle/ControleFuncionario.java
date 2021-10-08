@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.*;
 
+/**
+ * Classe que auxilia na montagem da tela onde os funcionários aparecem
+ * @author Luíza Esteves
+ */
 public class ControleFuncionario {
 
     private Funcionario[] funcionario;
@@ -16,6 +20,10 @@ public class ControleFuncionario {
         qtdFuncionario = d.getQtdFuncionarios();
     }
 
+    /**
+     * Método que junta todos os nomes de todos os funcionários
+     * @return um vetor de nomes
+     */
     public String[] getNomefuncionario() {
         String[] s = new String[qtdFuncionario];
         for (int i = 0; i < qtdFuncionario; i++) {
@@ -25,6 +33,10 @@ public class ControleFuncionario {
         return s;
     }
     
+    /**
+     * Método que retorna um funcionário através de seu nome
+     * @return funcionário
+     */
     public Funcionario getFuncionario(String nome) {
         Funcionario c = null;
         for (int i = 0; i < qtdFuncionario; i++) {

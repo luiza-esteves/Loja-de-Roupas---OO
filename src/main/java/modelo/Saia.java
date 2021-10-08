@@ -2,6 +2,10 @@ package modelo;
 
 import java.util.Scanner;
 
+/**
+ * Classe filha de Roupa que possui características exclusivas das saias
+ * @author Luíza Esteves
+ */
 public class Saia extends Roupa {
 
     Scanner ler = new Scanner(System.in);

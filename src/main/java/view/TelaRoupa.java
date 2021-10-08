@@ -14,6 +14,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+/**
+ * Classe responável pela tela que exibe a lista de roupas(de acordo com a peça selecionada).
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaRoupa implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
@@ -88,7 +93,11 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
     private JList<String> listaShorteCadastrados;
 
     private String[] listaNomes = new String[50];
-
+    /**
+     * Construtor da tela de roupas
+     * @param d objeto do tipo ControleDados, responsável por passar todos os 
+     * nomes das peças de roupa
+     */
     public TelaRoupa(ControleDados d) {
         dados = d;
 
@@ -133,12 +142,19 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
         shorte.addActionListener(this);
 
     }
-
+    
+    /**
+     * Método responsável por mostrar a lista de roupas cadastradas de acordo com a peça selecionada
+     * @param d objeto do tipo ControleDados, responsável por passar todos os nomes de todas 
+     * as roupas
+     * @param op variável do tipo int que determina se será exibida 
+     * uma lista de calças, ou camisas, ou casacos e etc.
+     */
     public void mostrarDados(int op, ControleDados d) {
         dados = d;
 
         switch (op) {
-            case 1:// Mostrar dados de alunos cadastrados (JList)
+            case 1:
 
                 listaNomes = new ControleCalca(dados).getNomesCalcas();
 
@@ -221,7 +237,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
                 listaCamisaCadastrados.addListSelectionListener(this);
 
                 break;
-            case 3:// Mostrar dados de alunos cadastrados (JList)
+            case 3:
                 listaNomes = new ControleCamiseta(dados).getNomesCamiseta();
                 listaCamisetaCadastrados = new JList<String>(listaNomes);
                 janelaCamiseta = new JFrame("Camiseta");
@@ -262,7 +278,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 4:// Mostrar dados de alunos cadastrados (JList)
+            case 4:
                 listaNomes = new ControleCasaco(dados).getNomesCasaco();
                 listaCasacoCadastrados = new JList<String>(listaNomes);
                 janelaCasaco = new JFrame("Casaco");
@@ -303,7 +319,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 5:// Mostrar dados de alunos cadastrados (JList)
+            case 5:
                 listaNomes = new ControleCinto(dados).getNomesCinto();
                 listaCintoCadastrados = new JList<String>(listaNomes);
                 janelaCinto = new JFrame("Cinto");
@@ -344,7 +360,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 6:// Mostrar dados de alunos cadastrados (JList)
+            case 6:
                 listaNomes = new ControleCropped(dados).getNomesCropped();
                 listaCroppedCadastrados = new JList<String>(listaNomes);
                 janelaCropped = new JFrame("Cropped");
@@ -385,7 +401,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 7:// Mostrar dados de alunos cadastrados (JList)
+            case 7:
                 listaNomes = new ControleMacacao(dados).getNomesMacacao();
                 listaMacacaoCadastrados = new JList<String>(listaNomes);
                 janelaMacacao = new JFrame("Macacão");
@@ -426,7 +442,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 8:// Mostrar dados de alunos cadastrados (JList)
+            case 8:
                 listaNomes = new ControleSaia(dados).getNomesSaia();
                 listaSaiaCadastrados = new JList<String>(listaNomes);
                 janelaSaia = new JFrame("Saia");
@@ -467,7 +483,7 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 9:// Mostrar dados de alunos cadastrados (JList)
+            case 9:
                 listaNomes = new ControleShorte(dados).getNomesShorte();
                 listaShorteCadastrados = new JList<String>(listaNomes);
                 janelaShorte = new JFrame("Saia");
@@ -513,7 +529,13 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
         }
 
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada.
+     * Nesse caso temos como opções as janelas que mostram listas de diferentes peças de roupa,
+     * as peças de roupa em si e opções de cadastro, atualização, e filtragem.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -820,7 +842,13 @@ public class TelaRoupa implements ActionListener, ListSelectionListener {
         }
 
     }
-
+    
+    /**
+     * Método responsável por comparar o índice da roupa a ser 
+     * editada com o índice na lista onde os mesmas estão cadastradas e assim 
+     * chama o método de edição
+     * @param e do tipo ListSelectionEvent, guarda o item da lista que foi selecionado
+     */
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();

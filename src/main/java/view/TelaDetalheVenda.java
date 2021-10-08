@@ -18,6 +18,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+/**
+ * Classe responável pela tela que exibe as informações de uma venda específica
+ * @author Rafael Xavier
+ * @version 1.0 (Out 2021) 
+ */
 public final class TelaDetalheVenda implements ActionListener, MouseListener, ListSelectionListener {
 
     private JFrame janela;
@@ -50,7 +55,15 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
     private int posicao;
     private int opcao;
     private String s;
-
+    
+    /**
+     * Método responsável pelo cadastro/edição dos dados de uma venda
+     * @param d objeto do tipo ControleDados, responsável por passar os dados das vendas
+     * @param op variável inteira que através de um switch determina se será exibida 
+     * a tela para cadastrar/editar uma venda
+     * @param pos variável inteira que funciona como índice, determina em qual 
+     * posição do vetor está a venda a ser alterada
+     */
     public void inserirEditar(int op, ControleDados d, TelaVenda v, int pos) {
 
         opcao = op;
@@ -133,7 +146,12 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
         botaoSalvar.addActionListener(this);
         botaoExcluir.addActionListener(this);
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada, portanto 
+     * faz com que os novos dados sejam colocados em seus devidos lugares, através dos botões de salvar ou excluir.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -209,7 +227,11 @@ public final class TelaDetalheVenda implements ActionListener, MouseListener, Li
                 JOptionPane.ERROR_MESSAGE);
 
     }
-
+    
+    /**
+     * Método responsável por mostrar as opções de roupas cadastradas quando a caixa de pesquisa é "clicada"
+     * @param e parâmetro que passa o clique do mouse
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         Object src = e.getSource();

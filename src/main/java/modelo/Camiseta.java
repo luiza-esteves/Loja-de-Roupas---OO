@@ -3,6 +3,10 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Classe filha de Roupa que possui características exclusivas das camisetas
+ * @author Luíza Esteves
+ */
 public class Camiseta extends Roupa {
 
     Scanner ler = new Scanner(System.in);

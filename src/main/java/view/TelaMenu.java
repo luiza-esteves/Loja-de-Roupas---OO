@@ -5,6 +5,12 @@ import java.awt.event.*;
 import javax.swing.*;
 import controle.*;
 
+/**
+ * Classe onde se encontra o método main. É a classe que dá acesso à todas as funcionalidades
+ * do sistema.
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaMenu implements ActionListener {
 
     private static final JFrame janela = new JFrame("Loja de roupas");
@@ -49,7 +55,13 @@ public class TelaMenu implements ActionListener {
         venda.addActionListener(menu);
         roupa.addActionListener(menu);
     }
-
+    
+    /**
+     * Métodos do tipo ActionPerformed fazem com que a ação do botão pressionado seja executada.
+     * Nesse caso temos como opções as janelas que mostram os clientes cadastrados, 
+     * ou funcionários cadastrados, e assim por diante.
+     * @param e objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource(); // pega a opção escolhida pelo usuário

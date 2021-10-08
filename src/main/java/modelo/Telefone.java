@@ -3,6 +3,10 @@ package modelo;
 import java.util.*;
 import java.util.Scanner;
 
+/**
+ * Classe que modela os telefones
+ * @author Luíza Esteves
+ */
 public class Telefone {
 
     Scanner ler = new Scanner(System.in);

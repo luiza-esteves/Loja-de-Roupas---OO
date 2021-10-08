@@ -4,6 +4,11 @@ import java.util.Date;
 
 import java.util.Scanner;
 
+/**
+ * Classe filha de Pessoa que possui características exclusivas dos clientes do sistema
+ * @author Rafael Xavier
+ * @author Luíza Esteves
+ */
 public class Cliente extends Pessoa {
 
     Scanner ler = new Scanner(System.in);

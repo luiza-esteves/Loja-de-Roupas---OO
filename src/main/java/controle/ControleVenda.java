@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 
 import modelo.*;
 
+/**
+ * Classe que auxilia na montagem da tela onde as vendas aparecem
+ * @author Rafael Xavier
+ */
 public class ControleVenda {
 
     Venda[] v;
@@ -18,6 +22,10 @@ public class ControleVenda {
 
     }
 
+    /**
+     * Método que junta todos os códigos de todos as vendas
+     * @return um vetor de códigos
+     */
     public String[] getCodigosCompras() {
         String[] s = new String[qtdVenda];
         for (int i = 0; i < qtdVenda; i++) {

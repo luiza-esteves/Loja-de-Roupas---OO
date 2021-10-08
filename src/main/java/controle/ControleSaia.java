@@ -9,6 +9,10 @@ import java.text.ParseException;
 import modelo.Saia;
 import modelo.Dados;
 
+/**
+ * Classe que auxilia na montagem da tela onde as saias aparecem
+ * @author Luíza Esteves
+ */
 public class ControleSaia {
 
     private Saia[] saia;
@@ -20,6 +24,10 @@ public class ControleSaia {
         qtdSaia = d.getQtdEstoque();
     }
 
+    /**
+     * Método que junta todos os nomes de todas as saias
+     * @return um vetor de nomes
+     */
     public String[] getNomesSaia() {
         String[] s = new String[qtdSaia];
         for (int i = 0; i < qtdSaia; i++) {

@@ -1,5 +1,9 @@
 package modelo;
 
+/**
+ * Classe que modela os endereços
+ * @author Luíza Esteves
+ */
 public class Endereco {
 
     private String cidade, estado, bairro;

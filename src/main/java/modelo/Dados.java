@@ -2,6 +2,11 @@ package modelo;
 
 import java.util.*;
 
+/**
+ * Classe responsável por preencher o sistema com dados também possui métodos de edição
+ * @author Luíza Esteves
+ * @author Rafael Xavier
+ */
 public class Dados {
 
     private Calca[] calca = new Calca[50];
@@ -105,7 +110,13 @@ public class Dados {
         qtdVenda = 5;
 
     }
-
+    
+    /**
+     * Método que faz a edição de dados na classe modelo. O qual é chamado nas 
+     * classes "Tela"
+     * @param v objeto do tipo venda
+     * @param pos variável inteira que exerce o papel de índice
+     */
     public void inserirEditarVenda(Venda v, int pos) {
         this.venda[pos] = v;
         if (pos == qtdVenda) {

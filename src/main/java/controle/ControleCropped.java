@@ -9,6 +9,10 @@ import java.text.ParseException;
 import modelo.Cropped;
 import modelo.Dados;
 
+/**
+ * Classe que auxilia na montagem da tela onde os croppeds aparecem
+ * @author Luíza Esteves
+ */
 public class ControleCropped {
 
     private Cropped[] cropped;
@@ -20,6 +24,10 @@ public class ControleCropped {
         qtdCropped = d.getQtdEstoque();
     }
 
+    /**
+     * Método que junta todos os nomes de todos os croppeds
+     * @return um vetor de nomes
+     */
     public String[] getNomesCropped() {
         String[] s = new String[qtdCropped];
         for (int i = 0; i < qtdCropped; i++) {

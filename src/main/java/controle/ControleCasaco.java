@@ -10,8 +10,8 @@ import modelo.Casaco;
 import modelo.Dados;
 
 /**
- *
- * @author luiza
+ * Classe que auxilia na montagem da tela onde os casacos aparecem
+ * @author Luíza Esteves
  */
 public class ControleCasaco {
 
@@ -25,6 +25,10 @@ public class ControleCasaco {
         qtdCasaco = d.getQtdEstoque();
     }
 
+    /**
+     * Método que junta todos os nomes de todos os casacos
+     * @return um vetor de nomes
+     */
     public String[] getNomesCasaco() {
         String[] s = new String[qtdCasaco];
         for (int i = 0; i < qtdCasaco; i++) {

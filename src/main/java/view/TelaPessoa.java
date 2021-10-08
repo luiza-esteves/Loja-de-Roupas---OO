@@ -6,6 +6,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Classe responável pela tela que exibe a lista de clientes ou de funcionários.
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaPessoa implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
@@ -22,13 +27,20 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
     private JList<String> listaClientesCadastrados;
     private JList<String> listaVendedoresCadastrados;
     private String[] listaNomes = new String[50];
-
+    
+    /**
+     * Método responsável por mostrar a lista de clientes ou funcionários
+     * @param d objeto do tipo ControleDados, responsável por passar todos os nomes de todos 
+     * os clientes/funcionários
+     * @param op variável do tipo int que determina se serão exibidos 
+     * os clientes ou os funcionários através de um switch
+     */
     public void mostrarDados(ControleDados d, int op) {
         //mostra lista de clientes ou funcionários, dependendo do parâmetro op passado
         dados = d;
 
         switch (op) {
-            case 1:// Mostrar dados de alunos cadastrados (JList)
+            case 1:
                 listaNomes = new ControleCliente(dados).getNomesCliente();
                 listaClientesCadastrados = new JList<String>(listaNomes);
                 janela = new JFrame("Cliente");
@@ -69,7 +81,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
                 break;
 
-            case 2:// Mostrar dados de professores cadastrados (JList)
+            case 2:
                 listaNomes = new ControleFuncionario(dados).getNomefuncionario();
                 listaVendedoresCadastrados = new JList<String>(listaNomes);
                 janela = new JFrame("Funcionários");
@@ -116,7 +128,11 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
     }
 
-    //Captura eventos relacionados aos botões da interface
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada.
+     * Nesse caso temos como opções cadastrar, atualizar, editar ou filtrar por nome.
+     * @param e objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -125,7 +141,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
         if (src == cadastroCliente) {
             new TelaDetalhePessoa().inserirEditar(1, dados, this, 0);
         }
-        //Cadastro de novo professor
+        
         if (src == cadastroVendedor) {
             new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
         }
@@ -135,7 +151,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
             listaClientesCadastrados.updateUI();
         }
 
-        // Atualiza a lista de nomes de professores mostrada no JList
+        // Atualiza a lista de nomes de funcionários
         if (src == refreshVendedor) {
             listaVendedoresCadastrados.setListData(new ControleFuncionario(dados).getNomefuncionario());
             listaVendedoresCadastrados.updateUI();
@@ -191,7 +207,12 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
     }
 
-    //Captura eventos relacionados ao JList
+    /**
+     * Método responsável por comparar o índice do cliente/funcionário a ser 
+     * editado com o índice na lista onde os mesmos estão cadastrados e assim 
+     * chama o método de edição
+     * @param e objeto do tipo ListSelectionEvent, guarda o item da lista que foi selecionado
+     */
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();

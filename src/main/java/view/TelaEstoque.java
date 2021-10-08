@@ -6,6 +6,12 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Classe responável pela tela que exibe todas as opções de roupas para que seja 
+ * verificada ou alterada a quantidade em estoque.
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaEstoque implements ActionListener, ListSelectionListener {
 
     private static JFrame janela;
@@ -71,7 +77,11 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
     private JList<String> listaSaiaCadastrados;
     private JList<String> listaShorteCadastrados;
     private String[] listaNomes = new String[50];
-
+    
+    /**
+     * Construtor da tela de estoque
+     * @param d objeto do tipo ControleDados, responsável por passar os dados das roupas
+     */
     public TelaEstoque(ControleDados d) {
         dados = d;
 
@@ -112,7 +122,13 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
         shorte.addActionListener(this);
 
     }
-
+    
+    /**
+     * Método responsável por mostrar a lista de roupas em estoque de acordo com a peça selecionada
+     * @param d objeto do tipo ControleDados, responsável por passar os dados das roupas
+     * @param op variável inteira que através de um switch determina se será exibida 
+     * a tela para alterar o estoque das calças, ou das camisas, ou dos casacos, e etc.
+     */
     public void mostrarDados(int op, ControleDados d) {
         switch (op) {
             case 1:
@@ -444,7 +460,13 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
         }
 
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada.
+     * Nesse caso temos como opções as janelas que mostram listas de diferentes peças de roupa,
+     * as peças de roupa em si e opções de cadastro, atualização, e filtragem.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -744,7 +766,12 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
 
     }
 
-    //Captura eventos relacionados ao JList
+    /**
+     * Método responsável por comparar o índice do estoque a ser 
+     * editado com o índice na lista onde as quantidades em estoque estão armazenadas e assim 
+     * chama o método de edição
+     * @param e do tipo ListSelectionEvent, guarda o item da lista que foi selecionado
+     */
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();
@@ -787,7 +814,7 @@ public class TelaEstoque implements ActionListener, ListSelectionListener {
                     listaShorteCadastrados.getSelectedIndex());
         }
     }
-
+    
     public void mensagemErroBusca() {
         JOptionPane.showMessageDialog(null, "Roupa não encontrada!.\n ", null,
                 JOptionPane.ERROR_MESSAGE);

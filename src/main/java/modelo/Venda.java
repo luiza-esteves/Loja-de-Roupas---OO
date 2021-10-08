@@ -2,6 +2,11 @@ package modelo;
 
 import java.util.Scanner;
 
+/**
+ * Classe que modela as vendas
+ * @author Rafael Xavier
+ * @author Luíza Esteves
+ */
 public class Venda {
 
     Scanner ler = new Scanner(System.in);

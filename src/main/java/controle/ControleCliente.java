@@ -2,6 +2,10 @@ package controle;
 
 import modelo.*;
 
+/**
+ * Classe que auxilia na montagem da tela onde os clientes aparecem
+ * @author Luíza Esteves
+ */
 public class ControleCliente {
 
     private Cliente[] cliente;
@@ -12,7 +16,11 @@ public class ControleCliente {
         cliente = d.getCliente();
         qtdCliente = d.getQtdCliente();
     }
-
+    
+    /**
+     * Método que junta todos os nomes de todos os clientes
+     * @return um vetor de nomes
+     */
     public String[] getNomesCliente() {
         String[] s = new String[qtdCliente];
         for (int i = 0; i < qtdCliente; i++) {
@@ -22,7 +30,11 @@ public class ControleCliente {
 
         return s;
     }
-
+    
+    /**
+     * Método que retorna um cliente através de seu nome
+     * @return cliente
+     */
     public Cliente getCliente(String nome) {
         Cliente c = null;
         for (int i = 0; i < qtdCliente; i++) {

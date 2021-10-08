@@ -13,6 +13,12 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Classe responável pela tela que exibe as informações de uma pessoa específica,
+ * podendo ser um funcionário ou um cliente
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaDetalhePessoa implements ActionListener {
 
     private JFrame janela;
@@ -52,7 +58,15 @@ public class TelaDetalhePessoa implements ActionListener {
     private int posicao;
     private int opcao;
     private String s;
-
+    
+    /**
+     * Método responsável pelo cadastro/edição dos dados de uma pessoa
+     * @param d objeto do tipo ControleDados, responsável por passar os dados das pessoas
+     * @param op variável inteira que através de um switch determina se será exibida 
+     * a tela para cadastrar/editar um cliente ou um funcionário 
+     * @param pos variável inteira que funciona como índice, determina em qual 
+     * posição do vetor está a pessoa a ser alterada
+     */
     public void inserirEditar(int op, ControleDados d,
             TelaPessoa p, int pos) {
 
@@ -222,7 +236,12 @@ public class TelaDetalhePessoa implements ActionListener {
         botaoSalvar.addActionListener(this);
         botaoExcluir.addActionListener(this);
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada, portanto 
+     * faz com que os novos dados sejam colocados em seus devidos lugares, através dos botões de salvar ou excluir.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();

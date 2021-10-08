@@ -3,6 +3,12 @@ package controle;
 import java.text.ParseException;
 import modelo.*;
 
+/**
+ * Classe responsável por interligar todas as classes do sistema conforme foi modelado, 
+ * através de gets/sets e os métodos de edição e exclusão
+ * @author Luíza Esteves
+ * @author Rafael Xavier
+ */
 public class ControleDados {
 
     private Dados dados = new Dados();
@@ -122,7 +128,14 @@ public class ControleDados {
     public Venda[] getVenda() {
         return this.dados.getVenda();
     }
-
+    
+    /**
+     * Método de edição responsável por verificar se o dado passado está no formato apropriado
+     * (um cpf que tem que estar só em números, por exemplo)
+     * @param dadosClientes string com dados de cliente
+     * @return true/false - true se o dado estiver no formato correto - 
+     * false se etiver num formato incorreto
+     */
     public boolean inserirEditarCliente(String[] dadosClientes) {
 
         if (!dadosClientes[3].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+") || !dadosClientes[2].matches("[0-9]+")
@@ -145,7 +158,13 @@ public class ControleDados {
         }
 
     }
-
+    
+    /**
+     * Método de exclusão responsável por verificar se o cliente está vinculado ou não a uma venda
+     * @param i variável índice que percorre o vetor de clientes
+     * @return true/false - true se o cliente não estiver vinculado a uma venda - 
+     * false se etiver vinculado
+     */
     public boolean removerCliente(int i) {
         int qtdCliente = dados.getQtdCliente();
         int qtdVendas = dados.getQtdVenda();

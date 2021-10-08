@@ -20,6 +20,11 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+/**
+ * Classe responável pela tela que exibe as informações sobre o estoque de uma peça de roupa
+ * @author Luíza Esteves
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaDetalheEstoque implements ActionListener, MouseListener, ListSelectionListener {
 
     private JFrame janela;
@@ -48,7 +53,15 @@ public class TelaDetalheEstoque implements ActionListener, MouseListener, ListSe
     private final JButton botaoExcluir = new JButton("Excluir");
     private final JButton botaoSalvar = new JButton("Salvar");
     private String nome;
-
+    
+    /**
+     * Método responsável pelo cadastro/edição dos dados de estoque de uma roupa
+     * @param d objeto do tipo ControleDados, responsável por passar os dados das roupas
+     * @param op variável inteira que através de um switch determina se será exibida 
+     * a tela para cadastrar/editar um estoque
+     * @param pos variável inteira que funciona como índice, determina em qual 
+     * posição do vetor está o estoque a ser alterado
+     */
     public void inserirEditar(int op, ControleDados d,
             TelaEstoque p, int pos) {
         opcao = op;
@@ -209,7 +222,12 @@ public class TelaDetalheEstoque implements ActionListener, MouseListener, ListSe
         botaoSalvar.addActionListener(this);
         botaoExcluir.addActionListener(this);
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada, portanto 
+     * faz com que os novos dados sejam colocados em seus devidos lugares, através dos botões de salvar ou excluir.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -344,7 +362,7 @@ public class TelaDetalheEstoque implements ActionListener, MouseListener, ListSe
 
         }
     }
-
+    
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();
@@ -392,7 +410,8 @@ public class TelaDetalheEstoque implements ActionListener, MouseListener, ListSe
         JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir o dado.\n ", null,
                 JOptionPane.ERROR_MESSAGE);
     }
-
+    
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         Object src = e.getSource();

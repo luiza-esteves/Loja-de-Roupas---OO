@@ -4,6 +4,10 @@ import java.text.ParseException;
 import modelo.Dados;
 import modelo.Shorte;
 
+/**
+ * Classe que auxilia na montagem da tela onde os shortes aparecem
+ * @author Luíza Esteves
+ */
 public class ControleShorte {
 
     private Shorte[] shorte;
@@ -15,6 +19,10 @@ public class ControleShorte {
         qtdShorte = d.getQtdEstoque();
     }
 
+    /**
+     * Método que junta todos os nomes de todos os shortes
+     * @return um vetor de nomes
+     */
     public String[] getNomesShorte() {
         String[] s = new String[qtdShorte];
         for (int i = 0; i < qtdShorte; i++) {

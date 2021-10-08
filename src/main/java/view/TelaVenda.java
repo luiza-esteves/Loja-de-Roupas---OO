@@ -6,6 +6,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Classe responável pela tela que exibe a lista de vendas.
+ * @author Rafael Xavier
+ * @version 1.0 (Out 2021) 
+ */
 public class TelaVenda implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
@@ -15,7 +20,12 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
     private ControleDados dados;
     private JList<String> listaVendasCadastradas;
     private String[] listaCods = new String[50];
-
+    
+    /**
+     * Método responsável por mostrar a lista de vendas
+     * @param d objeto do tipo ControleDados, responsável por passar todos os códigos de todas 
+     * as vendas
+     */
     public void mostrarDados(ControleDados d) {
         dados = d;
 
@@ -50,7 +60,12 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
         listaVendasCadastradas.addListSelectionListener(this);
 
     }
-
+    
+    /**
+     * Método que faz com que a ação do botão selecionado seja executada.
+     * Nesse caso temos como opções editar uma venda, cadastrar ou atualizar a lista de vendas.
+     * @param e é um objeto do tipo ActionEvent que carrega a opção escolhida pelo usuário
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
@@ -64,7 +79,13 @@ public class TelaVenda implements ActionListener, ListSelectionListener {
             listaVendasCadastradas.updateUI();
         }
     }
-
+    
+    /**
+     * Método responsável por comparar o índice da venda a ser 
+     * editada com o índice na lista onde as vendas estão armazenadas e assim 
+     * chama o método de edição
+     * @param e do tipo ListSelectionEvent, passa o item da lista que foi selecionado
+     */
     @Override
     public void valueChanged(ListSelectionEvent e) {
         Object src = e.getSource();

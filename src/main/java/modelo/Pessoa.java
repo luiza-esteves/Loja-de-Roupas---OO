@@ -2,6 +2,10 @@ package modelo;
 
 import java.util.Date;
 
+/**
+ * Classe abstrata que modela atributos comuns a todas as pessoas do sistema
+ * @author Luíza Esteves
+ */
 public abstract class Pessoa {
 
     protected String dataNascimento;
@@ -9,7 +13,10 @@ public abstract class Pessoa {
     protected long cpf;
     protected Telefone telefone;
     protected Endereco endereco;
-
+    
+    /**
+     * Construtor padrão
+     */
     public Pessoa() {
         super();
     }

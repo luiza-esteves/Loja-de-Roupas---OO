@@ -2,6 +2,10 @@ package modelo;
 
 import java.util.Scanner;
 
+/**
+ * Classe filha de Roupa que possui características exclusivas dos croppeds
+ * @author Luíza Esteves
+ */
 public class Cropped extends Roupa {
 
     Scanner ler = new Scanner(System.in);

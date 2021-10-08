@@ -4,6 +4,12 @@ import java.util.Date;
 
 import java.util.Scanner;
 
+/**
+ * Classe filha de Pessoa que possui características exclusivas dos funcionários
+ * do sistema
+ * @author Rafael Xavier
+ * @author Luíza Esteves
+ */
 public class Funcionario extends Pessoa {
 
     Scanner ler = new Scanner(System.in);
